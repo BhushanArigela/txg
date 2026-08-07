@@ -1,0 +1,331 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tecnolynx admin email template</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-left: 0;
+      min-width: 100%;
+      background-color: #ffffff;
+    "
+  >
+    <center
+      class="wrapper"
+      style="
+        width: 100%;
+        table-layout: fixed;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      "
+    >
+      <div class="webkit" style="max-width: 600px">
+        <div
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 1px;
+            color: #f6f7fb;
+            line-height: 1px;
+            mso-line-height-rule: exactly;
+            display: none;
+            max-width: 0px;
+            max-height: 0px;
+            opacity: 0;
+            overflow: hidden;
+            mso-hide: all;
+          "
+        ></div>
+
+        <table
+          class="outer"
+          align="center"
+          style="
+            border-spacing: 0;
+            font-family: sans-serif;
+            color: #333333;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border: 0px solid #061f3a;
+          "
+        >
+          <tr>
+            <td
+              class="one-column"
+              style="
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-right: 0;
+                padding-left: 0;
+              "
+            >
+              <table
+                width="100%"
+                style="
+                  border-spacing: 0;
+                  font-family: sans-serif;
+                  color: #333333;
+                "
+              >
+                <tr>
+                  <td
+                    class="inner contents"
+                    valign="top"
+                    width="600"
+                    height="50"
+                    style="
+                      background-color: #f0f9ff;
+                      padding-top: 30px;
+                      padding-bottom: 20px;
+                      padding-right: 20px;
+                      padding-left: 20px;
+                      text-align: center;
+                    "
+                  >
+                    <p
+                      style="
+                        font-size: 24px;
+                        color: #ffffff;
+                        font-family: arial, sans-serif;
+                        margin: 0px;
+                        text-align: center;
+                      "
+                    >
+                      <img
+                        src="{% if logo_url %}{{ logo_url }}{% else %}{% static 'img/logo.webp' %}{% endif %}"
+                        alt="Tecnolynx Logo"
+                        width="120"
+                        style="max-width: 140px; height: auto; display: inline-block; vertical-align: middle;"
+                      />
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="one-column"
+              style="
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-right: 0;
+                padding-left: 0;
+              "
+            >
+              <table
+                width="100%"
+                style="
+                  border-spacing: 0;
+                  font-family: sans-serif;
+                  color: #333333;
+                "
+              >
+                <tr>
+                  <td
+                    class="inner contents"
+                    valign="top"
+                    width="600"
+                    height="50"
+                    style="
+                      background-color: #f0f9ff;
+                      padding-top: 0px;
+                      padding-bottom: 0px;
+                      padding-right: 0px;
+                      padding-left: 0px;
+                      text-align: center;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #053b60;
+                        border-radius: 0px;
+                        padding: 20px 20px 20px;
+                        margin-top: 0px;
+                      "
+                    >
+                      <h2 style="color: #fff; font-weight: 700; margin: 0; font-size: 20px;">
+                        <b>Subject:</b> {{ contact_message.subject }}
+                      </h2>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td
+              style="
+                padding: 15px 20px;
+                text-align: left;
+                background-color: #f0f9ff;
+              "
+            >
+              <div
+                style="
+                  background: #fff;
+                  border-radius: 15px;
+                  padding: 20px 30px;
+                  margin: 20px 0;
+                  border: 1px solid #f1f1f1;
+                "
+              >
+                <p style="font-size: 15px; color: #1e293b; margin-top: 0; margin-bottom: 16px;">
+                  <b>Hi Tecnolynx Team,</b><br />You have received a new contact request.
+                </p>
+
+                <h3 style="font-size: 16px; color: #0f172a; margin-bottom: 16px;">
+                  A new form submission has been received. Below are the details:
+                </h3>
+                <ul style="text-align: left; line-height: 1.8; list-style-type: none; padding-left: 0; margin: 0;">
+                  <li style="margin-bottom: 10px;">
+                    <span style="width: 130px; display: inline-block; font-weight: bold; color: #475569;"
+                      >Name :</span
+                    >
+                    <span style="color: #0f172a; font-weight: 600;">{{ contact_message.first_name }} {{ contact_message.last_name }}</span>
+                  </li>
+                  <li style="margin-bottom: 10px;">
+                    <span style="width: 130px; display: inline-block; font-weight: bold; color: #475569;"
+                      >Email Address :</span
+                    >
+                    {% if contact_message.email %}
+                      <a href="mailto:{{ contact_message.email }}" style="color: #075da2; text-decoration: none; font-weight: 600;">{{ contact_message.email }}</a>
+                    {% else %}
+                      <span style="color: #94a3b8;">Not provided</span>
+                    {% endif %}
+                  </li>
+                  <li style="margin-bottom: 10px;">
+                    <span style="width: 130px; display: inline-block; font-weight: bold; color: #475569;"
+                      >Phone Number :</span
+                    >
+                    {% if contact_message.phone %}
+                      <a href="tel:{{ contact_message.phone }}" style="color: #075da2; text-decoration: none; font-weight: 600;">{{ contact_message.phone }}</a>
+                    {% else %}
+                      <span style="color: #94a3b8;">Not provided</span>
+                    {% endif %}
+                  </li>
+                  <li style="margin-bottom: 10px;">
+                    <span style="width: 130px; display: inline-block; font-weight: bold; color: #475569;"
+                      >Subject :</span
+                    >
+                    <span style="color: #0f172a; font-weight: 600;">{{ contact_message.subject }}</span>
+                  </li>
+                  {% if contact_message.created_at %}
+                  <li style="margin-bottom: 10px;">
+                    <span style="width: 130px; display: inline-block; font-weight: bold; color: #475569;"
+                      >Submitted At :</span
+                    >
+                    <span style="color: #64748b;">{{ contact_message.created_at|date:"F j, Y, g:i a" }}</span>
+                  </li>
+                  {% endif %}
+                  
+                  <li style="margin-top: 16px;">
+                    <span style="width: 130px; display: block; font-weight: bold; color: #475569; margin-bottom: 6px;"
+                      >Message :</span
+                    >
+                    <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; white-space: pre-wrap; color: #1e293b; font-size: 14px; line-height: 1.6;">{{ contact_message.message }}</div>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="one-column"
+              style="
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-right: 0;
+                padding-left: 0;
+              "
+            >
+              <table
+                width="100%"
+                style="
+                  border-spacing: 0;
+                  font-family: sans-serif;
+                  color: #333333;
+                "
+              >
+                <tr>
+                  <td
+                    class="inner contents"
+                    valign="top"
+                    width="600"
+                    height="50"
+                    style="
+                      background-color: #ee314d;
+                      padding-top: 30px;
+                      padding-bottom: 20px;
+                      padding-right: 20px;
+                      padding-left: 20px;
+                      text-align: center;
+                    "
+                  >
+                    <p
+                      style="
+                        font-size: 15px;
+                        color: #fff;
+                        font-family: arial, sans-serif;
+                        margin: 10px 0;
+                      "
+                    >
+                      Operations Team,<br />TecnolynxGlobal Pvt. Ltd.
+                    </p>
+                    <p
+                      style="
+                        font-size: 15px;
+                        color: #fff;
+                        font-family: arial, sans-serif;
+                        margin: 10px 0;
+                      "
+                    >
+                      <a
+                        href="https://www.facebook.com/people/TecnolynxGlobal-Pvt-Ltd/100077144360706/"
+                        target="_blank"
+                        ><img src="https://i.imgur.com/ms0nmKS.png" /></a
+                      ><a
+                        href="https://www.linkedin.com/company/78423800/admin/dashboard/"
+                        target="_blank"
+                        style="margin: 0 10px"
+                        ><img src="https://i.imgur.com/QOj8pgl.png" /></a
+                      ><a
+                        href="https://x.com/i/flow/login?redirect_after_login=%2Ftecnolynxglobal"
+                        target="_blank"
+                        ><img src="https://i.imgur.com/fN0KzfO.png"
+                      /></a>
+                    </p>
+                    <p
+                      style="
+                        font-size: 15px;
+                        color: #fff;
+                        font-family: arial, sans-serif;
+                        margin: 10px 0;
+                      "
+                    >
+                      www.tecnolynx.com, Email: operations@tecnolynx.com, Phone:
+                      +91 40 4851 8840
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>
+
+
+
+

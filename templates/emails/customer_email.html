@@ -1,0 +1,315 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tecnolynx email template</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-right: 0;
+      padding-left: 0;
+      min-width: 100%;
+      background-color: #ffffff;
+    "
+  >
+    <center
+      class="wrapper"
+      style="
+        width: 100%;
+        table-layout: fixed;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      "
+    >
+      <div class="webkit" style="max-width: 600px">
+        <div
+          style="
+            font-family: Arial, sans-serif;
+            font-size: 1px;
+            color: #f6f7fb;
+            line-height: 1px;
+            mso-line-height-rule: exactly;
+            display: none;
+            max-width: 0px;
+            max-height: 0px;
+            opacity: 0;
+            overflow: hidden;
+            mso-hide: all;
+          "
+        ></div>
+
+        <table
+          class="outer"
+          align="center"
+          style="
+            border-spacing: 0;
+            font-family: sans-serif;
+            color: #333333;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            border: 0px solid #061f3a;
+          "
+        >
+          <tr>
+            <td
+              class="one-column"
+              style="
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-right: 0;
+                padding-left: 0;
+              "
+            >
+              <table
+                width="100%"
+                style="
+                  border-spacing: 0;
+                  font-family: sans-serif;
+                  color: #333333;
+                "
+              >
+                <tr>
+                  <td
+                    class="inner contents"
+                    valign="top"
+                    width="600"
+                    height="50"
+                    style="
+                      background-color: #f0f9ff;
+                      padding-top: 30px;
+                      padding-bottom: 20px;
+                      padding-right: 20px;
+                      padding-left: 20px;
+                      text-align: center;
+                    "
+                  >
+                    <p
+                      style="
+                        font-size: 24px;
+                        color: #ffffff;
+                        font-family: arial, sans-serif;
+                        margin: 0px;
+                        text-align: center;
+                      "
+                    >
+                      <img
+                        src="{% if logo_url %}{{ logo_url }}{% else %}{% static 'img/logo.webp' %}{% endif %}"
+                        alt="Tecnolynx Logo"
+                        width="120"
+                        style="max-width: 140px; height: auto; display: inline-block; vertical-align: middle;"
+                      />
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="one-column"
+              style="
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-right: 0;
+                padding-left: 0;
+              "
+            >
+              <table
+                width="100%"
+                style="
+                  border-spacing: 0;
+                  font-family: sans-serif;
+                  color: #333333;
+                "
+              >
+                <tr>
+                  <td
+                    class="inner contents"
+                    valign="top"
+                    width="600"
+                    height="50"
+                    style="
+                      background-color: #f0f9ff;
+                      padding-top: 0px;
+                      padding-bottom: 0px;
+                      padding-right: 0px;
+                      padding-left: 0px;
+                      text-align: center;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #053b60;
+                        border-radius: 0px;
+                        padding: 20px 20px 20px;
+                        margin-top: 0px;
+                      "
+                    >
+                      <h2 style="color: #fff; font-weight: 700; margin: 0; font-size: 20px;">
+                        Dear {{ contact_message.first_name }} {{ contact_message.last_name }}!
+                      </h2>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td
+              style="
+                padding: 15px 40px;
+                text-align: center;
+                background-color: #f0f9ff;
+              "
+            >
+              <div style="text-align: center; margin-top: 20px">
+                <img src="https://i.imgur.com/QJfnHyS.png" width="120" alt="Thank You" />
+              </div>
+              <div
+                style="
+                  background-color: #fff;
+                  box-shadow: 0 0 40px #e5f4fd;
+                  padding: 20px 20px 20px;
+                  margin-top: 20px;
+                  margin-bottom: 20px;
+                "
+              >
+                <h3
+                  style="
+                    font-size: 24px;
+                    color: #053b60;
+                    line-height: 1.2;
+                    margin: 0;
+                  "
+                >
+                  We appreciate your communication with us! We value your inquiry greatly and are dedicated to giving you the best support we can.
+                </h3>
+              </div>
+
+              <p
+                style="
+                  font-size: 15px;
+                  color: #000;
+                  line-height: 1.3;
+                  margin-bottom: 20px;
+                "
+              >
+                While one of our committed professionals reviews your message right now, our team will respond to you as soon as possible. We strive to respond to your inquiries as soon as possible since we recognize how valuable your time is.
+              </p>
+              <p
+                style="
+                  font-size: 15px;
+                  color: #000;
+                  line-height: 1.3;
+                  margin-bottom: 20px;
+                "
+              >
+                Please browse our website to learn more about our offerings and the most recent changes in the interim.
+              </p>
+              <p
+                style="
+                  font-size: 15px;
+                  color: #000;
+                  line-height: 1.3;
+                  margin-bottom: 20px;
+                "
+              >
+                We are grateful for your interest in TecnolynxGlobal Pvt Ltd and eager to have the chance to help you even more. We are honored that you selected us!
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="one-column"
+              style="
+                padding-top: 0;
+                padding-bottom: 0;
+                padding-right: 0;
+                padding-left: 0;
+              "
+            >
+              <table
+                width="100%"
+                style="
+                  border-spacing: 0;
+                  font-family: sans-serif;
+                  color: #333333;
+                "
+              >
+                <tr>
+                  <td
+                    class="inner contents"
+                    valign="top"
+                    width="600"
+                    height="50"
+                    style="
+                      background-color: #ee314d;
+                      padding-top: 30px;
+                      padding-bottom: 20px;
+                      padding-right: 20px;
+                      padding-left: 20px;
+                      text-align: center;
+                    "
+                  >
+                    <p
+                      style="
+                        font-size: 15px;
+                        color: #fff;
+                        font-family: arial, sans-serif;
+                        margin: 10px 0;
+                      "
+                    >
+                      Operations Team,<br />TecnolynxGlobal Pvt. Ltd.
+                    </p>
+                    <p
+                      style="
+                        font-size: 15px;
+                        color: #fff;
+                        font-family: arial, sans-serif;
+                        margin: 10px 0;
+                      "
+                    >
+                      <a
+                        href="https://www.facebook.com/people/TecnolynxGlobal-Pvt-Ltd/100077144360706/"
+                        target="_blank"
+                        ><img src="https://i.imgur.com/ms0nmKS.png" /></a
+                      ><a
+                        href="https://www.linkedin.com/company/78423800/admin/dashboard/"
+                        target="_blank"
+                        style="margin: 0 10px"
+                        ><img src="https://i.imgur.com/QOj8pgl.png" /></a
+                      ><a
+                        href="https://x.com/i/flow/login?redirect_after_login=%2Ftecnolynxglobal"
+                        target="_blank"
+                        ><img src="https://i.imgur.com/fN0KzfO.png"
+                      /></a>
+                    </p>
+                    <p
+                      style="
+                        font-size: 15px;
+                        color: #fff;
+                        font-family: arial, sans-serif;
+                        margin: 10px 0;
+                      "
+                    >
+                      www.tecnolynx.com, Email: operations@tecnolynx.com, Phone:
+                      +91 40 4851 8840
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>
