@@ -1,0 +1,954 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "AboutPage",
+            "@id": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:about' %}#webpage",
+            "url": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:about' %}",
+            "name": "About Tecnolynx - Building Technology Around People",
+            "description": "Tecnolynx is an ISO 27001 certified technology partner specializing in Custom Software Development, Artificial Intelligence (AI) automation, Enterprise Software ERPs, and engineering BIM Digital Twin solutions.",
+            "inLanguage": "en-US",
+            "mainEntity": {
+                "@type": "Organization",
+                "@id": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:home' %}#organization",
+                "name": "Tecnolynx",
+                "legalName": "Tecnolynx Global Services",
+                "foundingDate": "2015",
+                "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.webp' %}",
+                "telephone": "+91-40-4851-8840",
+                "email": "business@tecnolynx.com",
+                "numberOfEmployees": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 25,
+                    "maxValue": 100
+                },
+                "areaServed": ["India", "United Arab Emirates", "United Kingdom", "Australia", "Global"]
+            }
+        },
+        {
+            "@type": "FAQPage",
+            "@id": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:about' %}#faq",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What does TecnolynxGlobal do?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "TecnolynxGlobal is a Technology Consulting and Software Development company that helps businesses build Custom Software, implement Artificial Intelligence (AI) and Machine Learning in Python, automate business processes, develop BIM solutions, and accelerate Digital Transformation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Which industries do you work with?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We work with startups, SMEs, and enterprises providing solutions like Manufacturing ERP, Healthcare Software, Construction Technology, Retail ERP, and Education ERP alongside Digital Marketing and SEO/GEO/AEO services."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you only develop software?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. We provide end-to-end services including Technology Consulting, Cloud Computing, UI/UX design, AI Agents deployment, Business Automation, Digital Marketing (HubSpot, GoHighLevel), and long-term support."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you modernize our existing applications?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We help businesses enhance, migrate, and modernize legacy systems (such as transitioning to React and Flutter) to improve performance, security, and scalability."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================================
+     1. HERO SECTION: Immersive Gradient & Oversized Typography
+   ========================================================================= -->
+<section class="relative min-h-[75vh] flex items-center pt-24 pb-20 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-white text-slate-900">
+    
+    <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
+    <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
+
+    <!-- Subtle Primary Blue Spotlight Glow Behind Headline -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[450px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none z-[1] opacity-35" 
+         style="background: radial-gradient(circle, rgba(7,93,162,0.5) 0%, rgba(11,117,205,0.25) 45%, rgba(56,189,248,0.1) 70%, transparent 100%);"></div>
+
+  
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 w-full text-center">
+        <!-- Floating Glowing Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-blue-100 shadow-[0_2px_15px_-3px_rgba(7,93,162,0.15)] mb-8 reveal">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#075da2]"></span>
+            </span>
+            <span class="text-xs font-black tracking-widest text-slate-800 uppercase">ABOUT US</span>
+        </div>
+
+        <div class="max-w-5xl mx-auto space-y-8 reveal" style="animation-delay: 0.1s;">
+            <!-- Typography matched slightly below home.html -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.05] tracking-tight">
+                Building Technology Around <br class="hidden md:block"/>
+                <span class="bg-gradient-to-r from-[#075da2] to-[#0b75cd] bg-clip-text text-transparent drop-shadow-sm">People</span>, Not Just Code.
+            </h1>
+            
+            <p class="text-slate-600 text-base sm:text-lg lg:text-xl leading-relaxed font-normal max-w-3xl mx-auto">
+                Technology transforms businesses—but only when it solves real problems. We design software to simplify work, empower teams, and deliver sustainable value.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================================
+     2. OUR VALUE COMMITMENT SECTION: Dark Mode Glassmorphism Impact
+   ========================================================================= -->
+<section id="our-philosophy" class="relative py-20 sm:py-28 overflow-hidden bg-slate-50 text-slate-900 border-t border-slate-200/60">
+    
+    <!-- Ambient Spotlights -->
+    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-blue-200/40 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-sky-200/30 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Header -->
+        <div class="max-w-4xl mx-auto text-center space-y-6 mb-16 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                We Don't Build Software to Check Boxes.<br class="hidden sm:inline" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#075da2] to-[#0b75cd]">We Engineer Measurable Value.</span>
+            </h2>
+        </div>
+
+        <!-- Quote Banner -->
+        <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/80 shadow-lg text-center max-w-4xl mx-auto reveal relative overflow-hidden">
+            <!-- Inner subtle glow -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent pointer-events-none"></div>
+            
+            <p class="text-base sm:text-lg font-medium text-slate-600 leading-relaxed relative z-10">
+                Whether it's developing custom applications, implementing AI, or creating engineering solutions, our focus is singular: <span class="text-slate-900 font-extrabold border-b-2 border-blue-500">Create Genuine Business Value.</span>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     3. OUR STORY SECTION: Sticky Scroll / Timeline with Images
+   ========================================================================= -->
+<section id="our-story" class="relative py-20 sm:py-28 bg-gradient-to-b from-white to-slate-50 text-slate-900 border-t border-slate-200/60 overflow-hidden">
+    
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10 text-left">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            
+            <!-- LEFT SIDE: Sticky Title -->
+            <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-32 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#075da2] text-xs font-bold tracking-widest uppercase">
+                    Our Story
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Every business has a unique journey.<br />
+                    <span class="bg-gradient-to-r from-[#075da2] to-[#0b75cd] bg-clip-text text-transparent">Ours began in 2017.</span>
+                </h2>
+                <!-- SVG Vector Journey Graphic -->
+                <div class="relative w-full rounded-3xl bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 p-6 sm:p-8 shadow-2xl border border-blue-500/20 overflow-hidden mt-8 group">
+                    <!-- Ambient Background Lighting -->
+                    <div class="absolute -top-16 -left-16 w-48 h-48 bg-[#075da2]/40 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -bottom-16 -right-16 w-48 h-48 bg-sky-500/30 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <!-- Micro Grid Pattern Overlay -->
+                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+
+                    <!-- Main SVG Graphic -->
+                    <div class="relative z-10 w-full aspect-[4/3] flex items-center justify-center">
+                        <svg viewBox="0 0 500 375" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-xl">
+                            <defs>
+                                <!-- Gradients -->
+                                <linearGradient id="journey-path-grad" x1="50" y1="320" x2="450" y2="50" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#075da2" />
+                                    <stop offset="50%" stop-color="#8b5cf6" />
+                                    <stop offset="100%" stop-color="#10b981" />
+                                </linearGradient>
+
+                                <linearGradient id="node-glow-1" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#6366f1" />
+                                    <stop offset="100%" stop-color="#075da2" />
+                                </linearGradient>
+
+                                <linearGradient id="node-glow-2" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#c084fc" />
+                                    <stop offset="100%" stop-color="#7e22ce" />
+                                </linearGradient>
+
+                                <linearGradient id="node-glow-3" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#34d399" />
+                                    <stop offset="100%" stop-color="#059669" />
+                                </linearGradient>
+
+                                <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="8" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                                
+                                <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+                                    <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity="0.4" />
+                                </filter>
+                            </defs>
+
+                            <!-- Grid Guidelines / Axis -->
+                            <g stroke="#ffffff" stroke-opacity="0.08" stroke-dasharray="4 4" stroke-width="1">
+                                <line x1="50" y1="80" x2="450" y2="80" />
+                                <line x1="50" y1="187" x2="450" y2="187" />
+                                <line x1="50" y1="295" x2="450" y2="295" />
+                            </g>
+
+                            <!-- Winding Growth Path Shadow (Glow) -->
+                            <path d="M 70 300 C 160 300, 160 190, 250 190 C 340 190, 340 70, 430 70" 
+                                  fill="none" stroke="url(#journey-path-grad)" stroke-width="12" stroke-linecap="round" opacity="0.3" filter="url(#glow-effect)" />
+
+                            <!-- Winding Growth Path Core Line -->
+                            <path d="M 70 300 C 160 300, 160 190, 250 190 C 340 190, 340 70, 430 70" 
+                                  fill="none" stroke="url(#journey-path-grad)" stroke-width="4" stroke-linecap="round" />
+
+                            <!-- Animated Dash Overlay along path -->
+                            <path d="M 70 300 C 160 300, 160 190, 250 190 C 340 190, 340 70, 430 70" 
+                                  fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-dasharray="8 12" opacity="0.7">
+                                <animate attributeName="stroke-dashoffset" from="100" to="0" dur="4s" repeatCount="indefinite" />
+                            </path>
+
+                            <!-- NODE 1: 2017 (Start / The Spark) -->
+                            <g transform="translate(70, 300)" filter="url(#soft-shadow)">
+                                <circle r="24" fill="#0f172a" stroke="#6366f1" stroke-width="2" />
+                                <circle r="18" fill="url(#node-glow-1)" />
+                                <!-- Rocket / Spark Icon -->
+                                <path d="M-5 4 C-5 -4, 0 -10, 5 -10 C 5 -10, 5 -4, 0 4 Z M-6 2 L-10 6 M6 2 L10 6" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                <circle r="3" cx="0" cy="-2" fill="#ffffff" />
+                            </g>
+
+                            <!-- NODE 2: Scaled Solutions (The Approach) -->
+                            <g transform="translate(250, 190)" filter="url(#soft-shadow)">
+                                <circle r="26" fill="#0f172a" stroke="#c084fc" stroke-width="2" />
+                                <circle r="20" fill="url(#node-glow-2)" />
+                                <!-- Architecture / Layers Icon -->
+                                <path d="M-8 -3 L0 -7 L8 -3 L0 1 Z M-8 2 L0 6 L8 2 M-8 7 L0 11 L8 7" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                            </g>
+
+                            <!-- NODE 3: Impact Today (Future / Global) -->
+                            <g transform="translate(430, 70)" filter="url(#soft-shadow)">
+                                <circle r="28" fill="#0f172a" stroke="#34d399" stroke-width="2" />
+                                <circle r="22" fill="url(#node-glow-3)" />
+                                <!-- Star / Diamond Sparkle Icon -->
+                                <path d="M0 -10 L3 -3 L10 0 L3 3 L0 10 L-3 3 L-10 0 L-3 -3 Z" fill="#ffffff" />
+                            </g>
+
+                            <!-- Floating Data Badges inside SVG -->
+                            <!-- 2017 Tag -->
+                            <g transform="translate(40, 240)">
+                                <rect x="0" y="0" width="70" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
+                                <text x="35" y="16" fill="#94a3b8" font-size="11" font-weight="700" text-anchor="middle" font-family="sans-serif">EST. 2017</text>
+                            </g>
+
+                            <!-- Innovation Tag -->
+                            <g transform="translate(200, 125)">
+                                <rect x="0" y="0" width="100" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1" />
+                                <text x="50" y="16" fill="#c084fc" font-size="10" font-weight="700" text-anchor="middle" font-family="sans-serif">TAILORED TECH</text>
+                            </g>
+
+                            <!-- Today Tag -->
+                            <g transform="translate(370, 115)">
+                                <rect x="0" y="0" width="85" height="24" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="1" />
+                                <text x="42" y="16" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle" font-family="sans-serif">GLOBAL SCALE</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Bottom Caption Bar inside Card -->
+                    <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-slate-400 font-semibold">
+                        <span class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Continuous Growth & Innovation
+                        </span>
+                        <span class="text-blue-300 font-bold">2017 — Present</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: Vertical Timeline -->
+            <div class="lg:col-span-7 relative pt-8 lg:pt-0">
+                
+                <!-- Vertical Timeline Line -->
+                <div class="absolute left-6 sm:left-10 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-sky-200 to-transparent"></div>
+
+                <div class="space-y-12">
+                    <!-- Separator Card 1 -->
+                    <div class="relative pl-16 sm:pl-24 reveal">
+                        <div class="absolute left-4 sm:left-8 top-2 w-5 h-5 rounded-full bg-white border-4 border-[#075da2] shadow-[0_0_15px_rgba(7,93,162,0.5)]"></div>
+                        <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-xl hover:shadow-2xl hover:border-blue-100 transition-all duration-300 space-y-4">
+                            <span class="text-sm font-extrabold tracking-widest text-[#075da2] uppercase">01 / The Spark</span>
+                            <p class="text-slate-900 text-xl font-bold leading-relaxed">
+                                Everything started with a simple idea: create technology that businesses actually enjoy using.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Separator Card 2 -->
+                    <div class="relative pl-16 sm:pl-24 reveal">
+                        <div class="absolute left-4 sm:left-8 top-2 w-5 h-5 rounded-full bg-white border-4 border-sky-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
+                        <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-xl hover:shadow-2xl hover:border-sky-100 transition-all duration-300 space-y-4">
+                            <span class="text-sm font-extrabold tracking-widest text-sky-600 uppercase">02 / The Approach</span>
+                            <p class="text-slate-600 text-lg leading-relaxed">
+                                Organizations struggled with disconnected systems and manual processes. Instead of offering generic products, we chose to build solutions around each client's unique business needs—creating software that feels natural and solves everyday challenges.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Separator Card 3 -->
+                    <div class="relative pl-16 sm:pl-24 reveal">
+                        <div class="absolute left-4 sm:left-8 top-2 w-5 h-5 rounded-full bg-white border-4 border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.5)]"></div>
+                        <div class="p-8 rounded-3xl bg-white border border-slate-100 shadow-xl hover:shadow-2xl hover:border-emerald-100 transition-all duration-300 space-y-4">
+                            <span class="text-sm font-extrabold tracking-widest text-emerald-600 uppercase">03 / The Impact Today</span>
+                            <p class="text-slate-900 text-lg font-medium leading-relaxed">
+                                Today, we work with startups, SMEs, and enterprises across industries, helping them embrace digital transformation with confidence and clarity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Standalone Minimal Quote Block at Bottom -->
+        <div class="mt-16 sm:mt-20 border-t border-blue-100/90 text-center w-full max-w-4xl mx-auto pt-8">
+            <blockquote class="text-base sm:text-xl lg:text-2xl font-semibold text-[#075da2] italic leading-relaxed text-center reveal max-w-3xl mx-auto">
+                "While technology continues to evolve, one thing has never changed—our commitment to building long-term relationships based on trust, collaboration, and results."
+            </blockquote>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     4. WHAT WE BELIEVE SECTION: Bento Box Grid
+   ========================================================================= -->
+<section id="what-we-believe" class="relative py-20 sm:py-28 bg-white text-slate-900 border-t border-slate-100 overflow-hidden">
+    
+    <!-- Subtle Background Ambient Soft Light Glow -->
+    <div class="absolute top-1/3 right-1/4 w-[700px] h-[350px] bg-blue-100/30 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10 text-center">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto space-y-6 mb-16 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                What We Believe
+            </h2>
+            <p class="text-lg sm:text-xl font-bold text-slate-800 leading-snug">
+                Technology should never be complicated.
+            </p>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                The best software is the software people hardly notice because it simply works.
+            </p>
+        </div>
+
+        <!-- 3 Action Principles Bento Box Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left reveal">
+            
+            <!-- Principle 1: Large Featured Card -->
+            <div class="md:row-span-2 p-10 sm:p-12 rounded-[2.5rem] bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
+                <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-blue-100 rounded-full blur-[80px] group-hover:bg-blue-200 transition-colors"></div>
+                <div class="relative z-10">
+                    <div class="w-16 h-16 rounded-2xl bg-white border border-blue-100 shadow-sm text-[#075da2] font-black text-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+                        01
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-3">Understand First</h3>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        We ask questions before we recommend solutions. Deep contextual understanding of your business processes is required before a single line of code is written.
+                    </p>
+                </div>
+                <div class="mt-12 pt-6 border-t border-slate-200/60 text-sm font-bold text-[#075da2] uppercase tracking-widest relative z-10">
+                    Discovery & Context
+                </div>
+            </div>
+
+            <!-- Principle 2: Top Right Card -->
+            <div class="p-8 sm:p-10 rounded-[2.5rem] bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-sky-200 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-sky-100 rounded-full blur-[60px] group-hover:bg-sky-200 transition-colors"></div>
+                <div class="relative z-10 flex items-start justify-between">
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-2">Listen Actively</h3>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            We listen to the people using the software, prioritizing human empathy over technical jargon.
+                        </p>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-white border border-sky-100 shadow-sm text-sky-600 font-black text-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        02
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-200/60 text-xs font-bold text-sky-600 uppercase tracking-wider relative z-10">
+                    Human-Centric Empathy
+                </div>
+            </div>
+
+            <!-- Principle 3: Bottom Right Card -->
+            <div class="p-8 sm:p-10 rounded-[2.5rem] bg-slate-50/80 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-emerald-200 transition-all duration-300 flex flex-col justify-between group overflow-hidden relative">
+                <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-emerald-100 rounded-full blur-[60px] group-hover:bg-emerald-200 transition-colors"></div>
+                <div class="relative z-10 flex items-start justify-between">
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-black text-slate-900 mb-2">Eliminate Complexity</h3>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            We focus on solving business problems rather than adding unnecessary technical complexity.
+                        </p>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-white border border-emerald-100 shadow-sm text-emerald-600 font-black text-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                        03
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-200/60 text-xs font-bold text-emerald-600 uppercase tracking-wider relative z-10">
+                    Pure Outcome Focus
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     5. WHAT WE DO SECTION: Staggered Dynamic Cards
+   ========================================================================= -->
+<section id="what-we-do" class="relative py-20 sm:py-28 bg-[#faf8fe] text-slate-900 border-t border-blue-100/70 overflow-hidden">
+    
+    <!-- Background Ambient Spotlights for Depth -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[400px] rounded-full bg-blue-200/40 blur-[120px] pointer-events-none"></div>
+    <!-- Mesh pattern overlay -->
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmFmOGZlIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlPSIjZThlNGY2IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-40"></div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center space-y-6 mb-20 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                What We Do
+            </h2>
+            <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+                We help businesses use technology to work smarter, serve customers better, and prepare for the future.
+            </p>
+        </div>
+
+        <!-- 4 Expertise Pillar Cards Grid (Staggered Layout) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16 lg:gap-y-24 reveal">
+            
+            <!-- Pillar 1: Build (Pushed down slightly) -->
+            <div class="md:mt-12 p-8 sm:p-12 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-10px_rgba(7,93,162,0.1)] hover:shadow-[0_20px_50px_-10px_rgba(7,93,162,0.2)] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-50 rounded-full blur-2xl group-hover:scale-150 group-hover:bg-blue-100 transition-transform duration-700"></div>
+                
+                <div class="relative z-10">
+                    <!-- Action Title -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#EE314D] font-black text-xl group-hover:bg-[#075da2] group-hover:text-white transition-colors duration-500 shadow-sm">
+                            01
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Build</h3>
+                    </div>
+
+                    <!-- Items List -->
+                    <ul class="space-y-4 text-slate-600 text-base font-medium">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#EE314D] shadow-[0_0_8px_#075da2]"></span>
+                            <span>Custom Software & Enterprise Platforms</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-[#EE314D] shadow-[0_0_8px_#075da2]"></span>
+                            <span>Web & Mobile Applications</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-slate-100 text-sm font-extrabold text-[#075da2] uppercase tracking-wider relative z-10">
+                    Engineering & Development
+                </div>
+            </div>
+
+            <!-- Pillar 2: Automate -->
+            <div class="p-8 sm:p-12 rounded-[2rem] bg-white border border-sky-100 shadow-[0_10px_40px_-10px_rgba(168,85,247,0.1)] hover:shadow-[0_20px_50px_-10px_rgba(168,85,247,0.2)] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-sky-50 rounded-full blur-2xl group-hover:scale-150 group-hover:bg-sky-100 transition-transform duration-700"></div>
+                
+                <div class="relative z-10">
+                    <!-- Action Title -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-50 border border-sky-100 flex items-center justify-center text-sky-600 font-black text-xl group-hover:bg-sky-600 group-hover:text-white transition-colors duration-500 shadow-sm">
+                            02
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Automate</h3>
+                    </div>
+
+                    <!-- Items List -->
+                    <ul class="space-y-4 text-slate-600 text-base font-medium">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-sky-600 shadow-[0_0_8px_#a855f7]"></span>
+                            <span>Artificial Intelligence & ML Models</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-sky-600 shadow-[0_0_8px_#a855f7]"></span>
+                            <span>ERP, CRM & Workflow Automation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-slate-100 text-sm font-extrabold text-sky-600 uppercase tracking-wider relative z-10">
+                    AI & Automation
+                </div>
+            </div>
+
+            <!-- Pillar 3: Grow (Pushed down slightly) -->
+            <div class="md:mt-12 p-8 sm:p-12 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-10px_rgba(59,130,246,0.1)] hover:shadow-[0_20px_50px_-10px_rgba(59,130,246,0.2)] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-blue-50 rounded-full blur-2xl group-hover:scale-150 group-hover:bg-blue-100 transition-transform duration-700"></div>
+                
+                <div class="relative z-10">
+                    <!-- Action Title -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 font-black text-xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-500 shadow-sm">
+                            03
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Grow</h3>
+                    </div>
+
+                    <!-- Items List -->
+                    <ul class="space-y-4 text-slate-600 text-base font-medium">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-blue-600 shadow-[0_0_8px_#3b82f6]"></span>
+                            <span>SEO & AI Search Optimization (AEO/GEO)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-blue-600 shadow-[0_0_8px_#3b82f6]"></span>
+                            <span>Digital Marketing & Analytics</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-slate-100 text-sm font-extrabold text-blue-600 uppercase tracking-wider relative z-10">
+                    Search & Performance
+                </div>
+            </div>
+
+            <!-- Pillar 4: Engineer -->
+            <div class="p-8 sm:p-12 rounded-[2rem] bg-white border border-emerald-100 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.1)] hover:shadow-[0_20px_50px_-10px_rgba(16,185,129,0.2)] hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-emerald-50 rounded-full blur-2xl group-hover:scale-150 group-hover:bg-emerald-100 transition-transform duration-700"></div>
+                
+                <div class="relative z-10">
+                    <!-- Action Title -->
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 font-black text-xl group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-500 shadow-sm">
+                            04
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Engineer</h3>
+                    </div>
+
+                    <!-- Items List -->
+                    <ul class="space-y-4 text-slate-600 text-base font-medium">
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-600 shadow-[0_0_8px_#10b981]"></span>
+                            <span>Autodesk Revit Plugins & BIM Solutions</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-600 shadow-[0_0_8px_#10b981]"></span>
+                            <span>Digital Twins & CAD Automation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-slate-100 text-sm font-extrabold text-emerald-600 uppercase tracking-wider relative z-10">
+                    AEC & CAD Tech
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<!-- =========================================================================
+     6. MEET THE PEOPLE BEHIND TECNOLYNX SECTION: Masonry-style interactive grid
+   ========================================================================= -->
+{% comment %} <section id="our-team" class="relative py-20 sm:py-28 bg-white text-slate-900 border-t border-slate-100 overflow-hidden">
+    
+    <!-- Ambient Background Soft Light Glow -->
+    <div class="absolute top-1/3 right-0 w-[800px] h-[400px] bg-gradient-to-l from-blue-100/40 to-transparent blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Header -->
+        <div class="max-w-4xl mx-auto text-center space-y-6 mb-20 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Meet the People Behind Tecnolynx
+            </h2>
+            <p class="text-xl sm:text-2xl text-slate-700 font-bold leading-relaxed max-w-3xl mx-auto">
+                Behind every successful project is a team of passionate professionals who enjoy solving problems and learning new technologies.
+            </p>
+        </div>
+
+        <!-- Team Avatar Cards Grid (Elegant Pseudo-Masonry Layout) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 reveal items-start">
+            
+            <!-- Column 1 -->
+            <div class="space-y-6 lg:space-y-8">
+                <!-- Member 1 -->
+                <div class="group relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-slate-100 border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Sarah Jenkins" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <!-- Smooth Gradient Fade -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white transition-all duration-500 group-hover:from-slate-950/95">
+                        <h3 class="text-xl font-black text-white mb-1 tracking-tight">Sarah Jenkins</h3>
+                        <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">Chief Executive Officer</p>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="group relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-slate-100 border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop" alt="Aisha Patel" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <!-- Smooth Gradient Fade -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white transition-all duration-500 group-hover:from-slate-950/95">
+                        <h3 class="text-xl font-black text-white mb-1 tracking-tight">Aisha Patel</h3>
+                        <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">Lead AI Engineer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="space-y-6 lg:space-y-8 sm:mt-12 lg:mt-16">
+                <!-- Member 2 -->
+                <div class="group relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-slate-100 border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop" alt="Michael Chang" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <!-- Smooth Gradient Fade -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white transition-all duration-500 group-hover:from-slate-950/95">
+                        <h3 class="text-xl font-black text-white mb-1 tracking-tight">Michael Chang</h3>
+                        <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">Chief Technology Officer</p>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="group relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-slate-100 border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop" alt="James Wilson" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <!-- Smooth Gradient Fade -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white transition-all duration-500 group-hover:from-slate-950/95">
+                        <h3 class="text-xl font-black text-white mb-1 tracking-tight">James Wilson</h3>
+                        <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">Head of Product</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="space-y-6 lg:space-y-8 lg:mt-8">
+                <!-- Member 3 -->
+                <div class="group relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-slate-100 border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=800&auto=format&fit=crop" alt="Elena Rodriguez" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <!-- Smooth Gradient Fade -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white transition-all duration-500 group-hover:from-slate-950/95">
+                        <h3 class="text-xl font-black text-white mb-1 tracking-tight">Elena Rodriguez</h3>
+                        <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">Head of Design</p>
+                    </div>
+                </div>
+
+                <!-- Member 7 -->
+                <div class="group relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-slate-100 border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=800&auto=format&fit=crop" alt="Marcus Johnson" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <!-- Smooth Gradient Fade -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white transition-all duration-500 group-hover:from-slate-950/95">
+                        <h3 class="text-xl font-black text-white mb-1 tracking-tight">Marcus Johnson</h3>
+                        <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">Cloud Architect</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="space-y-6 lg:space-y-8 sm:mt-12 lg:mt-24">
+                <!-- Member 4 -->
+                <div class="group relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-slate-100 border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="David O'Connor" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <!-- Smooth Gradient Fade -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white transition-all duration-500 group-hover:from-slate-950/95">
+                        <h3 class="text-xl font-black text-white mb-1 tracking-tight">David O'Connor</h3>
+                        <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">VP of Engineering</p>
+                    </div>
+                </div>
+
+                <!-- Member 8 -->
+                <div class="group relative rounded-[2rem] overflow-hidden aspect-[4/5] shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-700 bg-slate-100 border border-slate-200">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Olivia Bennett" width="800" height="1000" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <!-- Smooth Gradient Fade -->
+                    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent flex flex-col justify-end p-5 sm:p-6 text-white transition-all duration-500 group-hover:from-slate-950/95">
+                        <h3 class="text-xl font-black text-white mb-1 tracking-tight">Olivia Bennett</h3>
+                        <p class="text-blue-200 text-xs font-bold tracking-widest uppercase">Marketing Director</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section> {% endcomment %}
+
+<!-- =========================================================================
+     7. OUR VALUES SECTION: Interactive Hover Rows
+   ========================================================================= -->
+<section id="our-values" class="relative py-20 sm:py-28 bg-[#faf8fe] text-slate-900 border-t border-blue-100/70 overflow-hidden">
+    
+    <!-- Background Ambient Spotlights -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[500px] rounded-full bg-blue-100/40 blur-[120px] pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-6 sm:px-12 relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center space-y-6 mb-16 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Our Values
+            </h2>
+        </div>
+
+        <!-- Interactive Rows -->
+        <div class="space-y-4 reveal">
+            
+            <!-- Value 1 -->
+            <div class="group relative bg-white border border-blue-100/80 rounded-[2rem] p-8 sm:p-10 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-50/0 via-blue-50/0 to-blue-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                    <div class="flex items-center gap-6">
+                        <span class="text-4xl sm:text-5xl font-black text-blue-100 group-hover:text-blue-200 transition-colors">01</span>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900">We Listen</h3>
+                    </div>
+                    <p class="text-slate-600 text-base sm:text-lg font-medium sm:max-w-md text-left sm:text-right">
+                        Every successful project starts with understanding people before technology.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="group relative bg-white border border-sky-100/80 rounded-[2rem] p-8 sm:p-10 shadow-sm hover:shadow-xl hover:border-sky-300 transition-all duration-500 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-sky-50/0 via-sky-50/0 to-sky-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                    <div class="flex items-center gap-6">
+                        <span class="text-4xl sm:text-5xl font-black text-sky-100 group-hover:text-sky-200 transition-colors">02</span>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900">We Keep Learning</h3>
+                    </div>
+                    <p class="text-slate-600 text-base sm:text-lg font-medium sm:max-w-md text-left sm:text-right">
+                        Technology changes every day, and we're committed to staying ahead.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="group relative bg-white border border-blue-100/80 rounded-[2rem] p-8 sm:p-10 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-500 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-50/0 via-blue-50/0 to-blue-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                    <div class="flex items-center gap-6">
+                        <span class="text-4xl sm:text-5xl font-black text-blue-100 group-hover:text-blue-200 transition-colors">03</span>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900">We Build with Care</h3>
+                    </div>
+                    <p class="text-slate-600 text-base sm:text-lg font-medium sm:max-w-md text-left sm:text-right">
+                        Quality isn't added at the end—it's part of every decision we make.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="group relative bg-white border border-emerald-100/80 rounded-[2rem] p-8 sm:p-10 shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all duration-500 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-50/0 via-emerald-50/0 to-emerald-100/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                    <div class="flex items-center gap-6">
+                        <span class="text-4xl sm:text-5xl font-black text-emerald-100 group-hover:text-emerald-200 transition-colors">04</span>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900">We Work Together</h3>
+                    </div>
+                    <p class="text-slate-600 text-base sm:text-lg font-medium sm:max-w-md text-left sm:text-right">
+                        The best solutions come from strong partnerships built on trust.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Value 5 -->
+            <div class="group relative bg-[#075da2] rounded-[2rem] p-8 sm:p-10 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjM2UzNGI5Ij48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlPSIjNGUzZWM4IiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+')] opacity-20"></div>
+                <div class="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6 text-white">
+                    <div class="flex items-center gap-6">
+                        <span class="text-4xl sm:text-5xl font-black text-blue-400">05</span>
+                        <h3 class="text-xl sm:text-2xl font-black">We Deliver What Matters</h3>
+                    </div>
+                    <p class="text-blue-100 text-base sm:text-lg font-medium sm:max-w-md text-left sm:text-right">
+                        Success isn't measured by lines of code. It's measured by the value we create.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     8. LOOKING AHEAD & LET'S START THE CONVERSATION SECTION
+   ========================================================================= -->
+<section id="looking-ahead" class="relative py-24 sm:py-32 bg-slate-900 text-white overflow-hidden">
+    
+    <!-- Immersive Animated Gradient Background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] bg-blue-600/30 blur-[120px] rounded-full mix-blend-screen"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] bg-sky-600/30 blur-[120px] rounded-full mix-blend-screen"></div>
+        <div class="absolute top-[20%] left-[20%] w-[50vw] h-[50vw] bg-[#075da2]/40 blur-[100px] rounded-full mix-blend-screen"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 sm:px-12 relative z-10 text-center">
+        
+        <!-- Header -->
+        <div class="max-w-4xl mx-auto space-y-6 mb-16 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.1]">
+                Looking Ahead
+            </h2>
+            <p class="text-lg sm:text-xl font-bold text-blue-200 leading-snug">
+                The future is shaped by AI, automation, and connected experiences.
+            </p>
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+                Whether you're taking your first step toward digital transformation or planning your next big innovation, we're ready to build the future with you.
+            </p>
+        </div>
+
+        <!-- Grand Glassmorphic CTA Banner -->
+        <div class="p-10 sm:p-16 rounded-[3rem] bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl space-y-10 max-w-5xl mx-auto relative overflow-hidden reveal">
+            
+            <div class="space-y-6 relative z-10">
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+                    Let's Build Something <br class="hidden sm:block"/> Meaningful Together
+                </h3>
+                <p class="text-lg sm:text-xl font-medium text-slate-200 leading-relaxed max-w-2xl mx-auto">
+                    Tell us about your business, your goals, or the challenge you're trying to solve.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-10">
+                <a href="{% url 'master:contact' %}#contact-hub" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-2xl bg-white text-[#075da2] font-extrabold text-lg shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 group">
+                    <span>Schedule a Free Consultation</span>
+                    <svg class="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+                <a href="tel:+914048518840" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg hover:bg-white/20 transition-all duration-300">
+                    <svg class="w-6 h-6 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    <span>+91 40 4851 8840</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     9. FAQS SECTION: Floating Neumorphic Accordions
+   ========================================================================= -->
+<section id="faqs" class="relative py-20 sm:py-28 bg-[#faf8fe] text-slate-900 border-t border-blue-100/70 overflow-hidden">
+    
+    <!-- Background Ambient Spotlights -->
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-100/50 blur-[140px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-sky-100/40 blur-[140px] pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-6 sm:px-12 relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center space-y-4 mb-16 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <!-- FAQ Accordions (Floating Style) -->
+        <div class="space-y-6 reveal">
+            
+            <!-- FAQ Item 1 -->
+            <details class="group rounded-[1.5rem] bg-white border border-blue-50 shadow-[0_4px_20px_-10px_rgba(7,93,162,0.1)] transition-all duration-300 [&[open]]:shadow-xl [&[open]]:border-blue-200">
+                <summary class="flex items-center justify-between font-bold text-lg sm:text-xl text-slate-900 cursor-pointer list-none select-none p-6 sm:p-8">
+                    <span>What does TecnolynxGlobal do?</span>
+                    <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#075da2] font-black group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        ↓
+                    </span>
+                </summary>
+                <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <p class="text-slate-600 text-lg leading-relaxed border-t border-slate-100 pt-6">
+                        TecnolynxGlobal is a technology consulting and software development company that helps businesses build custom software, implement AI, automate business processes, develop BIM solutions, and accelerate digital transformation.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ Item 2 -->
+            <details class="group rounded-[1.5rem] bg-white border border-blue-50 shadow-[0_4px_20px_-10px_rgba(7,93,162,0.1)] transition-all duration-300 [&[open]]:shadow-xl [&[open]]:border-blue-200">
+                <summary class="flex items-center justify-between font-bold text-lg sm:text-xl text-slate-900 cursor-pointer list-none select-none p-6 sm:p-8">
+                    <span>Which industries do you work with?</span>
+                    <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#075da2] font-black group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        ↓
+                    </span>
+                </summary>
+                <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <p class="text-slate-600 text-lg leading-relaxed border-t border-slate-100 pt-6">
+                        We work with startups, SMEs, and enterprises across manufacturing, healthcare, construction, engineering, retail, education, logistics, finance, and professional services.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ Item 3 -->
+            <details class="group rounded-[1.5rem] bg-white border border-blue-50 shadow-[0_4px_20px_-10px_rgba(7,93,162,0.1)] transition-all duration-300 [&[open]]:shadow-xl [&[open]]:border-blue-200">
+                <summary class="flex items-center justify-between font-bold text-lg sm:text-xl text-slate-900 cursor-pointer list-none select-none p-6 sm:p-8">
+                    <span>Do you only develop software?</span>
+                    <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#075da2] font-black group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        ↓
+                    </span>
+                </summary>
+                <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <p class="text-slate-600 text-lg leading-relaxed border-t border-slate-100 pt-6">
+                        No. We provide end-to-end services including consulting, UI/UX design, cloud solutions, AI implementation, digital marketing, and long-term support.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ Item 4 -->
+            <details class="group rounded-[1.5rem] bg-white border border-blue-50 shadow-[0_4px_20px_-10px_rgba(7,93,162,0.1)] transition-all duration-300 [&[open]]:shadow-xl [&[open]]:border-blue-200">
+                <summary class="flex items-center justify-between font-bold text-lg sm:text-xl text-slate-900 cursor-pointer list-none select-none p-6 sm:p-8">
+                    <span>Can you modernize our existing applications?</span>
+                    <span class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#075da2] font-black group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        ↓
+                    </span>
+                </summary>
+                <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+                    <p class="text-slate-600 text-lg leading-relaxed border-t border-slate-100 pt-6">
+                        Yes. We help businesses enhance, migrate, and modernize legacy systems to improve performance, security, and scalability.
+                    </p>
+                </div>
+            </details>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+{% endblock %}

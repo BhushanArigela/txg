@@ -1,0 +1,1334 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Industries We Serve - Tecnolynx",
+    "description": "Tecnolynx provides specialized Custom Software Development, Artificial Intelligence (AI) solutions, and Enterprise Software for various industries including Manufacturing ERP, Healthcare Software, Construction Technology, Retail ERP, and Education ERP.",
+    "url": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:industries' %}",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Manufacturing & Supply Chain",
+            "description": "Manufacturing ERP, Business Automation, and IoT integration for supply chain optimization."
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Healthcare & Life Sciences",
+            "description": "Healthcare Software, telemedicine platforms, and HIPAA-compliant data management with Machine Learning."
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Construction & Real Estate",
+            "description": "Construction Technology, BIM, Digital Twin solutions, and project management ERP Development."
+        },
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Retail & E-commerce",
+            "description": "Retail ERP, omnichannel commerce platforms, CRM Solutions, and predictive analytics."
+        },
+        {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Education & E-learning",
+            "description": "Education ERP, LMS platforms, and AI-driven student success analytics."
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- =========================================================================
+     1. HERO SECTION: Asymmetrical Dark Gradient Canvas
+   ========================================================================= -->
+<section class="relative min-h-[75vh] flex items-center justify-center pt-32 pb-16 sm:pt-40 sm:pb-20 lg:pt-44 lg:pb-20 bg-white text-slate-900 overflow-hidden">
+    
+    <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
+    <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
+
+    <!-- Subtle Primary Blue Spotlight Glow Behind Headline -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[450px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none z-[1] opacity-35" 
+         style="background: radial-gradient(circle, rgba(7,93,162,0.5) 0%, rgba(11,117,205,0.25) 45%, rgba(56,189,248,0.1) 70%, transparent 100%);"></div>
+
+ 
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="max-w-4xl mx-auto text-center space-y-6 reveal">
+            
+            <!-- Eyebrow Badge -->
+            <div class="inline-flex items-center gap-1.5 sm:gap-2.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/80 backdrop-blur-md border border-blue-100 text-blue-900 text-[10px] sm:text-xs font-extrabold tracking-wider sm:tracking-widest uppercase shadow-sm">
+                <span class="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-[#EE314D]"></span>
+                </span>
+                <span>Tailored Industry Engineering</span>
+            </div>
+
+            <!-- Main Hero Headline -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
+                Every Industry Is Unique. <br class="hidden sm:block"/>
+                <span class="bg-gradient-to-r from-[#075da2] to-[#0b75cd] bg-clip-text text-transparent">
+                    Your Technology Should Be Too.
+                </span>
+            </h1>
+
+            <!-- Subtext & Narrative -->
+            <p class="text-base sm:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+                We build custom digital platforms and software solutions engineered specifically around your operational priorities, industry regulations, and business goals.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     2. MANUFACTURING SECTION: Layout Pattern A (Classic Split-Bento)
+   ========================================================================= -->
+<section id="manufacturing" class="relative py-16 sm:py-20 bg-[#faf8fe] text-slate-900 border-t border-blue-100/70 overflow-hidden scroll-mt-24">
+    
+    <!-- Background Spotlights & Industry Illustration -->
+    <div class="absolute top-1/4 -right-32 w-[800px] h-[800px] bg-blue-100/60 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute bottom-10 -left-32 w-[700px] h-[700px] bg-sky-100/50 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute right-[-4%] top-[12%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-5%] bottom-[5%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Header & Narrative Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-12 reveal">
+            
+            <!-- Left Header -->
+            <div class="lg:col-span-7 space-y-6">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200/80 text-cyan-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-cyan-600 animate-pulse"></span>
+                    <span>Manufacturing</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Build a Smarter Factory
+                </h2>
+
+                <p class="text-lg sm:text-xl font-bold text-[#075da2] leading-snug">
+                    Modern manufacturing depends on visibility, efficiency, and accuracy.
+                </p>
+            </div>
+
+            <!-- Right Narrative Card -->
+            <div class="lg:col-span-5 p-8 sm:p-10 rounded-[2rem] bg-white/60 backdrop-blur-2xl border border-white shadow-[0_20px_40px_-15px_rgba(7,93,162,0.1)] space-y-5">
+              
+                <p class="text-lg text-slate-800 font-semibold leading-relaxed">
+                    We help manufacturers connect production, inventory, procurement, quality, and reporting into one streamlined system, so teams spend less time managing data and more time improving operations.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Capabilities (Bento Grid) -->
+        <div class="space-y-8 reveal">
+            
+            <div class="flex items-center gap-4 border-b border-slate-200/80 pb-4">
+                <h3 class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+                    <span class="w-3 h-3 rounded-full bg-[#075da2]"></span>
+                    How We Help
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                
+                <!-- Card 1 -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-[#EE314D] font-bold group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 01-2-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Manufacturing ERP</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-[#EE314D] font-bold group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Inventory Management</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-[#EE314D] font-bold group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Production Planning</span>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-[#EE314D] font-bold group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Warehouse Solutions</span>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-[#EE314D] font-bold group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Supplier Portals</span>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-[#EE314D] font-bold group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Sales Management</span>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-[#EE314D] font-bold group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Power BI Dashboards</span>
+                </div>
+                
+                <!-- Card 8 -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group lg:col-span-2">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-[#EE314D] font-bold group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">AI Forecasting & Distributor Integration</span>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     3. CONSTRUCTION & ENGINEERING SECTION: Layout Pattern B (Sticky Scroll)
+   ========================================================================= -->
+<section id="construction" class="relative py-16 sm:py-20 bg-[#fcf8ff] text-slate-900 border-t border-blue-100 overflow-hidden scroll-mt-24">
+    
+    <!-- Multi-Layered Ambient Radial Glows & Industry Illustration -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-1/4 -left-32 w-[700px] h-[700px] rounded-full bg-blue-100/60 blur-[160px] mix-blend-multiply"></div>
+        <div class="absolute bottom-10 right-0 w-[700px] h-[700px] rounded-full bg-blue-200/50 blur-[160px] mix-blend-multiply"></div>
+    </div>
+    <div class="absolute right-[-4%] top-[10%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-5%] bottom-[10%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start reveal">
+            
+            <!-- LEFT COLUMN: Sticky Narrative -->
+            <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-36">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-red-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+                    <span>Construction</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Build Better Projects with Connected Digital Workflows
+                </h2>
+
+                <div class="space-y-4">
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Construction projects involve many moving parts. When information is scattered across different systems, delays and miscommunication become more likely.
+                    </p>
+                    <p class="text-lg text-blue-700 font-semibold leading-relaxed">
+                        We help engineering and construction companies simplify collaboration through BIM solutions, Revit plugins, project management tools, and workflow automation.
+                    </p>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Whether you're designing buildings, managing contractors, or coordinating project teams, we create technology that keeps everyone working from the same information.
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Stacked Capability Cards -->
+            <div class="lg:col-span-7 space-y-6 pt-8 lg:pt-0">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-3 h-3 rounded-full bg-blue-600"></span>
+                    <h3 class="text-2xl font-bold text-slate-900">Engineering Stack</h3>
+                </div>
+
+                <!-- 1. BIM & Digital Twins -->
+                <div class="p-6 sm:p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center gap-5 group">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xl font-bold text-slate-900 block">BIM & Digital Twin Solutions</span>
+                        <span class="text-slate-600 block">Building Information Modeling platforms and real-time virtual replicas of physical assets.</span>
+                    </div>
+                </div>
+
+                <!-- 2. Revit, SketchUp & CAD Automation -->
+                <div class="p-6 sm:p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center gap-5 group">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a2 2 0 01-2 2h-1.5M7 10v6a2 2 0 002 2h6a2 2 0 002-2v-6m-4-6h-2.5A2.5 2.5 0 008 6.5V8m8-4h.5A2.5 2.5 0 0119 6.5V8"/></svg>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xl font-bold text-slate-900 block">Revit, SketchUp & CAD Automation</span>
+                        <span class="text-slate-600 block">Custom 3D plugins and automated drafting tools that streamline architectural workflows.</span>
+                    </div>
+                </div>
+
+                <!-- 3. Engineering Software -->
+                <div class="p-6 sm:p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center gap-5 group">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xl font-bold text-slate-900 block">Custom Engineering Software</span>
+                        <span class="text-slate-600 block">Bespoke calculation engines, structural analysis, and specialized design software.</span>
+                    </div>
+                </div>
+
+                <!-- 4. Project Dashboards -->
+                <div class="p-6 sm:p-8 rounded-[2rem] bg-white border border-slate-100 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col sm:flex-row items-start sm:items-center gap-5 group">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-xl font-bold text-slate-900 block">Project & Operations Dashboards</span>
+                        <span class="text-slate-600 block">Real-time progress visualization, timeline management, and contractor tracking.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     4. HEALTHCARE SECTION: Layout Pattern C (Centered Immersive Hero)
+   ========================================================================= -->
+<section id="healthcare" class="relative py-16 sm:py-20 bg-[#faf8fe] text-slate-900 border-t border-blue-100/80 overflow-hidden scroll-mt-24">
+    
+    <!-- Deep Ambient Glows & Industry Illustration -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-100/60 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute right-[-2%] top-[8%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-2%] bottom-[8%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Centered Header -->
+        <div class="max-w-4xl mx-auto text-center space-y-8 mb-12 reveal">
+            <!-- Eyebrow Badge -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-teal-50 border border-teal-200/80 text-teal-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-teal-600 animate-pulse"></span>
+                <span>Healthcare</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                More Time for Patients, <br class="hidden md:block"/>
+                <span class="text-blue-700">Less Time on Screens.</span>
+            </h2>
+
+            <p class="text-lg sm:text-xl font-medium text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                Healthcare teams already have enough to focus on. We develop secure digital solutions that simplify administration, improve access to information, and help healthcare providers deliver better patient experiences.
+            </p>
+        </div>
+
+        <!-- Asymmetrical/Masonry Style Capabilities Grid -->
+        <div class="space-y-6 reveal">
+            <div class="flex items-center justify-center gap-4 mb-10">
+                <div class="h-px w-16 bg-blue-200 hidden sm:block"></div>
+                <h3 class="text-lg font-extrabold text-blue-800 tracking-widest uppercase text-center">Healthcare Solutions</h3>
+                <div class="h-px w-16 bg-blue-200 hidden sm:block"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Patient Portals -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Patient Portals</h4>
+                        <p class="text-slate-600">Secure, easy-to-use interfaces for patients to manage their care journey.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Healthcare Apps -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Healthcare Apps</h4>
+                        <p class="text-slate-600">Mobile solutions designed with reliability and clinical workflows in mind.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Appointment Systems -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Appointment Systems</h4>
+                        <p class="text-slate-600">Frictionless scheduling engines that reduce no-shows and optimize staff time.</p>
+                    </div>
+                </div>
+                
+                <!-- 4. Dashboards -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Reporting Dashboards</h4>
+                        <p class="text-slate-600">Clear visibility into operations, compliance, and patient outcomes.</p>
+                    </div>
+                </div>
+
+                <!-- 5. AI Document Processing -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group lg:col-span-2">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div class="max-w-lg">
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">AI Document Processing & Secure Cloud</h4>
+                        <p class="text-slate-600">Automate paperwork routing and securely manage health records in compliant cloud environments.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     5. RETAIL & E-COMMERCE SECTION: Layout Pattern A (Classic Split-Bento)
+   ========================================================================= -->
+<section id="retail" class="relative py-16 sm:py-20 bg-[#faf8fe] text-slate-900 border-t border-blue-100/80 overflow-hidden scroll-mt-24">
+    
+    <!-- Background Radial Glows & Industry Illustration -->
+    <div class="absolute top-1/4 -right-32 w-[800px] h-[800px] bg-blue-100/60 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute bottom-10 -left-32 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute right-[-4%] top-[12%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-5%] bottom-[5%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Header & Narrative Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-12 reveal">
+            
+            <!-- Left Header -->
+            <div class="lg:col-span-7 space-y-6">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-pink-50 border border-pink-200/80 text-pink-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-pink-600 animate-pulse"></span>
+                    <span>Retail & E-commerce</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Create Better Shopping Experiences
+                </h2>
+
+                <p class="text-lg sm:text-xl font-bold text-blue-900 leading-snug">
+                    Today's customers expect convenience, speed, and personalization.
+                </p>
+            </div>
+
+            <!-- Right Narrative Card -->
+            <div class="lg:col-span-5 p-8 sm:p-10 rounded-[2rem] bg-white/60 backdrop-blur-2xl border border-white shadow-[0_20px_40px_-15px_rgba(7,93,162,0.1)] space-y-5">
+                <p class="text-lg text-slate-700 leading-relaxed font-semibold ">
+                    Whether you're selling online, through distributors, or across multiple stores, we help retailers create connected digital experiences that improve customer satisfaction and simplify day-to-day operations.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Capabilities (Bento Grid) -->
+        <div class="space-y-8 reveal">
+            
+            <div class="flex items-center gap-4 border-b border-slate-200/80 pb-4">
+                <h3 class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+                    <span class="w-3 h-3 rounded-full bg-blue-600"></span>
+                    How We Help
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                
+                <!-- 1. E-commerce Platforms -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">E-commerce Platforms</span>
+                </div>
+
+                <!-- 2. Inventory Management -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Inventory Management</span>
+                </div>
+
+                <!-- 3. CRM -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">CRM Systems</span>
+                </div>
+
+                <!-- 4. Loyalty Programs -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Loyalty Programs</span>
+                </div>
+
+                <!-- 5. Mobile Apps -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Mobile Apps</span>
+                </div>
+
+                <!-- 6. Analytics -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Retail Analytics</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     6. EDUCATION SECTION: Layout Pattern B (Sticky Scroll Showcase)
+   ========================================================================= -->
+<section id="education" class="relative py-16 sm:py-20 bg-white text-slate-900 border-t border-blue-100/80 overflow-hidden scroll-mt-24">
+    
+    <!-- Ambient Radial Glows & Industry Illustration -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-1/4 -left-32 w-[800px] h-[800px] rounded-full bg-blue-100/60 blur-[160px]"></div>
+        <div class="absolute bottom-10 right-0 w-[800px] h-[800px] rounded-full bg-blue-100/60 blur-[160px]"></div>
+    </div>
+    <div class="absolute right-[-3%] top-[10%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M12 14l9-5-9-5-9 5 9 5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-4%] bottom-[5%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M12 14l9-5-9-5-9 5 9 5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start relative">
+            
+            <!-- Left Sticky Column (Narrative & Result) -->
+            <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-36 reveal">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200/80 text-sky-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-sky-600 animate-pulse"></span>
+                    <span>Education</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Modern Technology for Modern Learning
+                </h2>
+
+                <p class="text-lg sm:text-xl font-bold text-blue-900 leading-snug">
+                    Education is evolving quickly, and students expect engaging digital experiences wherever they learn.
+                </p>
+                
+                <p class="text-lg text-slate-700 leading-relaxed font-medium pb-8 border-b border-slate-200/80">
+                    We help educational institutions build platforms that simplify administration, improve communication, and create better learning environments.
+                </p>
+
+            </div>
+
+            <!-- Right Scrollable Column (Capabilities Stack) -->
+            <div class="lg:col-span-7 space-y-6">
+                
+                <div class="flex items-center gap-4 mb-10 reveal">
+                    <h3 class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(79,70,229,0.6)]"></span>
+                        How We Help
+                    </h3>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    
+                    <!-- 1. Learning Management & Student Portals -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 hover:border-blue-200 hover:-translate-y-1 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.1)] transition-all duration-300 flex items-start gap-5 reveal">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="text-xl font-bold text-slate-900">LMS & Student Portals</h4>
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Centralized course delivery, student self-service hubs, registration, and academic communication.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. AI Tutoring & Online Assessments -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 hover:border-blue-200 hover:-translate-y-1 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.1)] transition-all duration-300 flex items-start gap-5 reveal">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="text-xl font-bold text-slate-900">AI Learning & Assessment Engines</h4>
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Intelligent adaptive tutoring paired with secure, automated online examination environments.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Mobile Apps & Educational Analytics -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 hover:border-blue-200 hover:-translate-y-1 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.1)] transition-all duration-300 flex items-start gap-5 reveal">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="text-xl font-bold text-slate-900">Mobile Apps & Campus Analytics</h4>
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">On-the-go mobile learning tools backed by real-time administrative and performance metrics.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     7. LOGISTICS & SUPPLY CHAIN SECTION: Layout Pattern C (Centered Immersive Hero)
+   ========================================================================= -->
+<section id="logistics" class="relative py-16 sm:py-20 bg-[#faf8fe] text-slate-900 border-t border-blue-100/80 overflow-hidden scroll-mt-24">
+    
+    <!-- Background Spotlights & Industry Illustration -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-blue-100/60 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute right-[-3%] top-[8%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V7a2 2 0 00-2-2h-1.5A2.5 2.5 0 0113 2.5v-.579M15 11h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-4%] bottom-[5%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V7a2 2 0 00-2-2h-1.5A2.5 2.5 0 0113 2.5v-.579M15 11h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Centered Header -->
+        <div class="max-w-4xl mx-auto text-center space-y-8 mb-12 reveal">
+            <!-- Eyebrow Badge -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-100/70 border border-amber-300/80 text-amber-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
+                <span>Logistics & Supply Chain</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Keep Supply Chains Moving Efficiently
+            </h2>
+
+            <p class="text-lg sm:text-xl font-medium text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                Supply chains depend on accurate information and quick decisions. We help logistics businesses gain real-time visibility across operations so teams can plan with confidence.
+            </p>
+        </div>
+
+        <!-- Asymmetrical/Masonry Style Capabilities Grid -->
+        <div class="space-y-6 reveal">
+            <div class="flex items-center justify-center gap-4 mb-10">
+                <div class="h-px w-16 bg-blue-200 hidden sm:block"></div>
+                <h3 class="text-lg font-extrabold text-blue-800 tracking-widest uppercase text-center">Logistics Tech</h3>
+                <div class="h-px w-16 bg-blue-200 hidden sm:block"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Warehouse Management -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group lg:col-span-2">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <div class="max-w-lg">
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Warehouse Management</h4>
+                        <p class="text-slate-600">Digital twins of your physical inventory spaces to drastically reduce fulfillment times and eliminate errors.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Fleet Applications -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Fleet Apps</h4>
+                        <p class="text-slate-600">Driver tracking, route optimization, and direct dispatch communications.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Inventory Tracking -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Inventory Tracking</h4>
+                        <p class="text-slate-600">Real-time alerts for low stock and comprehensive automated ordering systems.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Delivery Portals -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Delivery Portals</h4>
+                        <p class="text-slate-600">Give clients B2B-grade tracking interfaces and accurate ETA pipelines.</p>
+                    </div>
+                </div>
+                
+                <!-- 5. Dashboards -->
+                <div class="p-8 rounded-[2rem] bg-white border border-blue-100 shadow-[0_10px_40px_-15px_rgba(7,93,162,0.15)] hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-5 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Business Dashboards</h4>
+                        <p class="text-slate-600">Unify metrics from across the supply chain into a single command center.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     8. FINANCIAL SERVICES SECTION: Layout Pattern A (Classic Split-Bento)
+   ========================================================================= -->
+<section id="finance" class="relative py-16 sm:py-20 bg-white text-slate-900 border-t border-blue-100/80 overflow-hidden scroll-mt-24">
+    
+    <!-- Background Ambient Gradients & Industry Illustration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-blue-100/60 blur-[130px]"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-blue-100/60 blur-[130px]"></div>
+    </div>
+    <div class="absolute right-[-4%] top-[10%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-5%] bottom-[10%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Header & Narrative Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-12 reveal">
+            
+            <!-- Left Header -->
+            <div class="lg:col-span-7 space-y-6">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/80 text-emerald-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                    <span>Financial Services</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Secure, Compliant Digital Financial Solutions
+                </h2>
+
+                <p class="text-lg sm:text-xl font-bold text-blue-900 leading-snug">
+                    Customers expect secure, reliable, and effortless financial experiences.
+                </p>
+            </div>
+
+            <!-- Right Narrative Card -->
+            <div class="lg:col-span-5 p-8 sm:p-10 rounded-[2rem] bg-blue-50/50 backdrop-blur-2xl border border-blue-100 shadow-[0_20px_40px_-15px_rgba(7,93,162,0.1)] space-y-5">
+                <p class="text-lg text-slate-700 leading-relaxed font-semibold">
+                    We help organizations modernize their digital platforms while uncompromisingly improving security, ensuring compliance, and delivering a superior customer experience.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Capabilities (Bento Grid) -->
+        <div class="space-y-8 reveal">
+            
+            <div class="flex items-center gap-4 border-b border-blue-100 pb-4">
+                <h3 class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+                    <span class="w-3 h-3 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(79,70,229,0.6)]"></span>
+                    Fintech & Security
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                
+                <!-- 1. Customer Portals -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Customer Portals</span>
+                </div>
+
+                <!-- 2. Financial Dashboards -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Financial Dashboards</span>
+                </div>
+
+                <!-- 3. Workflow Automation -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Workflow Automation</span>
+                </div>
+
+                <!-- 4. Secure Cloud Solutions -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Secure Cloud Solutions</span>
+                </div>
+
+                <!-- 5. AI Reporting -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">AI Reporting</span>
+                </div>
+
+                <!-- 6. Business Intelligence -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Business Intelligence</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     9. REAL ESTATE SECTION: Layout Pattern B (Sticky Scroll Showcase)
+   ========================================================================= -->
+<section id="real-estate" class="relative py-16 sm:py-20 bg-[#faf8fe] text-slate-900 border-t border-blue-100/80 overflow-hidden scroll-mt-24">
+    
+    <!-- Background Spotlights & Industry Illustration -->
+    <div class="absolute top-1/4 -right-32 w-[800px] h-[800px] bg-blue-100/60 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute bottom-10 -left-32 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-[160px] pointer-events-none"></div>
+    <div class="absolute right-[-3%] top-[12%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-4%] bottom-[5%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start relative">
+            
+            <!-- Left Sticky Column (Narrative & Result) -->
+            <div class="lg:col-span-5 space-y-8 lg:sticky lg:top-36 reveal">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-200/80 text-sky-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-sky-600 animate-pulse"></span>
+                    <span>Real Estate</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Make Property <br class="hidden sm:block"/>
+                    Management Simpler.
+                </h2>
+
+                <p class="text-xl sm:text-2xl font-bold text-blue-900 leading-snug">
+                    Managing properties, tenants, and maintenance is easier when connected.
+                </p>
+                
+                <p class="text-lg text-slate-700 leading-relaxed font-medium pb-8 border-b border-blue-100">
+                    We create digital platforms that help real estate businesses streamline operations and improve communication across portfolios.
+                </p>
+
+            </div>
+
+            <!-- Right Scrollable Column (Capabilities Stack) -->
+            <div class="lg:col-span-7 space-y-6">
+                
+                <div class="flex items-center gap-4 mb-10 reveal">
+                    <h3 class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-blue-600"></span>
+                        Property Tech
+                    </h3>
+                </div>
+
+                <div class="flex flex-col gap-6">
+                    
+                    <!-- 1. Property Management & Tenant Portals -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 hover:border-blue-200 hover:-translate-y-1 shadow-sm hover:shadow-[0_15px_30px_-10px_rgba(7,93,162,0.15)] transition-all duration-300 flex items-start gap-5 reveal">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="text-xl font-bold text-slate-900">Property Management & Tenant Portals</h4>
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Centralized operations, lease tracking, maintenance ticketing, and self-service tenant payment portals.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Real Estate CRM & Mobile Apps -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 hover:border-blue-200 hover:-translate-y-1 shadow-sm hover:shadow-[0_15px_30px_-10px_rgba(7,93,162,0.15)] transition-all duration-300 flex items-start gap-5 reveal">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="text-xl font-bold text-slate-900">Real Estate CRM & Mobile Apps</h4>
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Lead nurturing, broker pipeline tracking, and mobile tools for agents in the field and community tenants.</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Portfolio Analytics & Reporting -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 hover:border-blue-200 hover:-translate-y-1 shadow-sm hover:shadow-[0_15px_30px_-10px_rgba(7,93,162,0.15)] transition-all duration-300 flex items-start gap-5 reveal">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold flex-shrink-0">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        </div>
+                        <div class="space-y-1.5">
+                            <h4 class="text-xl font-bold text-slate-900">Portfolio Analytics & Yield Reporting</h4>
+                            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Comprehensive dashboards for portfolio performance, occupancy trends, and yield metrics.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     10. GOVERNMENT & PUBLIC SECTOR SECTION: Layout Pattern C (Centered Immersive Hero)
+   ========================================================================= -->
+<section id="government" class="relative py-16 sm:py-20 bg-white text-slate-900 border-t border-blue-100/80 overflow-hidden scroll-mt-24 flex flex-col items-center">
+    
+    <!-- Multi-Layered Glows & Industry Illustration -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-blue-100/60 blur-[160px] rounded-full"></div>
+        <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-100/60 blur-[160px] rounded-full"></div>
+    </div>
+    <div class="absolute right-[-3%] top-[8%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-4%] bottom-[5%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10 w-full">
+        
+        <!-- Centered Header Narrative -->
+        <div class="max-w-3xl mx-auto text-center space-y-5 mb-10 reveal">
+            <!-- Eyebrow Badge -->
+            <div class="inline-flex items-center justify-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm mx-auto">
+                <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                <span>Government & Public Sector</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Digital Services That Put Citizens First
+            </h2>
+
+            <p class="text-lg sm:text-xl font-medium text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                We help public organizations digitize services, automate workflows, and improve transparency while maintaining strict security and compliance standards.
+            </p>
+        </div>
+
+        <!-- Capabilities Grid -->
+        <div class="space-y-6 reveal">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- 1. Citizen Portals -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 shadow-[0_10px_30px_-15px_rgba(7,93,162,0.1)] hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-4 group">
+                    <div class="w-13 h-13 p-3.5 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <div class="space-y-1.5">
+                        <h4 class="text-xl font-bold text-slate-900">Citizen Portals & Services</h4>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Accessible, intuitive digital platforms for seamless public interaction and service delivery.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Workflow & Document Automation -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 shadow-[0_10px_30px_-15px_rgba(7,93,162,0.1)] hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-4 group">
+                    <div class="w-13 h-13 p-3.5 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <div class="space-y-1.5">
+                        <h4 class="text-xl font-bold text-slate-900">Workflow & Document Automation</h4>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Streamlined inter-departmental processes and paperless public records management.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Secure Analytics & Infrastructure -->
+                <div class="p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 shadow-[0_10px_30px_-15px_rgba(7,93,162,0.1)] hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-4 group">
+                    <div class="w-13 h-13 p-3.5 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div class="space-y-1.5">
+                        <h4 class="text-xl font-bold text-slate-900">Secure Analytics & Compliance</h4>
+                        <p class="text-slate-600 text-sm sm:text-base leading-relaxed">Mission-critical applications built with strict auditing, compliance, and civic data insights.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     11. STARTUPS SECTION: Layout Pattern A (Classic Split-Bento)
+   ========================================================================= -->
+<section id="startups" class="relative py-16 sm:py-20 bg-white text-slate-900 border-t border-blue-100/80 overflow-hidden scroll-mt-24">
+    
+    <!-- Ambient Radial Glows & Industry Illustration -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-blue-100/60 blur-[140px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-blue-100/60 blur-[140px]"></div>
+    </div>
+    <div class="absolute right-[-4%] top-[10%] pointer-events-none text-blue-900/[0.035] select-none overflow-hidden">
+        <svg class="w-[450px] h-[450px] lg:w-[580px] lg:h-[580px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+    </div>
+    <div class="absolute left-[-5%] bottom-[10%] pointer-events-none text-blue-900/[0.025] select-none overflow-hidden transform -scale-x-100">
+        <svg class="w-[350px] h-[350px] lg:w-[480px] lg:h-[480px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Header & Narrative Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-12 reveal">
+            
+            <!-- Left Header -->
+            <div class="lg:col-span-7 space-y-6">
+                <!-- Eyebrow Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-fuchsia-50 border border-fuchsia-200/80 text-fuchsia-950 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-fuchsia-600 animate-pulse"></span>
+                    <span>Startups & Ventures</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    From Idea to Launch
+                </h2>
+
+                <p class="text-xl sm:text-3xl font-bold text-blue-900 leading-snug">
+                    Every successful product starts with a vision.
+                </p>
+            </div>
+
+            <!-- Right Narrative Card -->
+            <div class="lg:col-span-5 p-8 sm:p-10 rounded-[2rem] bg-blue-50/50 backdrop-blur-2xl border border-blue-100 shadow-[0_20px_40px_-15px_rgba(7,93,162,0.1)] space-y-5">
+                <p class="text-lg text-slate-700 leading-relaxed font-semibold">
+                    Whether you're validating a new concept or preparing to scale, we become an extension of your team, helping you move from planning to launch with confidence. We understand the pace, flexibility, and focus that startups need.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Capabilities (Bento Grid) -->
+        <div class="space-y-8 reveal">
+            
+            <div class="flex items-center gap-4 border-b border-blue-100 pb-4">
+                <h3 class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-3">
+                    <span class="w-3 h-3 rounded-full bg-blue-600 shadow-[0_0_15px_rgba(79,70,229,0.6)]"></span>
+                    Venture Acceleration
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                
+                <!-- 1. MVP Development -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">MVP Development</span>
+                </div>
+
+                <!-- 2. Product Design -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Product Design</span>
+                </div>
+
+                <!-- 3. Web & Mobile Apps -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Web & Mobile Apps</span>
+                </div>
+
+                <!-- 4. Cloud Infrastructure -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 00-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Cloud Infrastructure</span>
+                </div>
+
+                <!-- 5. AI Integration -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">AI Integration</span>
+                </div>
+
+                <!-- 6. Ongoing Product Development -->
+                <div class="p-5 sm:p-6 rounded-3xl bg-white border border-blue-100 hover:shadow-2xl hover:border-blue-200 hover:scale-[1.02] transition-all duration-300 flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <span class="text-base sm:text-lg font-bold text-slate-900 leading-snug">Product Development</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     12. NOT SURE WHERE YOUR BUSINESS FITS Banner Card
+   ========================================================================= -->
+<section id="custom-solutions" class="relative py-14 bg-[#faf8fe] text-slate-900 overflow-hidden border-t border-blue-100/80">
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-4xl h-[400px] bg-blue-100/60 blur-[140px] rounded-full"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        <div class="p-6 sm:p-10 lg:p-14 rounded-[2.5rem] bg-gradient-to-br from-blue-50/90 via-white to-sky-50/90 border border-blue-100 shadow-[0_20px_50px_-15px_rgba(7,93,162,0.1)] backdrop-blur-2xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10 reveal">
+            
+            <div class="space-y-6 max-w-3xl">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-100/80 border border-blue-200 text-blue-900 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                    <span>Custom Solutions</span>
+                </div>
+                
+                <h3 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Not Sure Where Your Business Fits?
+                </h3>
+                
+                <p class="text-lg sm:text-xl text-slate-600 leading-relaxed font-medium">
+                    Every organization is unique, and many operate across multiple industries. If you don't see your industry listed, we'd still love to hear about your goals. We build tailored digital solutions for complex challenges.
+                </p>
+            </div>
+            
+            <a href="{% url 'master:contact' %}#contact-hub" class="px-5 py-4 sm:px-8 sm:py-5 rounded-2xl bg-[#EE314D] hover:bg-[#d42640] text-white font-black text-base sm:text-lg shadow-[0_12px_30px_rgba(7,93,162,0.25)] hover:scale-105 hover:-translate-y-1 transition-all flex-shrink-0 whitespace-normal sm:whitespace-nowrap text-center w-full lg:w-auto inline-flex items-center justify-center">
+                Discuss Your Custom Needs
+            </a>
+            
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     13. OUR APPROACH NEVER CHANGES (Process Stepper)
+   ========================================================================= -->
+<section id="our-approach" class="relative py-16 sm:py-20 bg-white text-slate-900 border-t border-slate-100 overflow-hidden">
+    
+    <!-- Background Accents -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-slate-50/80 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[100px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="max-w-3xl mx-auto text-center space-y-6 mb-12 reveal">
+            <span class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                Core Philosophy
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Our Approach <br class="hidden sm:block"/> Never Changes
+            </h2>
+            <p class="text-xl sm:text-2xl font-medium text-slate-500">
+                No matter the industry, our foundational process remains a constant driver of success.
+            </p>
+        </div>
+
+        <!-- 4 Process Pillars Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+            
+            <div class="p-8 sm:p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:border-slate-200 hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <span class="block text-5xl font-black text-slate-200 mb-4 group-hover:text-blue-100 transition-colors">01</span>
+                    <h4 class="text-2xl font-bold text-slate-900 leading-snug">We listen before we recommend.</h4>
+                </div>
+            </div>
+
+            <div class="p-8 sm:p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:border-slate-200 hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <span class="block text-5xl font-black text-slate-200 mb-4 group-hover:text-blue-100 transition-colors">02</span>
+                    <h4 class="text-2xl font-bold text-slate-900 leading-snug">We understand before we build.</h4>
+                </div>
+            </div>
+
+            <div class="p-8 sm:p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:border-slate-200 hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <span class="block text-5xl font-black text-slate-200 mb-4 group-hover:text-blue-100 transition-colors">03</span>
+                    <h4 class="text-2xl font-bold text-slate-900 leading-snug">We collaborate throughout the project.</h4>
+                </div>
+            </div>
+
+            <div class="p-8 sm:p-10 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] hover:border-slate-200 hover:-translate-y-1 transition-all duration-300 flex flex-col gap-6 relative group overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <span class="block text-5xl font-black text-slate-200 mb-4 group-hover:text-blue-100 transition-colors">04</span>
+                    <h4 class="text-2xl font-bold text-slate-900 leading-snug">We stay with you after launch.</h4>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 text-center reveal max-w-4xl mx-auto px-4">
+            <p class="text-lg sm:text-2xl font-bold text-slate-900 leading-relaxed relative inline-block">
+                <span class="relative z-10">Because great technology isn't just about software. It's about helping people do their best work.</span>
+                <span class="absolute bottom-1 left-0 w-full h-3 bg-blue-100 -z-0"></span>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     14. FINAL CTA: Let's Build the Right Solution Together
+   ========================================================================= -->
+<section class="relative py-20 sm:py-28 bg-[#faf8fe] text-slate-900 overflow-hidden border-t border-blue-100/80">
+    
+    <!-- Ambient Light Spotlights -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-100/50 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-6 sm:px-12 relative z-10 text-center space-y-8 reveal">
+        
+        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+            Ready to Transform Your Industry Operations?
+        </h2>
+
+        <p class="text-lg sm:text-xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
+            Whether you're modernizing an existing system or starting a brand-new project, we're here to help you take the next step with confidence.
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-6">
+            <a href="{% url 'master:contact' %}#contact-hub" class="w-auto sm:w-auto px-6 py-3.5 sm:px-10 sm:py-5 rounded-xl sm:rounded-2xl bg-[#EE314D] hover:bg-[#d42640] text-white font-bold sm:font-black text-base sm:text-lg shadow-lg shadow-red-500/25 hover:-translate-y-1 hover:shadow-blue-500/40 transition-all flex items-center justify-center gap-2.5 sm:gap-3 group">
+                <span>Book a Free Discovery Call</span>
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

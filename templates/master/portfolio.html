@@ -1,0 +1,908 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "ItemList",
+            "name": "Tecnolynx Case Studies & Portfolio",
+            "description": "Featured engineering case studies demonstrating Custom Software Development, Artificial Intelligence (AI) implementation, BIM Digital Twin automation, and ERP Development solutions.",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Enterprise ERP System: Unifying Multi-Department Operations",
+                    "description": "Custom ERP Development for manufacturing & supply chain unifying inventory, production scheduling, and financial reporting with Business Automation."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "AI Virtual Assistant: Automating Knowledge Retrieval",
+                    "description": "Enterprise RAG-driven AI virtual assistant leveraging Generative AI, Machine Learning, and ChromaDB for automated customer support and knowledge search."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "BIM SketchUp Automation: Streamlining Complex Structural Workflows",
+                    "description": "Custom SketchUp Ruby plugin automating 3D ICF block placement algorithms, advancing Construction Technology and Digital Twin modeling."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "Digital Ecosystem Modernization: Replacing Legacy Silos",
+                    "description": "End-to-end legacy modernization replacing fragmented software silos with unified Cloud Computing architecture and Enterprise Software integration."
+                }
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Can you work on projects that are already in progress?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We frequently step into active Custom Software projects to modernize architecture, optimize performance, refactor codebase bottlenecks, or add key Enterprise Software features."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you sign Non-Disclosure Agreements (NDAs)?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We strictly enforce data privacy and intellectual property confidentiality, signing formal NDAs prior to reviewing proprietary code, CRM Solutions, or AI workflows."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you support international clients and cross-border teams?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We collaborate with companies globally on Digital Transformation projects using asynchronous project management, Cloud Computing pipelines, and regular sprint reviews."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can you provide dedicated engineering teams?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We assemble specialized development teams—including backend engineers in Python, AI specialists, UI/UX designers, and QA engineers—tailored to your project scope."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- =========================================================================
+     1. HERO SECTION & IMPACT METRICS
+   ========================================================================= -->
+<section class="relative flex items-center justify-center pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-44 lg:pb-28 bg-white text-slate-900 overflow-hidden border-b border-slate-200/80" style="min-height: 100vh; min-height: 100dvh;">
+    <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
+    <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
+
+    <!-- Subtle Primary Blue Spotlight Glow Behind Headline -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[450px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none z-[1] opacity-35" 
+         style="background: radial-gradient(circle, rgba(7,93,162,0.5) 0%, rgba(11,117,205,0.25) 45%, rgba(56,189,248,0.1) 70%, transparent 100%);"></div>
+
+
+    <div class="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center reveal">
+            <!-- Left Content -->
+            <div class="space-y-8 max-w-2xl">
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
+                    Every Project Starts with a <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#075da2] to-[#0b75cd]">Business Challenge</span>
+                </h1>
+
+                <!-- Narrative Paragraphs -->
+                <div class="space-y-4 text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Every business has a unique story. Some want to modernize outdated systems. Others are launching a new product, automating manual processes, or exploring Artificial Intelligence for the first time.
+                    </p>
+                    <p class="text-slate-800 font-bold border-l-4 border-[#075da2] pl-4">
+                        Whatever the challenge, our role is the same—to understand the business, design the right solution, and deliver technology that creates lasting value.
+                    </p>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="pt-2 flex flex-col sm:flex-row items-center sm:justify-start gap-4">
+                    <a href="{% url 'master:contact' %}#contact-hub" class="w-auto sm:w-auto px-5 py-2.5 sm:px-8 sm:py-3.5 rounded-xl sm:rounded-2xl bg-[#EE314D] hover:bg-[#d42640] text-white font-bold sm:font-black text-sm sm:text-lg shadow-[0_10px_25px_rgba(7,93,162,0.25)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 sm:gap-3 group">
+                        <span>Have a project in mind? Let's talk</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Visual (Abstract composition with Rich Technical Illustrations) -->
+            <div class="relative hidden lg:block">
+                <!-- Decorative Glows -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-sky-200/40 rounded-full blur-3xl"></div>
+                
+                <!-- Card Composition -->
+                <div class="relative grid grid-cols-2 gap-5 p-2">
+                    
+                    <!-- Column 1 -->
+                    <div class="space-y-5 pt-10">
+                        <!-- Card 1: Performance -->
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:border-blue-300 hover:shadow-md transition-all group min-h-[220px]">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-[#075da2] group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-700 text-[10px] font-extrabold flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                    <span>&lt; 45ms</span>
+                                </span>
+                            </div>
+
+                            <!-- Mini Illustration: Performance Chart -->
+                            <div class="my-4 p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-2">
+                                <div class="flex items-end gap-1.5 h-10 pt-2">
+                                    <div class="flex-1 bg-blue-200 rounded-t-sm h-[40%] group-hover:h-[60%] transition-all"></div>
+                                    <div class="flex-1 bg-blue-300 rounded-t-sm h-[65%] group-hover:h-[80%] transition-all"></div>
+                                    <div class="flex-1 bg-blue-400 rounded-t-sm h-[50%] group-hover:h-[70%] transition-all"></div>
+                                    <div class="flex-1 bg-[#075da2] rounded-t-sm h-[95%]"></div>
+                                </div>
+                                <div class="flex items-center justify-between text-[10px] font-bold text-slate-400 border-t border-slate-200/60 pt-1">
+                                    <span>Latency</span>
+                                    <span class="text-blue-600 font-extrabold">99.9% Optimized</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="font-black text-slate-900 text-base">Performance</div>
+                                <div class="text-slate-500 text-xs font-medium">Optimized Architecture</div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Security -->
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:border-amber-300 hover:shadow-md transition-all group min-h-[220px]">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-900 text-[10px] font-extrabold">
+                                    AES-256
+                                </span>
+                            </div>
+
+                            <!-- Mini Illustration: Security Nodes -->
+                            <div class="my-4 p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-lg bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-800 text-[10px] font-black">
+                                        SSL
+                                    </div>
+                                    <div class="w-8 border-t-2 border-dashed border-amber-300"></div>
+                                    <div class="w-6 h-6 rounded-lg bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-800 text-[10px] font-black">
+                                        ✓
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-bold text-slate-500">SOC2 Ready</span>
+                            </div>
+
+                            <div>
+                                <div class="font-black text-slate-900 text-base">Security</div>
+                                <div class="text-slate-500 text-xs font-medium">Enterprise Grade</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="space-y-5">
+                        <!-- Card 3: Innovation -->
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:border-fuchsia-300 hover:shadow-md transition-all group min-h-[220px]">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-xl bg-fuchsia-50 flex items-center justify-center text-fuchsia-600 group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-md bg-fuchsia-50 border border-fuchsia-200 text-fuchsia-900 text-[10px] font-extrabold">
+                                    RAG + LLM
+                                </span>
+                            </div>
+
+                            <!-- Mini Illustration: AI Pipeline Nodes -->
+                            <div class="my-4 p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1.5">
+                                <div class="flex items-center justify-between text-[10px] font-bold text-slate-600">
+                                    <span>Vector Search</span>
+                                    <span class="text-fuchsia-600 font-extrabold">Active</span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-gradient-to-r from-fuchsia-500 to-blue-600 h-full w-[85%]"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="font-black text-slate-900 text-base">Innovation</div>
+                                <div class="text-slate-500 text-xs font-medium">AI & Automation</div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Scalability -->
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between hover:border-emerald-300 hover:shadow-md transition-all group min-h-[220px]">
+                            <div class="flex items-center justify-between">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:scale-110 transition-transform">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/></svg>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] font-extrabold">
+                                    Auto-Scale
+                                </span>
+                            </div>
+
+                            <!-- Mini Illustration: Cloud Cluster Stack -->
+                            <div class="my-4 p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                                <div class="px-2 py-1 rounded bg-white border border-slate-200 flex items-center justify-between text-[10px] font-bold text-slate-700">
+                                    <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Pod Cluster #01</span>
+                                    <span class="text-slate-400">99.99%</span>
+                                </div>
+                                <div class="px-2 py-1 rounded bg-white border border-slate-200 flex items-center justify-between text-[10px] font-bold text-slate-700">
+                                    <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Pod Cluster #02</span>
+                                    <span class="text-slate-400">Active</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="font-black text-slate-900 text-base">Scalability</div>
+                                <div class="text-slate-500 text-xs font-medium">Cloud Native</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================================
+     2. FEATURED CASE STUDIES (FORMAL ENTERPRISE MODULES)
+   ========================================================================= -->
+<section id="featured-success-stories" class="relative py-16 sm:py-24 bg-white text-slate-900 border-b border-blue-100/50 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center space-y-3 mb-16 sm:mb-20 reveal">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#EE314D] text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm mx-auto">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                <span>Engineering Case Studies</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Featured Success Stories
+            </h2>
+            <p class="text-slate-600 font-medium text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                The projects below showcase how we've helped organizations across different industries simplify operations, improve customer experiences, and prepare for future growth.
+            </p>
+        </div>
+
+        <!-- Case Studies Stack -->
+        <div class="space-y-16 lg:space-y-20">
+
+            <!-- Case Study 1: Enterprise ERP for Manufacturing -->
+            <div class="p-8 sm:p-12 rounded-[2.5rem] bg-slate-50/60 border border-slate-200/80 shadow-sm space-y-8 reveal hover:border-blue-200 transition-colors">
+                
+                <!-- Card Header -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                    <div class="space-y-1">
+                        <div class="inline-block px-3 py-1 rounded-full bg-amber-100 border border-amber-200 text-amber-900 font-extrabold text-xs uppercase tracking-wider">
+                            Manufacturing & Supply Chain
+                        </div>
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">
+                            Enterprise ERP System: Unifying Multi-Department Operations
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- 2-Column Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                    
+                    <!-- Left Column: Problem & Solution Architecture -->
+                    <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="p-6 rounded-2xl bg-white border border-slate-200/70 shadow-sm space-y-2">
+                                <h4 class="text-xs font-extrabold text-amber-800 tracking-widest uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-amber-500"></span> Operational Challenge
+                                </h4>
+                                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                                    The client relied on fragmented spreadsheets and disconnected tools across purchasing, production, inventory, and finance. This created severe data silos, high error rates in manual entries, and multi-hour delays in generating executive reports.
+                                </p>
+                            </div>
+
+                            <div class="p-6 rounded-2xl bg-white border border-slate-200/70 shadow-sm space-y-2">
+                                <h4 class="text-xs font-extrabold text-[#075da2] tracking-widest uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span> Engineering Execution
+                                </h4>
+                                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                                    We engineered a centralized Python & React ERP platform with automated REST API data pipelines, connecting every department into a single secure hub with real-time inventory tracking and Power BI dashboards.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="pt-2">
+                            <div class="text-xs font-extrabold text-slate-400 tracking-widest uppercase mb-2.5">Technologies Implemented</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Python</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">React</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">PostgreSQL</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Power BI</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Business Impact Card -->
+                    <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-white border border-amber-200/60 shadow-sm flex flex-col justify-between space-y-6">
+                        <div>
+                            <h4 class="text-xs font-extrabold text-amber-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-amber-500"></span> Quantifiable Business Outcomes
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-amber-600 font-extrabold shrink-0">✓</span> <span>Eliminated redundant manual data entry across departments</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-amber-600 font-extrabold shrink-0">✓</span> <span>Real-time inventory and production floor visibility</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-amber-600 font-extrabold shrink-0">✓</span> <span>Automated executive reporting, reducing decision lead times</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-amber-600 font-extrabold shrink-0">✓</span> <span>Significantly improved operational efficiency and audit control</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-amber-600 font-extrabold shrink-0">✓</span> <span>Scalable foundation ready for multi-location expansion</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-amber-50/50 border border-amber-100 text-xs font-semibold text-amber-900">
+                            Impact: Transformed a spreadsheet-reliant operation into a unified real-time enterprise.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Case Study 2: AI-Powered Customer Support Assistant -->
+            <div class="p-8 sm:p-12 rounded-[2.5rem] bg-slate-50/60 border border-slate-200/80 shadow-sm space-y-8 reveal hover:border-blue-200 transition-colors">
+                
+                <!-- Card Header -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                    <div class="space-y-1">
+                        <div class="inline-block px-3 py-1 rounded-full bg-fuchsia-100 border border-fuchsia-200 text-fuchsia-900 font-extrabold text-xs uppercase tracking-wider">
+                            Customer Support & Artificial Intelligence
+                        </div>
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">
+                            AI Virtual Assistant: Automating Knowledge Retrieval
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- 2-Column Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                    
+                    <!-- Left Column: Problem & Solution Architecture -->
+                    <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="p-6 rounded-2xl bg-white border border-slate-200/70 shadow-sm space-y-2">
+                                <h4 class="text-xs font-extrabold text-fuchsia-800 tracking-widest uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-fuchsia-600"></span> Operational Challenge
+                                </h4>
+                                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                                    Customer support teams faced a severe backlog due to high volumes of repetitive inquiries, creating long resolution wait times and pulling human agents away from high-priority complex issues.
+                                </p>
+                            </div>
+
+                            <div class="p-6 rounded-2xl bg-white border border-slate-200/70 shadow-sm space-y-2">
+                                <h4 class="text-xs font-extrabold text-[#075da2] tracking-widest uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span> Engineering Execution
+                                </h4>
+                                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                                    We architected an enterprise AI virtual assistant leveraging Retrieval-Augmented Generation (RAG) with LangChain and ChromaDB vector search to accurately query internal documentation and provide instant support resolutions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="pt-2">
+                            <div class="text-xs font-extrabold text-slate-400 tracking-widest uppercase mb-2.5">Technologies Implemented</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">LangChain</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Haystack</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">ChromaDB</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Vector Search</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Commercial LLM APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Business Impact Card -->
+                    <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-white border border-fuchsia-200/60 shadow-sm flex flex-col justify-between space-y-6">
+                        <div>
+                            <h4 class="text-xs font-extrabold text-fuchsia-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-fuchsia-600"></span> Quantifiable Business Outcomes
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-fuchsia-600 font-extrabold shrink-0">✓</span> <span>Substantial reduction in average ticket resolution time</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-fuchsia-600 font-extrabold shrink-0">✓</span> <span>Automated routine inquiries, freeing support teams for complex cases</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-fuchsia-600 font-extrabold shrink-0">✓</span> <span>24/7 intelligent customer response availability</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-fuchsia-600 font-extrabold shrink-0">✓</span> <span>Higher customer satisfaction and standardized knowledge delivery</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-fuchsia-50/50 border border-fuchsia-100 text-xs font-semibold text-fuchsia-950">
+                            Impact: Scaled support operations without increasing headcount.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Case Study 3: BIM SketchUp Plugin Development -->
+            <div class="p-8 sm:p-12 rounded-[2.5rem] bg-slate-50/60 border border-slate-200/80 shadow-sm space-y-8 reveal hover:border-blue-200 transition-colors">
+                
+                <!-- Card Header -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                    <div class="space-y-1">
+                        <div class="inline-block px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-950 font-extrabold text-xs uppercase tracking-wider">
+                            AEC & Digital Engineering
+                        </div>
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">
+                            BIM SketchUp Automation: Streamlining Complex Structural Workflows
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- 2-Column Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                    
+                    <!-- Left Column: Problem & Solution Architecture -->
+                    <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="p-6 rounded-2xl bg-white border border-slate-200/70 shadow-sm space-y-2">
+                                <h4 class="text-xs font-extrabold text-orange-900 tracking-widest uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-orange-600"></span> Operational Challenge
+                                </h4>
+                                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                                    Engineering teams were spending significant billable hours performing repetitive manual modeling tasks for ICF (Insulated Concrete Form) block layouts within SketchUp, creating modeling bottlenecks and human calculation errors.
+                                </p>
+                            </div>
+
+                            <div class="p-6 rounded-2xl bg-white border border-slate-200/70 shadow-sm space-y-2">
+                                <h4 class="text-xs font-extrabold text-[#075da2] tracking-widest uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span> Engineering Execution
+                                </h4>
+                                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                                    We engineered custom SketchUp Ruby plugins that automated 3D block placement algorithms, enforced structural modeling rules, and generated automated bill-of-materials calculations directly inside the CAD interface.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="pt-2">
+                            <div class="text-xs font-extrabold text-slate-400 tracking-widest uppercase mb-2.5">Technologies Implemented</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">SketchUp Ruby API</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Ruby on Rails</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">3D BIM Logic</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">CAD Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Business Impact Card -->
+                    <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-white border border-orange-200/60 shadow-sm flex flex-col justify-between space-y-6">
+                        <div>
+                            <h4 class="text-xs font-extrabold text-orange-950 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-orange-600"></span> Quantifiable Business Outcomes
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-orange-600 font-extrabold shrink-0">✓</span> <span>Dramatically accelerated 3D modeling turnaround times</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-orange-600 font-extrabold shrink-0">✓</span> <span>Standardized design accuracy and eliminated manual calculation errors</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-orange-600 font-extrabold shrink-0">✓</span> <span>Freed engineering teams to focus on complex design tasks</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-orange-600 font-extrabold shrink-0">✓</span> <span>Faster client project estimation and delivery schedules</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-orange-50/50 border border-orange-100 text-xs font-semibold text-orange-950">
+                            Impact: Automated hours of manual CAD modeling into seconds.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Case Study 4: Digital Transformation for a Growing Business -->
+            <div class="p-8 sm:p-12 rounded-[2.5rem] bg-slate-50/60 border border-slate-200/80 shadow-sm space-y-8 reveal hover:border-blue-200 transition-colors">
+                
+                <!-- Card Header -->
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-slate-200/80">
+                    <div class="space-y-1">
+                        <div class="inline-block px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-[#075da2] font-extrabold text-xs uppercase tracking-wider">
+                            Enterprise Transformation
+                        </div>
+                        <h3 class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 tracking-tight">
+                            Digital Ecosystem Modernization: Replacing Legacy Silos
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- 2-Column Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+                    
+                    <!-- Left Column: Problem & Solution Architecture -->
+                    <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="p-6 rounded-2xl bg-white border border-slate-200/70 shadow-sm space-y-2">
+                                <h4 class="text-xs font-extrabold text-[#075da2] tracking-widest uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span> Operational Challenge
+                                </h4>
+                                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                                    Rapid organizational growth resulted in fragmented tools across departments, creating duplicated operational efforts, data opacity, and high maintenance overhead for legacy systems.
+                                </p>
+                            </div>
+
+                            <div class="p-6 rounded-2xl bg-white border border-slate-200/70 shadow-sm space-y-2">
+                                <h4 class="text-xs font-extrabold text-blue-900 tracking-widest uppercase flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-blue-600"></span> Engineering Execution
+                                </h4>
+                                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                                    We architected a unified enterprise software ecosystem hosted on Microsoft Azure, implementing automated cross-platform workflows, centralized authentication, and executive reporting dashboards.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Tech Stack Pills -->
+                        <div class="pt-2">
+                            <div class="text-xs font-extrabold text-slate-400 tracking-widest uppercase mb-2.5">Technologies Implemented</div>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Python & Django</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">React</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Power BI</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-slate-900 font-bold text-xs sm:text-sm">Azure Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Business Impact Card -->
+                    <div class="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-white border border-blue-200/60 shadow-sm flex flex-col justify-between space-y-6">
+                        <div>
+                            <h4 class="text-xs font-extrabold text-[#075da2] uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span> Quantifiable Business Outcomes
+                            </h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-[#075da2] font-extrabold shrink-0">✓</span> <span>Unified inter-departmental workflows into one architecture</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-[#075da2] font-extrabold shrink-0">✓</span> <span>Eliminated legacy tool redundancy and lowered license costs</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-[#075da2] font-extrabold shrink-0">✓</span> <span>Delivered centralized analytics for real-time executive decisions</span>
+                                </li>
+                                <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800">
+                                    <span class="text-[#075da2] font-extrabold shrink-0">✓</span> <span>Established high uptime, cloud-native scalability</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-3.5 rounded-xl bg-blue-50/50 border border-blue-100 text-xs font-semibold text-blue-950">
+                            Impact: Seamlessly modernized legacy systems into a unified digital ecosystem.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     3. CLIENT PARTNERSHIP VALUES ("WHAT OUR CLIENTS VALUE")
+   ========================================================================= -->
+<section id="what-clients-value" class="relative py-16 sm:py-24 bg-slate-50/50 text-slate-900 border-b border-blue-100/50 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="max-w-3xl mx-auto text-center space-y-3 mb-14 reveal">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#EE314D] text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm mx-auto">
+                <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span>
+                <span>Client Partnership</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                What Our Clients Value
+            </h2>
+
+            <p class="text-slate-600 font-medium text-base sm:text-lg max-w-2xl mx-auto">
+                While every project unique, our engineering methodology consistently delivers transparency, long-term stability, and business alignment.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 reveal">
+            
+            <div class="p-8 rounded-[2rem] bg-white border border-slate-200/80 shadow-sm space-y-4 hover:border-blue-200 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-red-50 text-[#EE314D] flex items-center justify-center font-black text-base">01</div>
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Pre-Development Analysis</h3>
+                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                    We invest deep technical analysis upfront to understand business goals and system bottlenecks before proposing software architecture.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-[2rem] bg-white border border-slate-200/80 shadow-sm space-y-4 hover:border-blue-200 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-red-50 text-[#EE314D] flex items-center justify-center font-black text-base">02</div>
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Focus on Long-Term Value</h3>
+                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                    Our solutions are engineered for multi-year stability, security, and scalability rather than short-term patches.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-[2rem] bg-white border border-slate-200/80 shadow-sm space-y-4 hover:border-blue-200 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-red-50 text-[#EE314D] flex items-center justify-center font-black text-base">03</div>
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Transparent Collaboration</h3>
+                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                    Open communication, direct access to senior engineers, and clear sprint milestones throughout development.
+                </p>
+            </div>
+
+            <div class="p-8 rounded-[2rem] bg-white border border-slate-200/80 shadow-sm space-y-4 hover:border-blue-200 transition-all">
+                <div class="w-10 h-10 rounded-xl bg-red-50 text-[#EE314D] flex items-center justify-center font-black text-base">04</div>
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Post-Deployment Partnership</h3>
+                <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                    Go-live is just the beginning. We provide continuous support, performance optimization, and SLA maintenance as your business grows.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     4. DOMAIN & TECHNICAL VERSATILITY (INDUSTRIES & TECH COMBINED)
+   ========================================================================= -->
+<section id="work-across-technologies" class="relative py-16 sm:py-24 bg-white text-slate-900 border-b border-blue-100/50 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10 space-y-12">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center space-y-3 reveal">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#EE314D] text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm mx-auto">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                <span>Domain & Technical Spectrum</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Proven Across Industries & Technologies
+            </h2>
+
+            <p class="text-slate-600 font-medium text-base sm:text-lg max-w-2xl mx-auto">
+                Every solution is custom-built using battle-tested technologies aligned with specific industry requirements.
+            </p>
+        </div>
+
+        <!-- Industries Pills -->
+        <div class="space-y-4 reveal">
+            <div class="text-center text-xs font-extrabold text-slate-400 uppercase tracking-widest">Industries We Support</div>
+            <div class="flex flex-wrap items-center justify-center gap-2.5 max-w-5xl mx-auto">
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Manufacturing</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Construction & AEC</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Healthcare</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Retail & E-commerce</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Education</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Logistics & Supply Chain</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Financial Services</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Real Estate</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Government</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">Professional Services</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm">High-Growth Startups</span>
+            </div>
+        </div>
+
+        <hr class="border-slate-200/60 max-w-4xl mx-auto">
+
+        <!-- Capabilities Grid -->
+        <div class="space-y-4 reveal">
+            <div class="text-center text-xs font-extrabold text-slate-400 uppercase tracking-widest">Core Technical Capabilities</div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm text-center flex items-center justify-center min-h-[70px]">
+                    AI & Generative AI Solutions
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm text-center flex items-center justify-center min-h-[70px]">
+                    Custom Enterprise Software
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm text-center flex items-center justify-center min-h-[70px]">
+                    ERP & CRM Engineering
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm text-center flex items-center justify-center min-h-[70px]">
+                    Web & Mobile Applications
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm text-center flex items-center justify-center min-h-[70px]">
+                    BIM & Autodesk Revit Plugins
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm text-center flex items-center justify-center min-h-[70px]">
+                    Cloud Native Infrastructure
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm text-center flex items-center justify-center min-h-[70px]">
+                    BI & Predictive Analytics
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 font-bold text-slate-900 text-xs sm:text-sm text-center flex items-center justify-center min-h-[70px]">
+                    API Pipelines & Integrations
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     5. FREQUENTLY ASKED QUESTIONS
+   ========================================================================= -->
+<section id="faq-portfolio" class="py-12 sm:py-16 bg-[#faf8fe] relative overflow-hidden border-t border-slate-200/60 scroll-mt-24">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-20">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight mb-2">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <!-- Flush Accordion Stack (Max Width 900px Centered) -->
+        <div class="max-w-4xl mx-auto divide-y divide-gray-200/80 border-y border-gray-200/80 reveal">
+            
+            <!-- FAQ 1 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" open>
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Can you work on projects that are already in progress?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Yes. We frequently step into active projects to modernize architecture, optimize performance, refactor codebase bottlenecks, or add key enterprise features.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Do you sign Non-Disclosure Agreements (NDAs)?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Yes. We strictly enforce data privacy and intellectual property confidentiality, signing formal NDAs prior to reviewing proprietary code or workflows.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Do you support international clients and cross-border teams?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Yes. We collaborate with companies globally across multiple time zones using asynchronous project management, Git pipelines, and regular sprint reviews.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 4 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Can you provide dedicated engineering teams?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Yes. We assemble specialized development teams—including backend engineers, AI specialists, UI/UX designers, and QA engineers—tailored to your project scope.
+                    </p>
+                </div>
+            </details>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     6. FINAL CALL TO ACTION
+   ========================================================================= -->
+<section id="thinking-next-project" class="relative py-20 sm:py-24 bg-white text-slate-900 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 sm:px-12 relative z-10 text-center space-y-8 reveal">
+        
+        <div class="p-10 sm:p-16 rounded-[2.5rem] bg-gradient-to-br from-blue-50/70 via-white to-sky-50/50 border border-blue-100 shadow-sm space-y-6 relative overflow-hidden">
+            
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#EE314D] text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm mx-auto">
+                <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span>
+                <span>Get Started</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Ready to Discuss Your Next Project?
+            </h2>
+
+            <p class="text-base sm:text-lg text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+                Whether you're architecting a new application, modernizing legacy systems, or deploying custom AI solutions, our engineering team is here to assist.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="{% url 'master:contact' %}#contact-hub" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#EE314D] hover:bg-[#d42640] text-white font-black text-base sm:text-lg shadow-[0_12px_30px_rgba(7,93,162,0.25)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2.5 group">
+                    <span>Start Your Project</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+
+                {% comment %} <a href="{% url 'master:contact' %}" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white border border-slate-200 text-slate-900 hover:bg-slate-50 font-black text-base sm:text-lg shadow-sm hover:-translate-y-0.5 transition-all flex items-center justify-center">
+                    <span>Schedule a Discovery Call</span>
+                </a> {% endcomment %}
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<style>
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+{% endblock %}

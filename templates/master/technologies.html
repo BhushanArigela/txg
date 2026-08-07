@@ -1,0 +1,911 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Do I need to know which technology my project should use?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not at all. Most of our clients come to us with a business challenge for Custom Software Development, not a technology requirement. We'll help you identify the best approach, whether it involves Artificial Intelligence, React, Flutter, or Business Intelligence tools."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you work with our existing systems?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We regularly integrate with existing Enterprise Software, ERP Development, CRM Solutions (like HubSpot), accounting, HR, and Cloud Computing platforms to protect your current investments while extending their capabilities."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do you choose the right technology?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We continuously evaluate emerging Construction Technology, Machine Learning algorithms (in Python), and industry best practices. When we recommend a platform, we consider long-term Digital Transformation support, security, scalability, and the needs of your business."
+            }
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- =========================================================================
+     1. HERO SECTION: Compact & Elegant
+   ========================================================================= -->
+<section class="relative min-h-[75vh] flex items-center justify-center pt-32 pb-16 sm:pt-40 sm:pb-20 lg:pt-44 lg:pb-20 bg-white text-slate-900 overflow-hidden">
+    <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
+    <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
+
+    <!-- Subtle Primary Blue Spotlight Glow Behind Headline -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[450px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none z-[1] opacity-35" 
+         style="background: radial-gradient(circle, rgba(7,93,162,0.5) 0%, rgba(11,117,205,0.25) 45%, rgba(56,189,248,0.1) 70%, transparent 100%);"></div>
+
+
+    <div class="max-w-5xl mx-auto px-6 sm:px-12 relative z-10 text-center space-y-6 reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-900 text-xs sm:text-sm font-bold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-[#EE314D] animate-pulse"></span>
+            Strategic Technology Selection
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
+            Great Software Starts with <br class="hidden sm:block"/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#075da2] to-[#0b75cd]">the Right Technology</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto">
+            We don't build software around technology. We choose tools that are reliable, scalable, and tailored to your business goals.
+        </p>
+    </div>
+</section>
+
+<!-- =========================================================================
+     2. ARCHITECTURE PILLARS (Building Solutions That Last)
+   ========================================================================= -->
+<section class="py-16 sm:py-20 bg-[#faf8fe] border-b border-blue-100/50 relative z-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+        
+        <div class="max-w-3xl mx-auto text-center space-y-4 mb-12 reveal">
+          
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Building Solutions That Last
+            </h2>
+
+            <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+                Behind every successful digital solution is a combination of technologies working together.
+            </p>
+            <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+                Our job is to bring them together in a way that feels simple for your team and your customers.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+            <div class="p-6 rounded-[2rem] bg-white border border-blue-100/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group">
+                <span class="block text-3xl font-black text-[#EE314D]/30 group-hover:text-[#EE314D] transition-colors mb-2">01</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">User Experiences</h3>
+                <p class="text-slate-600 text-sm font-medium">Intuitive interfaces engineered for fast load speeds.</p>
+            </div>
+            <div class="p-6 rounded-[2rem] bg-white border border-blue-100/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group">
+                <span class="block text-3xl font-black text-[#EE314D]/30 group-hover:text-[#EE314D] transition-colors mb-2">02</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Business Logic</h3>
+                <p class="text-slate-600 text-sm font-medium">Robust backend engines for complex workflows.</p>
+            </div>
+            <div class="p-6 rounded-[2rem] bg-white border border-blue-100/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group">
+                <span class="block text-3xl font-black text-[#EE314D]/30 group-hover:text-[#EE314D] transition-colors mb-2">03</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Data Security</h3>
+                <p class="text-slate-600 text-sm font-medium">ISO standard controls and strict access governance.</p>
+            </div>
+            <div class="p-6 rounded-[2rem] bg-white border border-blue-100/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all group">
+                <span class="block text-3xl font-black text-[#EE314D]/30 group-hover:text-[#EE314D] transition-colors mb-2">04</span>
+                <h3 class="text-lg font-bold text-slate-900 mb-2">Elastic Scalability</h3>
+                <p class="text-slate-600 text-sm font-medium">Cloud infrastructure built for traffic spikes & growth.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     3. INTERACTIVE TECH HUB (The core redesign)
+   ========================================================================= -->
+<section id="tech-hub" class="py-12 sm:py-16 bg-white border-b border-blue-100/50 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 reveal">
+        
+        <div class="text-center space-y-3 mb-8">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Explore Our Technology Stack
+            </h2>
+            <p class="text-base sm:text-lg text-slate-600 font-medium max-w-2xl mx-auto">
+                Select a category below to see how we engineer solutions across different layers of your business.
+            </p>
+        </div>
+
+        <!-- The Hub Container -->
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 bg-[#faf8fe] rounded-[2.5rem] p-4 sm:p-6 lg:p-7 border border-blue-100/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
+            
+            <!-- Left Sidebar (Tabs) -->
+            <div class="lg:w-1/3 flex flex-col gap-2 shrink-0">
+                
+                <!-- Mobile Horizontal Scroll Indicator -->
+                <div class="flex lg:hidden items-center justify-between text-xs font-extrabold text-[#075da2] bg-blue-50/90 px-4 py-2.5 rounded-xl border border-blue-100/80 mb-1">
+                    <span class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-[#EE314D] animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg>
+                        <span>Swipe &rarr;</span>
+                    </span>
+                    <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">5 Domains</span>
+                </div>
+
+                <!-- Tab Buttons List -->
+                <div class="flex flex-row lg:flex-col gap-2 overflow-x-auto pb-3 lg:pb-0 scrollbar-thin scroll-smooth shrink-0 snap-x snap-mandatory" role="tablist">
+                    
+                    <button class="tech-tab-btn active snap-start flex-shrink-0 lg:flex-shrink w-auto lg:w-full text-left px-5 py-4 rounded-2xl font-bold text-sm sm:text-base transition-all whitespace-nowrap lg:whitespace-normal flex items-center justify-between group" data-target="tab-frontend" role="tab">
+                        <span class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center group-[.active]:bg-cyan-600 group-[.active]:text-white transition-colors">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </span>
+                            UI & Front-End
+                        </span>
+                    </button>
+
+                    <button class="tech-tab-btn snap-start flex-shrink-0 lg:flex-shrink w-auto lg:w-full text-left px-5 py-4 rounded-2xl font-bold text-sm sm:text-base transition-all whitespace-nowrap lg:whitespace-normal flex items-center justify-between group text-slate-500 hover:bg-slate-50" data-target="tab-backend" role="tab">
+                        <span class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center transition-colors group-[.active]:bg-emerald-600 group-[.active]:text-white">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+                            </span>
+                            Core Back-End
+                        </span>
+                    </button>
+
+                    <button class="tech-tab-btn snap-start flex-shrink-0 lg:flex-shrink w-auto lg:w-full text-left px-5 py-4 rounded-2xl font-bold text-sm sm:text-base transition-all whitespace-nowrap lg:whitespace-normal flex items-center justify-between group text-slate-500 hover:bg-slate-50" data-target="tab-mobile" role="tab">
+                        <span class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center transition-colors group-[.active]:bg-sky-600 group-[.active]:text-white">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            </span>
+                            Mobile Apps
+                        </span>
+                    </button>
+
+                    <button class="tech-tab-btn snap-start flex-shrink-0 lg:flex-shrink w-auto lg:w-full text-left px-5 py-4 rounded-2xl font-bold text-sm sm:text-base transition-all whitespace-nowrap lg:whitespace-normal flex items-center justify-between group text-slate-500 hover:bg-slate-50" data-target="tab-cloud" role="tab">
+                        <span class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center transition-colors group-[.active]:bg-blue-600 group-[.active]:text-white">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                            </span>
+                            Cloud Infrastructure
+                        </span>
+                    </button>
+
+                    <button class="tech-tab-btn snap-start flex-shrink-0 lg:flex-shrink w-auto lg:w-full text-left px-5 py-4 rounded-2xl font-bold text-sm sm:text-base transition-all whitespace-nowrap lg:whitespace-normal flex items-center justify-between group text-slate-500 hover:bg-slate-50" data-target="tab-data-ai" role="tab">
+                        <span class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center transition-colors group-[.active]:bg-rose-600 group-[.active]:text-white">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                            </span>
+                            Data & AI Automation
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Content Area -->
+            <div class="lg:w-2/3 relative w-full lg:min-h-[340px]">
+                
+                <!-- 1. Front-End Tab -->
+                <div class="tech-pane active flex opacity-100 lg:absolute lg:inset-0 z-10 pointer-events-auto transition-all duration-300 flex-col w-full h-auto lg:h-full" id="tab-frontend" role="tabpanel">
+                    <div class="mb-3 space-y-1">
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Exceptional User Experiences</h3>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                            Every interaction should be simple, intuitive, and fast. We build responsive, accessible web applications with fluid UI patterns and rapid load speeds across desktops, tablets, and mobile devices.
+                        </p>
+                    </div>
+
+                    <h4 class="text-xs font-extrabold text-cyan-900 uppercase tracking-widest mb-2">Technologies We Use</h4>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">React</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Next.js</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">HTML5 & CSS3</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">JavaScript & TypeScript</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Tailwind CSS</span>
+                    </div>
+
+                    <div class="mt-auto p-3.5 sm:p-4 rounded-2xl bg-cyan-50/50 border border-cyan-100">
+                        <h4 class="text-xs font-extrabold text-cyan-900 uppercase tracking-widest mb-2">What this means for you:</h4>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-cyan-600">✓</span> Faster websites & load times</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-cyan-600">✓</span> Better user engagement</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-cyan-600">✓</span> Mobile-friendly across all screens</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-cyan-600">✓</span> Future-ready maintainable code</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Back-End Tab -->
+                <div class="tech-pane hidden lg:flex opacity-0 lg:absolute lg:inset-0 z-0 pointer-events-none transition-all duration-300 flex-col w-full h-auto lg:h-full" id="tab-backend" role="tabpanel">
+                    <div class="mb-3 space-y-1">
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Reliable Business Engines</h3>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                            The back end is the engine of your digital ecosystem. We build secure, high-performance server architectures, API integrations, and robust database foundations designed to scale effortlessly as your enterprise grows.
+                        </p>
+                    </div>
+
+                    <h4 class="text-xs font-extrabold text-emerald-900 uppercase tracking-widest mb-2">Technologies We Use</h4>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Python</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Django</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">FastAPI</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Laravel & PHP</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Node.js</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">.NET</span>
+                    </div>
+
+                    <div class="mt-auto p-3.5 sm:p-4 rounded-2xl bg-emerald-50/50 border border-emerald-100">
+                        <h4 class="text-xs font-extrabold text-emerald-900 uppercase tracking-widest mb-2">What this means for you:</h4>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-emerald-600">✓</span> Highly secure applications</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-emerald-600">✓</span> Faster backend performance</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-emerald-600">✓</span> Easier maintenance & updates</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-emerald-600">✓</span> Flexible API integrations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. Mobile Tab -->
+                <div class="tech-pane hidden lg:flex opacity-0 lg:absolute lg:inset-0 z-0 pointer-events-none transition-all duration-300 flex-col w-full h-auto lg:h-full" id="tab-mobile" role="tabpanel">
+                    <div class="mb-3 space-y-1">
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Apps People Enjoy Using</h3>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                            Keep your customers and field teams seamlessly connected. We build intuitive cross-platform and native mobile applications that deliver fast, reliable, high-performance experiences across Android and iOS.
+                        </p>
+                    </div>
+
+                    <h4 class="text-xs font-extrabold text-sky-900 uppercase tracking-widest mb-2">Technologies We Use</h4>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Flutter (Cross-Platform)</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Android (Native Kotlin)</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">iOS (Native Swift)</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">React Native</span>
+                    </div>
+
+                    <div class="mt-auto p-3.5 sm:p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
+                        <h4 class="text-xs font-extrabold text-sky-900 uppercase tracking-widest mb-2">What this means for you:</h4>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-sky-600">✓</span> One app, multiple platforms</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-sky-600">✓</span> Accelerated development</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-sky-600">✓</span> Lower maintenance costs</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-sky-600">✓</span> Consistent user experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. Cloud Tab -->
+                <div class="tech-pane hidden lg:flex opacity-0 lg:absolute lg:inset-0 z-0 pointer-events-none transition-all duration-300 flex-col w-full h-auto lg:h-full" id="tab-cloud" role="tabpanel">
+                    <div class="mb-3 space-y-1">
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Cloud That Grows With You</h3>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                            Build a cloud foundation that scales seamlessly with your business. We architect high-availability, cost-optimized cloud environments with 99.9% uptime, robust compliance, and automated deployment pipelines.
+                        </p>
+                    </div>
+
+                    <h4 class="text-xs font-extrabold text-blue-900 uppercase tracking-widest mb-2">Technologies We Use</h4>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Amazon Web Services (AWS)</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Microsoft Azure</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Google Cloud Platform</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Docker & Kubernetes</span>
+                    </div>
+
+                    <div class="mt-auto p-3.5 sm:p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
+                        <h4 class="text-xs font-extrabold text-blue-900 uppercase tracking-widest mb-2">What this means for you:</h4>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-blue-600">✓</span> 99.9% uptime & reliability</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-blue-600">✓</span> Instant scalability</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-blue-600">✓</span> Better security & compliance</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-blue-600">✓</span> Optimized cloud costs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5. Data & AI Tab -->
+                <div class="tech-pane hidden lg:flex opacity-0 lg:absolute lg:inset-0 z-0 pointer-events-none transition-all duration-300 flex-col w-full h-auto lg:h-full" id="tab-data-ai" role="tabpanel">
+                    <div class="mb-3 space-y-1">
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Intelligence & Automation</h3>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
+                            Automate routine workflows and turn complex datasets into actionable business intelligence. We build practical AI tools, smart automation, and predictive analytics that integrate directly into your operations.
+                        </p>
+                    </div>
+
+                    <h4 class="text-xs font-extrabold text-rose-900 uppercase tracking-widest mb-2">Technologies We Use</h4>
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">OpenAI & LLMs</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">TensorFlow & PyTorch</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">PostgreSQL & MySQL</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">MongoDB & NoSQL</span>
+                        <span class="px-3 py-1 rounded-xl bg-[#faf8fe] border border-blue-100 text-slate-900 font-bold text-xs sm:text-sm">Power BI & Looker</span>
+                    </div>
+
+                    <div class="mt-auto p-3.5 sm:p-4 rounded-2xl bg-rose-50/50 border border-rose-100">
+                        <h4 class="text-xs font-extrabold text-rose-900 uppercase tracking-widest mb-2">What this means for you:</h4>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-rose-600">✓</span> Automated repetitive tasks</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-rose-600">✓</span> 24/7 intelligent customer support</li>
+                            <li class="flex items-start gap-2 text-xs sm:text-sm font-bold text-slate-800"><span class="text-rose-600">✓</span> Predictive business analytics</li>
+                            <li class="flex items-start gap-2.5 text-xs sm:text-sm font-bold text-slate-800"><span class="text-rose-600">✓</span> Unified data visibility</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     GROWTH TECHNOLOGY & MARKETING AUTOMATION
+   ========================================================================= -->
+<section id="digital-marketing" class="py-12 sm:py-16 bg-[#faf8fe] border-b border-blue-100/50 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 reveal">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            
+            <!-- Left Side: Content -->
+            <div class="space-y-5">
+                <div class="space-y-3">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                        Growth Technology & Marketing Automation
+                    </h2>
+                    <p class="text-base sm:text-lg font-bold text-teal-600">
+                        Helping your business get found, connect with customers, and scale.
+                    </p>
+                </div>
+                
+                <div class="text-slate-600 font-medium leading-relaxed">
+                    <p class="text-base sm:text-lg">
+                        Building great software is only half the battle. We combine engineering with growth technology to attract qualified leads, automate customer journeys, and unify your CRM, marketing, and analytics into a high-converting digital ecosystem.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side: Expertise & Platforms -->
+            <div class="bg-teal-50/30 rounded-[2rem] p-8 border border-teal-100 space-y-8">
+                
+                <!-- Expertise Grid -->
+                <div>
+                    <h3 class="text-sm font-extrabold text-teal-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-teal-500"></span> Our Expertise
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="flex items-center gap-2.5 text-sm font-bold text-slate-800"><span class="text-teal-600">✓</span> SEO Optimization</div>
+                        <div class="flex items-center gap-2.5 text-sm font-bold text-slate-800"><span class="text-teal-600">✓</span> PPC Advertising</div>
+                        <div class="flex items-center gap-2.5 text-sm font-bold text-slate-800"><span class="text-teal-600">✓</span> Social Media Marketing</div>
+                        <div class="flex items-center gap-2.5 text-sm font-bold text-slate-800"><span class="text-teal-600">✓</span> Content Strategy</div>
+                        <div class="flex items-center gap-2.5 text-sm font-bold text-slate-800"><span class="text-teal-600">✓</span> Email Automation</div>
+                        <div class="flex items-center gap-2.5 text-sm font-bold text-slate-800"><span class="text-teal-600">✓</span> CRM Integrations</div>
+                        <div class="flex items-center gap-2.5 text-sm font-bold text-slate-800"><span class="text-teal-600">✓</span> Marketing Analytics</div>
+                        <div class="flex items-center gap-2.5 text-sm font-bold text-slate-800"><span class="text-teal-600">✓</span> Conversion Optimization</div>
+                    </div>
+                </div>
+                
+                <hr class="border-teal-100">
+
+                <!-- Platforms Pills -->
+                <div>
+                    <h3 class="text-sm font-extrabold text-teal-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-teal-500"></span> Platforms & Tech
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-white border border-teal-200 text-slate-900 font-bold text-sm">HubSpot</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-white border border-teal-200 text-slate-900 font-bold text-sm">GoHighLevel</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-white border border-teal-200 text-slate-900 font-bold text-sm">Google Ads</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-white border border-teal-200 text-slate-900 font-bold text-sm">GA4 & GTM</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-white border border-teal-200 text-slate-900 font-bold text-sm">Meta Suite</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-white border border-teal-200 text-slate-900 font-bold text-sm">SEMrush</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     BIM, DIGITAL ENGINEERING & AEC TECHNOLOGIES
+   ========================================================================= -->
+<section id="bim-engineering" class="py-16 bg-white border-b border-blue-100/50 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 reveal space-y-10">
+        
+        <!-- Header & Introduction -->
+        <div class="max-w-3xl mx-auto text-center space-y-3">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                BIM, Digital Engineering & AEC Technologies
+            </h2>
+            <p class="text-lg font-bold text-amber-600">
+                Building the future of construction through intelligent digital engineering.
+            </p>
+            <p class="text-slate-600 font-medium leading-relaxed pt-1 max-w-2xl mx-auto">
+                Building Information Modelling (BIM) is transforming the AEC industry. We help engineering firms, contractors, and tech providers automate design workflows, streamline data, and develop custom BIM applications—combining software engineering with AEC domain expertise.
+            </p>
+        </div>
+
+        <!-- Two Column Grid for Expertise and Impact -->
+        <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+            
+            <!-- Left Card: Expertise -->
+            <div class="bg-amber-50/40 rounded-[2rem] p-6 sm:p-8 border border-amber-200/60 flex flex-col justify-between space-y-6">
+                <div>
+                    <h3 class="text-sm font-extrabold text-amber-950 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-amber-500"></span> Our BIM & AEC Expertise
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Custom SketchUp Plugins
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> BIM Automation & Workflows
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Engineering Software Dev
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Digital Twin Solutions
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> 3D Visualisation & Apps
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> BIM Data Management
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Product Config (CPQ)
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Cloud Engineering Platforms
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Manufacturing-to-BIM
+                        </span>
+                        <span class="p-3 rounded-xl bg-white border border-amber-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span> Construction Workflow Auto
+                        </span>
+                    </div>
+                </div>
+
+            
+            </div>
+
+            <!-- Right Card: Business Benefits -->
+            <div class="bg-white rounded-[2rem] p-6 sm:p-8 border border-amber-200/60 shadow-sm flex flex-col justify-between space-y-6">
+                <div>
+                    <h3 class="text-sm font-extrabold text-amber-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-amber-500"></span> What This Means for Your Business
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800"><span class="text-amber-600 font-extrabold shrink-0">✓</span> Reduce repetitive design & modelling tasks through automation</li>
+                        <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800"><span class="text-amber-600 font-extrabold shrink-0">✓</span> Improve collaboration between architects, engineers, & contractors</li>
+                        <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800"><span class="text-amber-600 font-extrabold shrink-0">✓</span> Increase modelling accuracy and consistency</li>
+                        <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800"><span class="text-amber-600 font-extrabold shrink-0">✓</span> Integrate BIM data with ERP, CRM, manufacturing, & PM systems</li>
+                        <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800"><span class="text-amber-600 font-extrabold shrink-0">✓</span> Accelerate project delivery with connected digital workflows</li>
+                        <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800"><span class="text-amber-600 font-extrabold shrink-0">✓</span> Develop custom engineering applications tailored to your business</li>
+                        <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800"><span class="text-amber-600 font-extrabold shrink-0">✓</span> Future-proof your BIM and digital engineering capabilities</li>
+                        <li class="flex items-start gap-2.5 text-sm font-bold text-slate-800"><span class="text-amber-600 font-extrabold shrink-0">✓</span> Improve productivity while reducing project risks and rework</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================================
+     SECURITY, QUALITY & RELIABILITY
+   ========================================================================= -->
+<section class="py-16 bg-[#faf8fe] border-b border-blue-100/50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 reveal space-y-10">
+        
+        <!-- Header & Introduction -->
+        <div class="max-w-3xl mx-auto text-center space-y-3">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Security, Quality & Reliability
+            </h2>
+            <p class="text-lg font-bold text-[#075da2]">
+                Building software you can trust every day.
+            </p>
+            <p class="text-slate-600 font-medium leading-relaxed pt-1 max-w-2xl mx-auto">
+                The best software isn't just functional—it's secure, reliable, and built to scale. We embed security and quality into every stage of development, ensuring your applications are dependable, performant, and resilient from day one.
+            </p>
+        </div>
+
+        <!-- Two Column Symmetrical Cards -->
+        <div class="grid lg:grid-cols-2 gap-8 items-stretch">
+            
+            <!-- Left Card: Engineering Practices & Security Tech -->
+            <div class="bg-blue-50/30 rounded-[2rem] p-6 sm:p-8 border border-blue-100 flex flex-col justify-between space-y-6">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-sm font-extrabold text-[#075da2] uppercase tracking-widest mb-4 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span> Our Engineering Practices
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <span class="p-2.5 rounded-xl bg-white border border-blue-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#EE314D] shrink-0"></span> SSDLC Security
+                            </span>
+                            <span class="p-2.5 rounded-xl bg-white border border-blue-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#EE314D] shrink-0"></span> RBAC & Access Control
+                            </span>
+                            <span class="p-2.5 rounded-xl bg-white border border-blue-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#EE314D] shrink-0"></span> API & Data Encryption
+                            </span>
+                            <span class="p-2.5 rounded-xl bg-white border border-blue-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#EE314D] shrink-0"></span> Automated & QA Testing
+                            </span>
+                            <span class="p-2.5 rounded-xl bg-white border border-blue-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#EE314D] shrink-0"></span> Performance & Load Test
+                            </span>
+                            <span class="p-2.5 rounded-xl bg-white border border-blue-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#EE314D] shrink-0"></span> Cross-Platform QA
+                            </span>
+                            <span class="p-2.5 rounded-xl bg-white border border-blue-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#EE314D] shrink-0"></span> CI/CD Automated Pipelines
+                            </span>
+                            <span class="p-2.5 rounded-xl bg-white border border-blue-100 text-slate-800 font-bold text-xs sm:text-sm flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#EE314D] shrink-0"></span> Backup & Disaster Recovery
+                            </span>
+                        </div>
+                    </div>
+
+                    <hr class="border-blue-100/80">
+
+                    <!-- Security & Quality Stack -->
+                    <div>
+                        <h3 class="text-xs font-extrabold text-[#075da2] uppercase tracking-widest mb-3 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span> Technologies & Standards
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-xl bg-white border border-blue-200 text-slate-900 font-bold text-xs sm:text-sm">Docker & K8s</span>
+                            <span class="px-3 py-1 rounded-xl bg-white border border-blue-200 text-slate-900 font-bold text-xs sm:text-sm">GitHub & Azure DevOps</span>
+                            <span class="px-3 py-1 rounded-xl bg-white border border-blue-200 text-slate-900 font-bold text-xs sm:text-sm">SonarQube</span>
+                            <span class="px-3 py-1 rounded-xl bg-white border border-blue-200 text-slate-900 font-bold text-xs sm:text-sm">Playwright & Selenium</span>
+                            <span class="px-3 py-1 rounded-xl bg-white border border-blue-200 text-slate-900 font-bold text-xs sm:text-sm">JMeter & Postman</span>
+                            <span class="px-3 py-1 rounded-xl bg-white border border-blue-200 text-slate-900 font-bold text-xs sm:text-sm">OWASP & SSL/TLS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Card: Business Benefits -->
+            <div class="bg-slate-50/50 rounded-[2rem] p-6 sm:p-8 border border-blue-100/80 shadow-sm flex flex-col justify-between space-y-6">
+                <div>
+                    <h3 class="text-sm font-extrabold text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#EE314D]"></span> What This Means for Your Business
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm font-bold text-slate-800">
+                            <span class="text-[#075da2] font-black shrink-0 text-base">✓</span> 
+                            <span>Secure applications that protect your business & customer data</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm font-bold text-slate-800">
+                            <span class="text-[#075da2] font-black shrink-0 text-base">✓</span> 
+                            <span>Reliable software that performs consistently under real-world traffic</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm font-bold text-slate-800">
+                            <span class="text-[#075da2] font-black shrink-0 text-base">✓</span> 
+                            <span>Fewer production issues, minimal downtime, & lower maintenance costs</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm font-bold text-slate-800">
+                            <span class="text-[#075da2] font-black shrink-0 text-base">✓</span> 
+                            <span>Faster user load times and smooth overall application performance</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm font-bold text-slate-800">
+                            <span class="text-[#075da2] font-black shrink-0 text-base">✓</span> 
+                            <span>Continuous 24/7 monitoring and proactive system enhancements</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm font-bold text-slate-800">
+                            <span class="text-[#075da2] font-black shrink-0 text-base">✓</span> 
+                            <span>Complete confidence that your technology foundation is built for long-term growth</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     TECHNOLOGY IS ONLY PART OF THE STORY (OUR PHILOSOPHY)
+   ========================================================================= -->
+<section class="py-20 bg-white border-b border-blue-100/50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 reveal space-y-14 relative z-10">
+        
+        <!-- Top Philosophy Hero Box -->
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 text-[#075da2] font-black text-xs uppercase tracking-widest">
+                Our Philosophy
+            </span>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Technology Is Only Part of the Story
+            </h2>
+            
+            <p class="text-slate-600 font-medium leading-relaxed text-base sm:text-lg max-w-2xl mx-auto">
+                Choosing the right tools matters, but knowing how to use them to solve real business problems matters even more. We combine technical expertise with business understanding to deliver genuine long-term value.
+            </p>
+
+            <!-- Featured Core Question Callout -->
+            <div class="mt-8 p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 shadow-[0_10px_30px_rgba(7,93,162,0.06)] max-w-2xl mx-auto space-y-2 relative">
+                <div class="text-xs font-extrabold text-[#075da2] uppercase tracking-widest">Every recommendation starts with one question</div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-900 italic">"What are you trying to achieve?"</div>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium">The answer to this question shapes every architectural decision that follows.</p>
+            </div>
+        </div>
+
+        <!-- Evaluation Grid: How We Choose the Right Technology -->
+        <div class="space-y-8 pt-4">
+            <div class="text-center space-y-2 max-w-xl mx-auto">
+                <h3 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">How We Choose the Right Technology</h3>
+                <p class="text-slate-600 text-sm font-medium">We don't believe in using the same tech stack for every project. Instead, we thoroughly evaluate six key pillars:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Pillar 1 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-200 transition-all space-y-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-red-50 text-[#EE314D] font-black text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                        🎯
+                    </div>
+                    <h4 class="font-extrabold text-slate-900 text-base">Your Business Goals</h4>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Aligning architecture and framework choices directly with your strategic business outcomes.</p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-200 transition-all space-y-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 font-black text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                        👥
+                    </div>
+                    <h4 class="font-extrabold text-slate-900 text-base">Your Users</h4>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Designing around real-world user access patterns, devices, and seamless user experiences.</p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-200 transition-all space-y-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 font-black text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                        🔄
+                    </div>
+                    <h4 class="font-extrabold text-slate-900 text-base">Existing Systems</h4>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Ensuring smooth API integration and data synchronization with legacy software and tools.</p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-200 transition-all space-y-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 font-black text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                        📈
+                    </div>
+                    <h4 class="font-extrabold text-slate-900 text-base">Growth Plans</h4>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Architecting cloud infrastructure that scales effortlessly as traffic and operations expand.</p>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-200 transition-all space-y-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 font-black text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                        💰
+                    </div>
+                    <h4 class="font-extrabold text-slate-900 text-base">Budget & Efficiency</h4>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Balancing licensing costs, cloud overhead, and development speed for maximum ROI.</p>
+                </div>
+
+                <!-- Pillar 6 -->
+                <div class="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-blue-200 transition-all space-y-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 font-black text-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                        🛠️
+                    </div>
+                    <h4 class="font-extrabold text-slate-900 text-base">Long-Term Maintenance</h4>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Selecting battle-tested technologies that are easy to update, secure, and maintain long-term.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Takeaway Quote -->
+        <div class="max-w-2xl mx-auto text-center pt-2">
+            <blockquote class="text-slate-800 font-extrabold text-base sm:text-lg italic tracking-tight">
+                <span class="text-[#075da2] font-serif text-2xl leading-none pr-1">“</span>The right technology is the one that helps your business succeed.<span class="text-[#075da2] font-serif text-2xl leading-none pl-1">”</span>
+            </blockquote>
+            <div class="mt-3 w-10 h-0.5 bg-[#075da2]/30 mx-auto rounded-full"></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     FAQ SECTION
+   ========================================================================= -->
+<section id="faq" class="py-12 sm:py-16 bg-[#faf8fe] relative overflow-hidden border-t border-slate-200/60">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-20">
+        
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight mb-2">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <!-- Flush Accordion Stack (Max Width 900px Centered) -->
+        <div class="max-w-4xl mx-auto divide-y divide-gray-200/80 border-y border-gray-200/80 reveal">
+            
+            <!-- FAQ 1 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" open>
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Do I need to know which technology my project should use?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Not at all. Most of our clients come to us with a business challenge, not a technology requirement. We'll help you identify the best approach based on your goals.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Can you work with our existing systems?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Yes. We regularly integrate with existing ERP, CRM, accounting, HR, and third-party platforms to protect your current investments while extending their capabilities.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">How do you choose the right technology?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        We continuously evaluate emerging technologies and industry best practices. When we recommend a platform or framework, we consider long-term support, security, scalability, and the needs of your business.
+                    </p>
+                </div>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     5. CALL TO ACTION
+   ========================================================================= -->
+<section class="py-16 sm:py-24 bg-white border-t border-slate-200/60">
+    <div class="max-w-5xl mx-auto px-6 sm:px-12 text-center">
+        <div class="p-10 sm:p-16 rounded-[2.5rem] bg-gradient-to-br from-blue-50 via-white to-sky-50 border border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] space-y-8 relative overflow-hidden reveal">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/50 via-transparent to-transparent pointer-events-none"></div>
+            
+            <div class="relative z-10 space-y-4">
+                <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Let's Build with the Right Stack.
+                </h2>
+                <p class="text-lg text-slate-600 font-medium max-w-2xl mx-auto">
+                    Whether you're modernizing an existing system or starting a brand-new project, our engineering team is here to help.
+                </p>
+            </div>
+
+            <div class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="{% url 'master:contact' %}#contact-hub" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#EE314D] hover:bg-[#d42640] text-white font-black text-base shadow-[0_10px_25px_rgba(7,93,162,0.2)] hover:shadow-[0_15px_35px_rgba(7,93,162,0.3)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3 group">
+                    <span>Discuss Your Project</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Tech Hub Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll('.tech-tab-btn');
+    const panes = document.querySelectorAll('.tech-pane');
+
+    function activateTab(targetId) {
+        const targetTab = document.querySelector(`.tech-tab-btn[data-target="${targetId}"]`);
+        const targetPane = document.getElementById(targetId);
+
+        if (targetTab && targetPane) {
+            tabs.forEach(t => {
+                t.classList.remove('active', 'bg-white', 'shadow-sm', 'text-slate-900');
+                t.classList.add('text-slate-500');
+            });
+            
+            panes.forEach(p => {
+                p.classList.remove('active', 'flex', 'opacity-100', 'z-10', 'pointer-events-auto');
+                p.classList.add('hidden', 'lg:flex', 'opacity-0', 'z-0', 'pointer-events-none');
+            });
+
+            targetTab.classList.add('active', 'bg-white', 'shadow-sm', 'text-slate-900');
+            targetTab.classList.remove('text-slate-500');
+
+            // Scroll active tab into view horizontally on mobile
+            targetTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+
+            targetPane.classList.remove('hidden', 'opacity-0', 'z-0', 'pointer-events-none');
+            targetPane.classList.add('active', 'flex', 'opacity-100', 'z-10', 'pointer-events-auto');
+        }
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = tab.getAttribute('data-target');
+            activateTab(targetId);
+        });
+    });
+
+    function handleHash() {
+        const hash = window.location.hash.substring(1);
+        if (!hash) return;
+
+        const tabAliases = {
+            'custom-software': 'tab-backend',
+            'artificial-intelligence': 'tab-data-ai',
+            'erp-automation': 'tab-backend',
+            'mobile-web': 'tab-mobile',
+            'frontend': 'tab-frontend',
+            'backend': 'tab-backend',
+            'mobile': 'tab-mobile',
+            'cloud': 'tab-cloud',
+            'data-ai': 'tab-data-ai',
+            'tab-frontend': 'tab-frontend',
+            'tab-backend': 'tab-backend',
+            'tab-mobile': 'tab-mobile',
+            'tab-cloud': 'tab-cloud',
+            'tab-data-ai': 'tab-data-ai'
+        };
+
+        const targetTabId = tabAliases[hash];
+        if (targetTabId) {
+            activateTab(targetTabId);
+            const techHub = document.getElementById('tech-hub');
+            if (techHub) {
+                setTimeout(() => {
+                    techHub.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        } else {
+            const targetSection = document.getElementById(hash);
+            if (targetSection) {
+                setTimeout(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+            }
+        }
+    }
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+});
+</script>
+
+{% endblock %}

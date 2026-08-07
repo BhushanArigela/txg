@@ -1,0 +1,873 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Dynamic Title -->
+    <title>{% if seo_title %}{{ seo_title }}{% else %}Tecnolynx | Custom Software Development & Digital Solutions{% endif %}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{% if seo_description %}{{ seo_description }}{% else %}Tecnolynx G builds AI-powered custom software, ERP systems, mobile apps & digital solutions. ISO 27001 certified with offices in India, UAE, UK & Australia.{% endif %}">
+    <meta name="keywords" content="{% if seo_keywords %}{{ seo_keywords }}{% else %}custom software development, ERP solutions, mobile app development, AI software, digital transformation, IT company Hyderabad{% endif %}">
+    <meta name="author" content="Tecnolynx">
+    
+    {% comment %} <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"> {% endcomment %}
+     <meta name="robots" content="noindex, nofollow">
+    <!-- Canonical URL -->
+    {% block canonical %}<link rel="canonical" href="{{ request.build_absolute_uri }}">{% endblock %}
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:site_name" content="Tecnolynx Global">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% if seo_og_title %}{{ seo_og_title }}{% elif seo_title %}{{ seo_title }}{% else %}Tecnolynx | Custom Software Development & Digital Solutions{% endif %}">
+    <meta property="og:description" content="{% if seo_og_description %}{{ seo_og_description }}{% elif seo_description %}{{ seo_description }}{% else %}Tecnolynx builds AI-powered custom software, ERP systems, mobile apps & digital solutions. ISO 27001 certified.{% endif %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.webp' %}">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if seo_twitter_title %}{{ seo_twitter_title }}{% elif seo_title %}{{ seo_title }}{% else %}Tecnolynx | Custom Software Development & Digital Solutions{% endif %}">
+    <meta name="twitter:description" content="{% if seo_twitter_description %}{{ seo_twitter_description }}{% elif seo_description %}{{ seo_description }}{% else %}Tecnolynx builds AI-powered custom software, ERP systems, mobile apps & digital solutions. ISO 27001 certified.{% endif %}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.webp' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'img/logo.webp' %}">
+
+    <!-- Tailwind CSS (Compiled) -->
+    <link rel="preload" href="{% static 'css/output.css' %}" as="style">
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+
+    <!-- Local Inter Fonts Preload -->
+    <link rel="preload" href="{% static 'fonts/inter-v20-latin-regular.woff2' %}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{% static 'fonts/inter-v20-latin-600.woff2' %}" as="font" type="font/woff2" crossorigin>
+
+    <style>
+        
+        body { font-family: 'Inter', sans-serif; }
+        /* Show hamburger below 1400px, show desktop nav at 1400px+ */
+        @media (max-width: 1399px) {
+            .nav-desktop { display: none !important; }
+            .nav-mobile-toggle { display: flex !important; }
+        }
+        @media (min-width: 1400px) {
+            .nav-desktop { display: flex !important; }
+            .nav-mobile-toggle { display: none !important; }
+        }
+        /* Compact nav items at the 1400-1600px range */
+        @media (min-width: 1400px) and (max-width: 1599px) {
+            .nav-link { font-size: 11px !important; letter-spacing: 0.08em !important; padding-left: 10px !important; padding-right: 10px !important; }
+            .nav-cta { font-size: 11px !important; padding-left: 14px !important; padding-right: 14px !important; padding-top: 8px !important; padding-bottom: 8px !important; }
+        }
+    </style>
+
+    <!-- Sitewide Organization JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tecnolynx",
+        "legalName": "Tecnolynx Global Services",
+        "url": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:home' %}",
+        "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.webp' %}",
+        "description": "Tecnolynx is an ISO 27001 certified technology consulting company specializing in Custom Software Development, Artificial Intelligence (AI), Enterprise Software, Cloud Computing, and Digital Transformation. We build scalable ERP Development, CRM Solutions, and Mobile App Development for modern businesses.",
+        "foundingDate": "2015",
+        "contactPoint": [
+            {
+                "@type": "ContactPoint",
+                "telephone": "+91-40-4851-8840",
+                "contactType": "sales",
+                "email": "business@tecnolynx.com",
+                "availableLanguage": ["English", "Hindi"]
+            }
+        ],
+        "address": [
+            {
+                "@type": "PostalAddress",
+                "streetAddress": "7th Floor, Sy No: 160, Dulapally Junction, Kompally Fairmount Downtown",
+                "addressLocality": "Hyderabad",
+                "addressRegion": "Telangana",
+                "postalCode": "500014",
+                "addressCountry": "IN"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/people/TecnolynxGlobal-Pvt-Ltd/100077144360706/",
+            "https://www.linkedin.com/company/tecnolynx/posts/?feedView=all",
+            "https://www.instagram.com/tecnolynxglobal/",
+            "https://x.com/tecnolynxglobal"
+        ],
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "certification",
+                "name": "ISO 9001:2015"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "credentialCategory": "certification",
+                "name": "ISO 27001:2022"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Page-specific Structured Data -->
+    {% block structured_data %}{% endblock %}
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation Bar -->
+    <div class="fixed w-full top-0 sm:top-4 z-50 transition-all duration-500 px-0 sm:px-5 lg:px-8 pointer-events-none" id="navbar-wrapper">
+        <nav id="navbar" class="relative pointer-events-auto mx-auto max-w-[86rem] bg-white/85 backdrop-blur-xl sm:border sm:border-white/70 shadow-[0_8px_32px_rgba(0,0,0,0.05)] sm:rounded-2xl transition-all duration-300" aria-label="Main navigation">
+            <div class="px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-[76px] sm:h-[80px]">
+                    
+                    <!-- Logo Area -->
+                    <a href="{% url 'master:home' %}" class="flex-shrink-0 flex items-center gap-3 transition-all hover:opacity-90 duration-300 group">
+                        <img src="{% static 'img/logo.webp' %}" alt="Tecnolynx Logo" width="102" height="47" loading="eager" fetchpriority="high" class="h-10 sm:h-11 w-auto">
+                    </a>
+
+                    <!-- Desktop Menu Links -->
+                    <div class="nav-desktop space-x-1 xl:space-x-1.5 items-center">
+                        {% with request.resolver_match.url_name as url_name %}
+                        
+                        <!-- Home -->
+                        <a href="{% url 'master:home' %}" class="nav-link group relative px-3 xl:px-4 py-2 rounded-full text-[12px] xl:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 {% if url_name == 'home' %}bg-[#EE314D]/[0.07] text-[#EE314D] shadow-sm{% else %}text-slate-600 hover:text-[#EE314D] hover:bg-[#EE314D]/5{% endif %}">
+                            <span class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#EE314D] transition-all duration-300 {% if url_name == 'home' %}opacity-100 scale-100{% else %}opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100{% endif %}"></span>
+                            Home
+                        </a>
+                        
+                        <!-- Services -->
+                        <a href="{% url 'master:services' %}" class="nav-link group relative px-3 xl:px-4 py-2 rounded-full text-[12px] xl:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 {% if url_name == 'services' %}bg-[#EE314D]/[0.07] text-[#EE314D] shadow-sm{% else %}text-slate-600 hover:text-[#EE314D] hover:bg-[#EE314D]/5{% endif %}">
+                            <span class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#EE314D] transition-all duration-300 {% if url_name == 'services' %}opacity-100 scale-100{% else %}opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100{% endif %}"></span>
+                            Services
+                        </a>
+
+                        <!-- Products -->
+                        <a href="{% url 'master:products' %}" class="nav-link group relative px-3 xl:px-4 py-2 rounded-full text-[12px] xl:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 {% if url_name == 'products' %}bg-[#EE314D]/[0.07] text-[#EE314D] shadow-sm{% else %}text-slate-600 hover:text-[#EE314D] hover:bg-[#EE314D]/5{% endif %}">
+                            <span class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#EE314D] transition-all duration-300 {% if url_name == 'products' %}opacity-100 scale-100{% else %}opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100{% endif %}"></span>
+                            Products
+                        </a>
+
+                        <!-- Industries -->
+                        <a href="{% url 'master:industries' %}" class="nav-link group relative px-3 xl:px-4 py-2 rounded-full text-[12px] xl:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 {% if url_name == 'industries' %}bg-[#EE314D]/[0.07] text-[#EE314D] shadow-sm{% else %}text-slate-600 hover:text-[#EE314D] hover:bg-[#EE314D]/5{% endif %}">
+                            <span class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#EE314D] transition-all duration-300 {% if url_name == 'industries' %}opacity-100 scale-100{% else %}opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100{% endif %}"></span>
+                            Industries
+                        </a>
+
+                        <!-- Technologies -->
+                        <a href="{% url 'master:technologies' %}" class="nav-link group relative px-3 xl:px-4 py-2 rounded-full text-[12px] xl:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 {% if url_name == 'technologies' %}bg-[#EE314D]/[0.07] text-[#EE314D] shadow-sm{% else %}text-slate-600 hover:text-[#EE314D] hover:bg-[#EE314D]/5{% endif %}">
+                            <span class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#EE314D] transition-all duration-300 {% if url_name == 'technologies' %}opacity-100 scale-100{% else %}opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100{% endif %}"></span>
+                            Technologies
+                        </a>
+
+                        <!-- Portfolio -->
+                        <a href="{% url 'master:portfolio' %}" class="nav-link group relative px-3 xl:px-4 py-2 rounded-full text-[12px] xl:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 {% if url_name == 'portfolio' %}bg-[#EE314D]/[0.07] text-[#EE314D] shadow-sm{% else %}text-slate-600 hover:text-[#EE314D] hover:bg-[#EE314D]/5{% endif %}">
+                            <span class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#EE314D] transition-all duration-300 {% if url_name == 'portfolio' %}opacity-100 scale-100{% else %}opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100{% endif %}"></span>
+                            Portfolio
+                        </a>
+
+                        <!-- About Us -->
+                        <a href="{% url 'master:about' %}" class="nav-link group relative px-3 xl:px-4 py-2 rounded-full text-[12px] xl:text-[13px] font-bold uppercase tracking-wider transition-all duration-300 {% if url_name == 'about' %}bg-[#EE314D]/[0.07] text-[#EE314D] shadow-sm{% else %}text-slate-600 hover:text-[#EE314D] hover:bg-[#EE314D]/5{% endif %}">
+                            <span class="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#EE314D] transition-all duration-300 {% if url_name == 'about' %}opacity-100 scale-100{% else %}opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100{% endif %}"></span>
+                            About Us
+                        </a>
+                        
+                        {% endwith %}
+                    </div>
+
+                    <!-- Contact Button (Desktop) -->
+                    <div class="nav-desktop items-center">
+                        <a href="{% url 'master:contact' %}" class="nav-cta relative inline-flex items-center justify-center gap-2 px-5 xl:px-6 py-2.5 text-[13px] font-bold uppercase tracking-wider rounded-full text-white bg-[#EE314D] hover:bg-[#d42640] overflow-hidden group transition-all duration-300 shadow-md hover:shadow-red-500/25">
+                            Contact Us
+                            <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+
+                    <!-- Mobile menu toggle button -->
+                    <div class="nav-mobile-toggle items-center flex">
+                    <button type="button" id="mobile-menu-btn" onclick="(function(btn){var menu=document.getElementById('mobile-menu');menu.classList.toggle('hidden');btn.setAttribute('aria-expanded',menu.classList.contains('hidden')?'false':'true');})(this)" class="p-2.5 rounded-full text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none transition-colors" aria-controls="mobile-menu" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu (Hidden by default) -->
+            <div class="hidden border-t border-gray-100/50 bg-white/95 backdrop-blur-2xl sm:rounded-b-2xl shadow-xl overflow-hidden absolute w-full left-0 top-full mt-0" id="mobile-menu">
+                <div class="px-4 py-6 space-y-1.5">
+                    {% with request.resolver_match.url_name as url_name %}
+                    <a href="{% url 'master:home' %}" class="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-colors {% if url_name == 'home' %}bg-red-50 text-[#EE314D]{% else %}text-slate-700 hover:bg-slate-50{% endif %}">Home</a>
+                    <a href="{% url 'master:services' %}" class="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-colors {% if url_name == 'services' %}bg-red-50 text-[#EE314D]{% else %}text-slate-700 hover:bg-slate-50{% endif %}">Services</a>
+                    <a href="{% url 'master:products' %}" class="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-colors {% if url_name == 'products' %}bg-red-50 text-[#EE314D]{% else %}text-slate-700 hover:bg-slate-50{% endif %}">Products</a>
+                    <a href="{% url 'master:industries' %}" class="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-colors {% if url_name == 'industries' %}bg-red-50 text-[#EE314D]{% else %}text-slate-700 hover:bg-slate-50{% endif %}">Industries</a>
+                    <a href="{% url 'master:technologies' %}" class="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-colors {% if url_name == 'technologies' %}bg-red-50 text-[#EE314D]{% else %}text-slate-700 hover:bg-slate-50{% endif %}">Technologies</a>
+                    <a href="{% url 'master:portfolio' %}" class="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-colors {% if url_name == 'portfolio' %}bg-red-50 text-[#EE314D]{% else %}text-slate-700 hover:bg-slate-50{% endif %}">Portfolio</a>
+                    <a href="{% url 'master:about' %}" class="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-colors {% if url_name == 'about' %}bg-red-50 text-[#EE314D]{% else %}text-slate-700 hover:bg-slate-50{% endif %}">About Us</a>
+                    {% endwith %}
+                    <div class="pt-4 mt-2 border-t border-gray-100">
+                        <a href="{% url 'master:contact' %}" class="block w-full text-center px-4 py-3.5 rounded-xl shadow-sm text-sm font-bold uppercase tracking-wider text-white bg-[#EE314D] hover:bg-[#d42640] transition-colors">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- Main Content block for inheritance -->
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <!-- Sticky Consultation CTA -->
+    {% if '/contact' not in request.path_info %}
+    <div id="sticky-cta-container" class="fixed z-50 transition-all duration-500 opacity-0 translate-y-full pointer-events-none bottom-0 left-0 w-full sm:bottom-8 sm:right-8 sm:left-auto sm:w-auto">
+        <div class="relative w-full sm:w-auto flex items-center bg-gradient-to-b from-[#ff4763] via-[#EE314D] to-[#c71e38] border-t border-white/20 shadow-[0_6px_20px_-4px_rgba(238,49,77,0.35)] sm:rounded-full sm:hover:shadow-[0_10px_28px_-4px_rgba(238,49,77,0.45)] transition-all duration-300 group">
+            
+            <a href="{% url 'master:contact' %}#contact-hub" id="sticky-cta-btn" class="relative flex items-center justify-center flex-grow sm:flex-grow-0 pl-5 pr-14 py-4 sm:pl-6 sm:pr-14 sm:py-3.5 text-white overflow-hidden sm:rounded-full">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 pointer-events-none"></div>
+                <span class="relative flex items-center justify-center">
+                    <svg class="h-5 w-5 sm:mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <!-- Mobile Text -->
+                    <span class="ml-2 font-extrabold text-sm sm:hidden tracking-wide">Book a Call</span>
+                    <!-- Desktop Text -->
+                    <div class="hidden sm:flex items-center">
+                        <span class="whitespace-nowrap font-extrabold text-sm tracking-wide inline-block overflow-hidden transition-all duration-500 max-w-[85px] group-hover:max-w-0 opacity-100 group-hover:opacity-0 group-hover:-translate-x-4">Book a Call</span>
+                        <span class="whitespace-nowrap font-extrabold text-sm tracking-wide inline-block overflow-hidden transition-all duration-500 max-w-0 group-hover:max-w-[200px] opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0">Book a Free Consultation</span>
+                    </div>
+                </span>
+            </a>
+            
+            <!-- Dismiss Button -->
+            <button id="sticky-cta-dismiss" class="absolute top-1/2 -translate-y-1/2 right-3 sm:right-2.5 p-1.5 text-white/70 hover:text-white rounded-full hover:bg-white/20 transition-colors z-10" aria-label="Dismiss CTA">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Trusted by Innovative Teams (Full Width Light Section Marquee) -->
+    <section class="relative z-10 w-full py-16 bg-slate-50/80 border-t border-slate-200/80 overflow-hidden" aria-label="Trusted by Innovative Teams">
+        <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center mb-8 reveal">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                Trusted by Innovative Teams Worldwide
+            </h3>
+        </div>
+
+        <!-- Full Width Infinite Scroll Marquee Container -->
+        <div class="relative w-full flex overflow-hidden group">
+            <!-- Ambient Left/Right Fade Masks for Seamless Scrolling into Light Edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+
+            <style>
+                @keyframes footerMarquee {
+                    0% { transform: translate3d(0, 0, 0); }
+                    100% { transform: translate3d(-50%, 0, 0); }
+                }
+                .animate-footer-marquee {
+                    display: flex;
+                    width: max-content;
+                    animation: footerMarquee 50s linear infinite;
+                    will-change: transform;
+                    transform: translateZ(0);
+                    backface-visibility: hidden;
+                    contain: layout style paint;
+                }
+                .group:hover .animate-footer-marquee {
+                    animation-play-state: paused;
+                }
+            </style>
+
+            <div id="footer-marquee-track" class="animate-footer-marquee flex items-center shrink-0">
+                <!-- Master Set of Logos -->
+                <div class="footer-logo-set flex items-center shrink-0">
+                    <img src="{% static 'img/portfolio/logo.webp' %}" alt="Client - First Rate" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo1.webp' %}" alt="Client - Monster Engine Parts" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo2.webp' %}" alt="Client - Hope Foundation" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo3.webp' %}" alt="Client - Cascade IT Trading" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo5.webp' %}" alt="Client - Eswar Dental Clinic" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo6.webp' %}" alt="Client - The Methodist Church in India" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0 grayscale">
+                    <img src="{% static 'img/portfolio/logo7.webp' %}" alt="Client - G P Birla Archeological Astronomical And Scientific Research Institute" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo8.webp' %}" alt="Client - NutriMap" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo9.webp' %}" alt="Client - Salar Jung Museum" width="180" height="64" loading="lazy" class="h-14 sm:h-16 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo10.webp' %}" alt="Client - Church of St. John The Baptist" width="180" height="64" loading="lazy" class="h-14 sm:h-16 w-auto object-contain mr-8 sm:mr-12 shrink-0 bg-slate-900/90 p-2 rounded-xl shadow-xs">
+                    <img src="{% static 'img/portfolio/logo11.webp' %}" alt="Client - Nutraferon" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo12.webp' %}" alt="Client - Person to Person" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                    <img src="{% static 'img/portfolio/logo13.webp' %}" alt="Client - wood bricks" width="160" height="56" loading="lazy" class="h-12 sm:h-14 w-auto object-contain mr-8 sm:mr-12 shrink-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative overflow-hidden bg-[#0f172a] text-white pt-16 pb-8 text-base" role="contentinfo">
+        <!-- Ambient Background Gradients -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#075da2]/20 rounded-full blur-[100px] pointer-events-none transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-600/10 rounded-full blur-[100px] pointer-events-none transform -translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="relative z-10 max-w-full mx-auto px-6 sm:px-12 lg:px-20">
+            <!-- Top Contact Highlight -->
+            <div class="bg-slate-800/60 backdrop-blur-xl border border-slate-700/80 rounded-3xl p-8 lg:p-12 mb-16 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+                <div class="max-w-2xl text-center lg:text-left">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-white">Let's Build Something Great Together</h2>
+                    <p class="text-slate-300 text-lg font-medium">Reach out to us for custom software, ERP systems, and AI-powered digital solutions.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full lg:w-auto">
+                    <!-- Phone -->
+                    <a href="tel:+914048518840" class="group flex items-center bg-slate-800 border border-slate-700 hover:bg-[#EE314D] hover:border-[#EE314D] transition-all duration-300 rounded-2xl p-4 sm:pr-8">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="text-xs text-blue-200 uppercase tracking-wider font-extrabold mb-1">Call Us 24/7</div>
+                            <div class="text-base sm:text-lg font-bold text-white whitespace-nowrap">+91 40 4851 8840</div>
+                        </div>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:business@tecnolynx.com" class="group flex items-center bg-slate-800 border border-slate-700 hover:bg-[#EE314D] hover:border-[#EE314D] transition-all duration-300 rounded-2xl p-4 sm:pr-8">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <div class="text-xs text-blue-200 uppercase tracking-wider font-extrabold mb-1">Email Us</div>
+                            <div class="text-sm xs:text-base sm:text-lg font-bold text-white break-all sm:break-normal sm:whitespace-nowrap">business@tecnolynx.com</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Footer Links Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-12 border-b border-white/10">
+                
+                <!-- Col 1: Brand & Description -->
+                <div class="lg:col-span-4 space-y-6">
+                    <a href="{% url 'master:home' %}" class="inline-block">
+                        <div class="bg-white px-5 py-3 rounded-2xl shadow-md border border-white/20 inline-flex items-center hover:shadow-lg transition-all duration-300">
+                            <img src="{% static 'img/logo.webp' %}" alt="Tecnolynx Logo" width="102" height="47" loading="lazy" class="h-9 sm:h-10 w-auto object-contain">
+                        </div>
+                    </a>
+                    <p class="text-slate-300 text-sm leading-relaxed max-w-sm">
+                        Building intelligent solutions for a smarter future. Custom software, ERP, mobile apps, and digital solutions that drive real business growth.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/people/TecnolynxGlobal-Pvt-Ltd/100077144360706/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-[#075da2] hover:text-white hover:border-[#075da2] transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <!-- X -->
+                        <a href="https://x.com/tecnolynxglobal" target="_blank" rel="noopener noreferrer nofollow" aria-label="X" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-[#075da2] hover:text-white hover:border-[#075da2] transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/tecnolynx/posts/?feedView=all" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-[#075da2] hover:text-white hover:border-[#075da2] transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/tecnolynxglobal/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 hover:bg-[#075da2] hover:text-white hover:border-[#075da2] transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.46 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="lg:col-span-3">
+                    <h3 class="text-white font-bold text-sm tracking-widest uppercase mb-6">Quick Links</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="{% url 'master:home' %}" class="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-200">Home</a></li>
+                        <li><a href="{% url 'master:services' %}" class="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-200">Services</a></li>
+                        <li><a href="{% url 'master:products' %}" class="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-200">Products</a></li>
+                        <li><a href="{% url 'master:industries' %}" class="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-200">Industries</a></li>
+                        <li><a href="{% url 'master:technologies' %}" class="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-200">Technologies</a></li>
+                        <li><a href="{% url 'master:portfolio' %}" class="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-200">Portfolio</a></li>
+                        <li><a href="{% url 'master:about' %}" class="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-200">About Us</a></li>
+                        <li><a href="{% url 'master:contact' %}" class="text-slate-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-200">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Address & Legal -->
+                <div class="lg:col-span-5 flex flex-col space-y-8">
+                    <div>
+                        <h3 class="text-white font-bold text-sm tracking-widest uppercase mb-6">Headquarters</h3>
+                        <div class="flex items-start text-slate-300 text-sm leading-relaxed max-w-sm">
+                            <svg class="w-5 h-5 text-blue-400 mr-3 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            <span>Tecnolynx Global Pvt. Ltd. <br>7th Floor, Sy No: 160, Dulapally Junction, Kompally Fairmount Downtown<br>Hyderabad, Telangana, India – 500014.</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-sm tracking-widest uppercase mb-6">Legal</h3>
+                        <ul class="flex space-x-6 text-sm">
+                            <li><a href="{% url 'master:privacy_policy' %}" class="text-slate-300 hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="{% url 'master:sitemap' %}" class="text-slate-300 hover:text-white transition-colors">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Area: ISO Certs & Copyright -->
+            <div class="pt-8 flex flex-col lg:flex-row justify-between items-center gap-6">
+                <p class="text-sm text-slate-300 font-medium">
+                    &copy; 2026 Tecnolynx. All rights reserved.
+                </p>
+                
+                <!-- ISO Certification Badges -->
+                <div class="flex flex-wrap items-center gap-3 sm:gap-4">
+                    <div class="flex items-center space-x-3 bg-slate-800/80 border border-slate-700 p-2.5 pr-4 rounded-2xl backdrop-blur-md transition-all duration-300">
+                        <div class="bg-white p-2 rounded-xl flex items-center justify-center shadow-sm">
+                            <img src="{% static 'img/iso-9001.webp' %}" alt="ISO 9001:2015 Quality Management" width="200" height="200" loading="lazy" class="h-10 sm:h-12 w-auto object-contain">
+                        </div>
+                        <div class="text-left">
+                            <div class="text-xs font-bold text-white tracking-wide">ISO 9001:2015</div>
+                            <div class="text-[11px] text-slate-300 font-semibold">Quality Certified</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-3 bg-slate-800/80 border border-slate-700 p-2.5 pr-4 rounded-2xl backdrop-blur-md transition-all duration-300">
+                        <div class="bg-white p-2 rounded-xl flex items-center justify-center shadow-sm">
+                            <img src="{% static 'img/iso-27001.webp' %}" alt="ISO 27001:2022 Information Security" width="200" height="200" loading="lazy" class="h-10 sm:h-12 w-auto object-contain">
+                        </div>
+                        <div class="text-left">
+                            <div class="text-xs font-bold text-white tracking-wide">ISO 27001:2022</div>
+                            <div class="text-[11px] text-slate-300 font-semibold">Security Certified</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        (function () {
+            const track = document.getElementById('footer-marquee-track');
+            if (!track) return;
+            const masterSet = track.querySelector('.footer-logo-set');
+            if (!masterSet) return;
+            for (let i = 0; i < 3; i++) {
+                const clone = masterSet.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                track.appendChild(clone);
+            }
+        })();
+
+
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+        let isNavbarTicking = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!isNavbarTicking) {
+                window.requestAnimationFrame(function() {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Glassmorphism effect on scroll
+                    if (scrollTop > 20) {
+                        navbar.classList.add('bg-white/60', 'backdrop-blur-2xl', 'shadow-md', 'border-white/50');
+                        navbar.classList.remove('bg-white', 'border-transparent');
+                    } else {
+                        navbar.classList.add('bg-white', 'border-transparent');
+                        navbar.classList.remove('bg-white/60', 'backdrop-blur-2xl', 'shadow-md', 'border-white/50');
+                    }
+
+                    // Hide/show logic based on scroll direction
+                    if (scrollTop > lastScrollTop && scrollTop > 90) {
+                        navbar.classList.add('-translate-y-full'); // scroll down
+                    } else {
+                        navbar.classList.remove('-translate-y-full'); // scroll up
+                    }
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                    isNavbarTicking = false;
+                });
+                isNavbarTicking = true;
+            }
+        }, { passive: true });
+
+
+        // Sticky CTA Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const stickyCta = document.getElementById('sticky-cta-container');
+            const dismissBtn = document.getElementById('sticky-cta-dismiss');
+            
+            if (stickyCta && dismissBtn) {
+                let isDismissed = sessionStorage.getItem('stickyCtaDismissed') === 'true';
+                let isNearOtherCta = false;
+                
+                const updateCtaVisibility = () => {
+                    if (isDismissed) {
+                        stickyCta.classList.add('opacity-0', 'translate-y-full', 'pointer-events-none');
+                        stickyCta.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                        return;
+                    }
+                    
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    if (scrollTop > 500 && !isNearOtherCta) {
+                        stickyCta.classList.remove('opacity-0', 'translate-y-full', 'pointer-events-none');
+                        stickyCta.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                    } else {
+                        stickyCta.classList.add('opacity-0', 'translate-y-full', 'pointer-events-none');
+                        stickyCta.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                    }
+                };
+
+                let isCtaTicking = false;
+                const onScrollCta = () => {
+                    if (!isCtaTicking) {
+                        window.requestAnimationFrame(() => {
+                            updateCtaVisibility();
+                            isCtaTicking = false;
+                        });
+                        isCtaTicking = true;
+                    }
+                };
+
+                if (!isDismissed) {
+                    window.addEventListener('scroll', onScrollCta, { passive: true });
+                    
+                    // Observe existing CTAs
+                    const contactLinks = Array.from(document.querySelectorAll('a[href*="contact"]:not(#sticky-cta-btn)'));
+                    if (contactLinks.length > 0) {
+                        const ctaObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                entry.target.dataset.intersecting = entry.isIntersecting ? 'true' : 'false';
+                            });
+                            isNearOtherCta = contactLinks.some(link => link.dataset.intersecting === 'true');
+                            updateCtaVisibility();
+                        }, { rootMargin: '0px 0px 100px 0px', threshold: 0.1 });
+                        
+                        contactLinks.forEach(link => ctaObserver.observe(link));
+                    }
+                }
+
+                dismissBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sessionStorage.setItem('stickyCtaDismissed', 'true');
+                    isDismissed = true;
+                    updateCtaVisibility();
+                });
+            }
+
+            // Sitewide Performant Scroll Reveal Observer for .reveal elements
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active', 'opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -30px 0px'
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                revealObserver.observe(el);
+            });
+        });
+    </script>
+
+    {% if request.resolver_match.url_name != 'privacy_policy' and request.resolver_match.url_name != 'sitemap' and request.resolver_match.url_name %}
+    <!-- Particles.js -->
+    <script defer src="{% static 'js/particles.min.js' %}"></script>
+    <script>
+        // Initialize particles.js after script loads
+        var _particlesRetries = 0;
+        function initParticles() {
+            if (typeof particlesJS === 'undefined') {
+                if (++_particlesRetries > 50) return; // give up after ~5s if script never loads
+                setTimeout(initParticles, 100);
+                return;
+            }
+
+            // Find all targets: elements with id="particles-js", class="has-particles", or data-particles
+            const targets = document.querySelectorAll('#particles-js, .has-particles, [data-particles]');
+            if (targets.length === 0) return;
+
+            // Strict cap for mobile vs desktop for optimal performance
+            var particleCount = window.innerWidth < 768 ? 60 : 85;
+
+            const particlesConfig = {
+                particles: {
+                    number: {
+                        value: particleCount,
+                        density: { enable: true, value_area: 1000 }
+                    },
+                    color: { value: ["#075da2", "#0b75cd", "#38bdf8"] },
+                    shape: { type: 'circle' },
+                    opacity: {
+                        value: 0.25,
+                        random: true,
+                        anim: { enable: true, speed: 0.3, opacity_min: 0.08, sync: false }
+                    },
+                    size: {
+                        value: 4,
+                        random: true,
+                        anim: { enable: true, speed: 1, size_min: 1, sync: false }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 180,
+                        color: '#075da2',
+                        opacity: 0.25,
+                        width: 1.3
+                    },
+                    move: {
+                        enable: true,
+                        speed: 0.6,
+                        direction: 'top-right',
+                        random: true,
+                        straight: false,
+                        out_mode: 'out',
+                        attract: { enable: false }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: ["grab", "bubble"] },
+                        onclick: { enable: false },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 180, line_linked: { opacity: 0.2 } },
+                        bubble: { distance: 250, size: 6, duration: 2, opacity: 0.2, speed: 3 }
+                    }
+                },
+                retina_detect: true
+            };
+
+            targets.forEach((el, idx) => {
+                let targetId = el.id;
+                
+                if (!targetId || targetId !== 'particles-js') {
+                    let canvasWrap = el.querySelector('.particles-canvas-wrap');
+                    if (!canvasWrap) {
+                        canvasWrap = document.createElement('div');
+                        canvasWrap.id = 'particles-canvas-' + idx;
+                        canvasWrap.className = 'particles-canvas-wrap absolute inset-0 pointer-events-none z-[1]';
+                        canvasWrap.style.cssText = 'mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);';
+                        
+                        const computedStyle = window.getComputedStyle(el);
+                        if (computedStyle.position === 'static') {
+                            el.style.position = 'relative';
+                        }
+                        
+                        el.insertBefore(canvasWrap, el.firstChild);
+                    }
+                    targetId = canvasWrap.id;
+                }
+                
+                particlesJS(targetId, particlesConfig);
+            });
+        }
+
+        // Wait for DOM, then init
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initParticles);
+        } else {
+            initParticles();
+        }
+    </script>
+    <script>
+    // Technical Blueprint Grid Animation
+    document.addEventListener("DOMContentLoaded", function() {
+        const canvas = document.getElementById('blueprint-canvas');
+        if (!canvas) return;
+        
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        const gridSize = 45; // Grid cell size in pixels
+        
+        // Animated signal pulses traveling along grid lines
+        let pulses = [];
+        // Intermittent glowing nodes at intersections
+        let nodes = [];
+        
+        let isResizeTicking = false;
+        function resize() {
+            if (!isResizeTicking) {
+                window.requestAnimationFrame(() => {
+                    if (canvas && canvas.parentElement) {
+                        width = canvas.width = canvas.parentElement.offsetWidth;
+                        height = canvas.height = canvas.parentElement.offsetHeight;
+                    }
+                    isResizeTicking = false;
+                });
+                isResizeTicking = true;
+            }
+        }
+        
+        resize();
+        window.addEventListener('resize', resize, { passive: true });
+
+        class Pulse {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                // Select a random horizontal or vertical grid line
+                this.horizontal = Math.random() > 0.5;
+                if (this.horizontal) {
+                    this.gridY = Math.floor(Math.random() * (height / gridSize)) * gridSize;
+                    this.x = Math.random() > 0.5 ? 0 : width;
+                    this.speed = (this.x === 0 ? 1 : -1) * (1.5 + Math.random() * 2);
+                    this.y = this.gridY;
+                    this.length = 30 + Math.random() * 40;
+                } else {
+                    this.gridX = Math.floor(Math.random() * (width / gridSize)) * gridSize;
+                    this.y = Math.random() > 0.5 ? 0 : height;
+                    this.speed = (this.y === 0 ? 1 : -1) * (1.5 + Math.random() * 2);
+                    this.x = this.gridX;
+                    this.length = 30 + Math.random() * 40;
+                }
+                this.life = 0;
+                this.maxLife = 200 + Math.random() * 200;
+            }
+
+            update() {
+                if (this.horizontal) {
+                    this.x += this.speed;
+                    if (this.x < -this.length || this.x > width + this.length) this.reset();
+                } else {
+                    this.y += this.speed;
+                    if (this.y < -this.length || this.y > height + this.length) this.reset();
+                }
+                this.life++;
+                if (this.life > this.maxLife) this.reset();
+            }
+
+            draw() {
+                const grad = this.horizontal
+                    ? ctx.createLinearGradient(this.x - this.speed * (this.length / 2), this.y, this.x, this.y)
+                    : ctx.createLinearGradient(this.x, this.y - this.speed * (this.length / 2), this.x, this.y);
+
+                grad.addColorStop(0, 'rgba(7, 93, 162, 0)');
+                grad.addColorStop(0.7, 'rgba(7, 93, 162, 0.45)');
+                grad.addColorStop(1, 'rgba(14, 165, 233, 0.85)');
+
+                ctx.beginPath();
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = grad;
+
+                if (this.horizontal) {
+                    ctx.moveTo(this.x - (this.speed > 0 ? this.length : -this.length), this.y);
+                    ctx.lineTo(this.x, this.y);
+                } else {
+                    ctx.moveTo(this.x, this.y - (this.speed > 0 ? this.length : -this.length));
+                    ctx.lineTo(this.x, this.y);
+                }
+                ctx.stroke();
+
+                // Leading glowing point
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#0ea5e9';
+                ctx.shadowColor = '#075da2';
+                ctx.shadowBlur = 6;
+                ctx.fill();
+                ctx.shadowBlur = 0; // Reset shadow
+            }
+        }
+
+        class GlowingNode {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.gridX = Math.floor(Math.random() * Math.ceil(width / gridSize)) * gridSize;
+                this.gridY = Math.floor(Math.random() * Math.ceil(height / gridSize)) * gridSize;
+                this.radius = 0;
+                this.maxRadius = 6 + Math.random() * 8;
+                this.alpha = 0.8;
+                this.speed = 0.15 + Math.random() * 0.15;
+            }
+            update() {
+                this.radius += this.speed;
+                this.alpha -= 0.015;
+                if (this.alpha <= 0 || this.radius >= this.maxRadius) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.gridX, this.gridY, this.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(7, 93, 162, ${this.alpha})`;
+                ctx.lineWidth = 1.2;
+                ctx.stroke();
+            }
+        }
+
+        // Initialize pulses & nodes
+        for (let i = 0; i < 14; i++) pulses.push(new Pulse());
+        for (let i = 0; i < 8; i++) nodes.push(new GlowingNode());
+
+        function drawGrid() {
+            ctx.clearRect(0, 0, width, height);
+
+            // 1. Draw static subtle blueprint grid lines
+            ctx.beginPath();
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'rgba(7, 93, 162, 0.22)'; // Crisp, visible blueprint grid
+
+            for (let x = 0; x <= width; x += gridSize) {
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, height);
+            }
+            for (let y = 0; y <= height; y += gridSize) {
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+            }
+            ctx.stroke();
+
+            // 2. Draw blueprint crosshairs (+) at grid intersections
+            ctx.strokeStyle = 'rgba(7, 93, 162, 0.5)';
+            ctx.lineWidth = 1.2;
+            const crossSize = 5;
+
+            for (let x = gridSize; x < width; x += gridSize * 2) {
+                for (let y = gridSize; y < height; y += gridSize * 2) {
+                    ctx.beginPath();
+                    ctx.moveTo(x - crossSize, y);
+                    ctx.lineTo(x + crossSize, y);
+                    ctx.moveTo(x, y - crossSize);
+                    ctx.lineTo(x, y + crossSize);
+                    ctx.stroke();
+                }
+            }
+
+            // 3. Update & Draw Pulses
+            pulses.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // 4. Update & Draw Nodes
+            nodes.forEach(n => {
+                n.update();
+                n.draw();
+            });
+
+            requestAnimationFrame(drawGrid);
+        }
+
+        requestAnimationFrame(drawGrid);
+    });
+</script>
+    {% endif %}
+</body>
+
+</html>
