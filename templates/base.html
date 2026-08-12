@@ -259,7 +259,7 @@
     </div>
     {% endif %}
 
-    <!-- Trusted by Innovative Teams (Full Width Light Section Marquee) -->
+    {% comment %} <!-- Trusted by Innovative Teams (Full Width Light Section Marquee) -->
     <section class="relative z-10 w-full py-16 bg-slate-50/80 border-t border-slate-200/80 overflow-hidden" aria-label="Trusted by Innovative Teams">
         <div class="max-w-7xl mx-auto px-6 sm:px-12 text-center mb-8 reveal">
             <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -316,7 +316,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>{% endcomment %}
 
     <!-- Footer -->
     <footer class="relative overflow-hidden bg-[#0f172a] text-white pt-16 pb-8 text-base" role="contentinfo">
@@ -602,7 +602,7 @@
             if (targets.length === 0) return;
 
             // Strict cap for mobile vs desktop for optimal performance
-            var particleCount = window.innerWidth < 768 ? 60 : 85;
+            var particleCount = window.innerWidth < 768 ? 85 : 100;
 
             const particlesConfig = {
                 particles: {
@@ -613,9 +613,9 @@
                     color: { value: ["#075da2", "#0b75cd", "#38bdf8"] },
                     shape: { type: 'circle' },
                     opacity: {
-                        value: 0.25,
+                        value: 0.55,
                         random: true,
-                        anim: { enable: true, speed: 0.3, opacity_min: 0.08, sync: false }
+                        anim: { enable: true, speed: 0.3, opacity_min: 0.55, sync: false }
                     },
                     size: {
                         value: 4,
@@ -647,8 +647,8 @@
                         resize: true
                     },
                     modes: {
-                        grab: { distance: 180, line_linked: { opacity: 0.2 } },
-                        bubble: { distance: 250, size: 6, duration: 2, opacity: 0.2, speed: 3 }
+                        grab: { distance: 180, line_linked: { opacity: 0.8 } },
+                        bubble: { distance: 250, size: 6, duration: 2, opacity: 0.8, speed: 3 }
                     }
                 },
                 retina_detect: true
