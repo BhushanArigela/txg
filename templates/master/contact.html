@@ -105,7 +105,7 @@
 <!-- =========================================================================
      1. HERO SECTION
    ========================================================================= -->
-<section class="relative min-h-[75vh] flex items-center justify-center pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pt-44 lg:pb-24 bg-white text-slate-900 overflow-hidden border-b border-slate-200/80">
+<section class="relative flex items-center justify-center pt-24 pb-4 sm:pt-28 sm:pb-6 lg:pt-32 lg:pb-6 bg-white text-slate-900 overflow-hidden border-b border-slate-200/80">
     <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
     <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
 
@@ -115,7 +115,161 @@
 
 
     <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
-        <!-- Section Header -->
+        {% if source %}
+        <!-- CONCEPT: INFOGRAPHIC TIMELINE -->
+        <div class="max-w-5xl mx-auto space-y-6 reveal relative z-10 pt-3 pb-2">            
+            <!-- 1. Header Section -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="md:w-3/5 space-y-5 text-center md:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
+                        You found us!
+                    </h1>
+                    <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
+                        We are so glad you found your way and we love that you peeked behind the curtain to see who crafted the digital experience you just explored.
+                    </p>
+                </div>
+                <div class="md:w-2/5 flex justify-center md:justify-end">
+                    <!-- Header Image -->
+                    <div class="w-64 h-64 sm:w-72 sm:h-72 rounded-3xl overflow-hidden shadow-sm border border-slate-200/80 bg-slate-50 flex items-center justify-center">
+                        <img src="{% static 'img/contact.webp' %}" alt="Contact Tecnolynx" class="w-full h-full object-cover rounded-3xl" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Reasons Grid (Single Row) -->
+            <div class="pt-6 sm:pt-10 pb-2 my-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Point 1: Design -->
+                    <div class="flex flex-col items-center text-center space-y-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-blue-300">
+                            <div class="w-12 h-9 sm:w-14 sm:h-10 border-2 border-slate-700 rounded-md bg-white flex flex-col overflow-hidden">
+                                <div class="w-full h-2.5 sm:h-3 border-b-2 border-slate-700 flex items-center px-1 gap-1">
+                                    <div class="w-1 h-1 bg-slate-700 rounded-full"></div>
+                                    <div class="w-1 h-1 bg-slate-700 rounded-full"></div>
+                                </div>
+                                <div class="flex-1 flex items-center justify-center">
+                                     <svg class="w-4 h-4 sm:w-5 sm:h-5 text-sky-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed max-w-xs">
+                            Whether you're here because <br><span class="text-[#075da2] font-black text-base sm:text-lg">you loved the design,</span>
+                        </p>
+                    </div>
+
+                    <!-- Point 2: Tech Partner -->
+                    <div class="flex flex-col items-center text-center space-y-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-amber-300">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed max-w-xs">
+                            are looking for a <br><span class="text-[#075da2] font-black text-base sm:text-lg">creative/technology partner,</span>
+                        </p>
+                    </div>
+
+                    <!-- Point 3: Web Wanderers -->
+                    <div class="flex flex-col items-center text-center space-y-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-emerald-300">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed max-w-xs">
+                            or simply love wandering <br><span class="text-[#075da2] font-black text-base sm:text-lg">through the corners of the web,</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sleek Separator Line -->
+            <div class="w-full my-6 border-t border-dashed border-slate-300/80 max-w-4xl mx-auto"></div>
+
+            <!-- 3. Action Grid Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center pt-4 relative">
+                
+                <!-- Subtle dividers between columns on desktop -->
+                <div class="hidden md:block absolute left-1/3 top-2 bottom-2 w-px border-l-2 border-dashed border-slate-300"></div>
+                <div class="hidden md:block absolute right-1/3 top-2 bottom-2 w-px border-l-2 border-dashed border-slate-300"></div>
+
+                <!-- Coffee -->
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="w-20 h-16 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-orange-500" viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-.55 0-1 .45-1 1v9c0 2.76 2.24 5 5 5h6c2.76 0 5-2.24 5-5v-1h2c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-2 5h-2V6h2v7zM4 6h11v7H4V6z"/></svg>
+                        </div>
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 flex justify-between gap-1 opacity-60">
+                            <div class="w-0.5 h-3 bg-slate-400 rounded-full animate-[pulse_1.5s_infinite]"></div>
+                            <div class="w-0.5 h-4 bg-slate-400 rounded-full animate-[pulse_1.5s_0.5s_infinite]"></div>
+                            <div class="w-0.5 h-3 bg-slate-400 rounded-full animate-[pulse_1.5s_1s_infinite]"></div>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 font-medium text-sm sm:text-base leading-relaxed">
+                        <strong class="text-slate-900 font-black">Grab a cup of coffee,</strong><br>take a look around<br><span class="text-[#075da2] font-bold">our portfolio,</span>
+                    </p>
+                </div>
+                
+                <!-- Chat -->
+                <div class="flex flex-col items-center space-y-3">
+                    <div class="w-20 h-16 flex items-center justify-center relative">
+                        <svg class="w-12 h-12 text-[#075da2]" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                        <svg class="w-10 h-10 text-sky-200 absolute bottom-1 right-2" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                    </div>
+                    <p class="text-slate-700 font-medium text-sm sm:text-base leading-relaxed">
+                        <strong class="text-slate-900 font-black">and let's start</strong><br><span class="text-[#075da2] font-bold">a conversation.</span>
+                    </p>
+                    <a href="#contact-hub" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#EE314D] hover:bg-[#d62841] text-white font-bold text-xs transition-all shadow-sm hover:shadow hover:-translate-y-0.5 mt-1">
+                        <span>Send Message</span>
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                    </a>
+                </div>
+
+                <!-- Email/Social -->
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="w-20 h-16 flex items-center justify-center relative">
+                        <svg class="w-14 h-14 text-slate-100" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                <span class="text-[#EE314D] font-bold text-lg leading-none">@</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 font-medium text-sm sm:text-base leading-relaxed">
+                        You can drop us a line anytime at<br>
+                        <a href="mailto:letsconnect@tecnolynx.com" class="text-[#EE314D] font-bold hover:underline transition-colors">letsconnect@tecnolynx.com</a>
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+                        <span class="text-slate-700 font-medium text-sm sm:text-base">or connect with us:</span>
+                        <div class="inline-flex items-center gap-2 ml-1">
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/people/TecnolynxGlobal-Pvt-Ltd/100077144360706/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook" class="w-7 h-7 rounded-full bg-[#075da2] hover:bg-slate-800 flex items-center justify-center text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <!-- X -->
+                            <a href="https://x.com/tecnolynxglobal" target="_blank" rel="noopener noreferrer nofollow" aria-label="X" class="w-7 h-7 rounded-full bg-[#075da2] hover:bg-slate-800 flex items-center justify-center text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/company/tecnolynx/posts/?feedView=all" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn" class="w-7 h-7 rounded-full bg-[#075da2] hover:bg-slate-800 flex items-center justify-center text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/tecnolynxglobal/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram" class="w-7 h-7 rounded-full bg-[#075da2] hover:bg-slate-800 flex items-center justify-center text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.46 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Signature -->
+            <div class="pb-2 pt-4 text-center">
+                <p class="font-serif italic text-lg sm:text-xl text-slate-700 font-medium">
+                    Thanks for stopping by, we hope you stay a while 😊
+                </p>
+            </div>
+            
+        </div>
+        {% else %}
+        <!-- STANDARD HERO SECTION -->
         <div class="max-w-3xl mx-auto text-center space-y-4 reveal">
             <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#075da2] font-extrabold text-xs sm:text-sm tracking-widest uppercase shadow-sm mx-auto">
                 <svg class="w-4 h-4 text-[#EE314D]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
@@ -130,13 +284,14 @@
                 Every successful project starts with a conversation. Share your goals with us, and we'll help you explore the best technical path forward.
             </p>
         </div>
+        {% endif %}
     </div>
 </section>
 
 <!-- =========================================================================
      2. CONTACT FORM & WAYS TO REACH US
    ========================================================================= -->
-<section id="contact-hub" class="relative py-16 sm:py-24 bg-white text-slate-900 border-b border-slate-200/80">
+<section id="contact-hub" class="relative pt-10 pb-16 sm:pt-14 sm:pb-24 bg-white text-slate-900 border-b border-slate-200/80 scroll-mt-20">
     <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
         <!-- Contact Hub Grid (Ways to Reach Us + Form) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
