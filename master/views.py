@@ -13,6 +13,7 @@ from django.views.generic import TemplateView
 logger = logging.getLogger(__name__)
 
 from .forms import ContactForm
+from .models import SourceVisit
 
 class HomeView(TemplateView):
     template_name = "master/home.html"
@@ -38,11 +39,44 @@ class PortfolioView(TemplateView):
 class ContactView(TemplateView):
     template_name = "master/contact.html"
 
+    def get(self, request, *args, **kwargs):
+        source = request.GET.get('source', '').strip()
+        if source:
+            try:
+                SourceVisit.objects.create(
+                    source=source,
+                    page_url=request.path,
+                    ip_address=get_client_ip(request),
+                    user_agent=request.META.get('HTTP_USER_AGENT', ''),
+                    referer=request.META.get('HTTP_REFERER', '')
+                )
+            except Exception as e:
+                logger.error("Failed to record source visit for '%s': %s", source, e)
+        return super().get(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         from django.conf import settings
         context['turnstile_sitekey'] = getattr(settings, 'TURNSTILE_SITEKEY', '')
+        
+        raw_source = self.request.GET.get('source', '').strip()
+        context['source'] = raw_source
+
+        if raw_source:
+            # Format source dynamically: "salar_jung" -> "Salar Jung"
+            formatted_source = ' '.join(word.capitalize() for word in raw_source.replace('-', '_').split('_') if word)
+            context['formatted_source'] = formatted_source
+            context['hero_badge'] = "✨ You Found Us!"
+            context['hero_title'] = f'Meet the Creators of <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-[#075da2] to-[#0b75cd]">{formatted_source}</span>'
+            context['hero_subtitle'] = f"We love that you peeked behind the curtain to see who crafted the digital experience for {formatted_source}."
+        else:
+            context['hero_badge'] = 'Get In Touch'
+            context['hero_title'] = 'Let\'s Build Something <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#075da2] to-[#0b75cd]">Great Together</span>'
+            context['hero_subtitle'] = 'Every successful project starts with a conversation. Share your goals with us, and we\'ll help you explore the best technical path forward.'
+
         return context
+
+
 
 class PrivacyPolicyView(TemplateView):
     template_name = "master/privacy_policy.html"
