@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.sitemaps.views import sitemap
-from .views import HomeView, AboutView, IndustriesView, ServicesView, ProductsView, TechnologiesView, PortfolioView, ContactView, PrivacyPolicyView, RobotsTxtView, SitemapView, submit_contact_form
+from .views import HomeView, AboutView, IndustriesView, ServicesView, ProductsView, TechnologiesView, PortfolioView, ContactView, PrivacyPolicyView, RobotsTxtView, LLMTxtView, SitemapView, submit_contact_form
 from .sitemaps import StaticViewSitemap
 
 app_name = 'master'
