@@ -22,6 +22,7 @@ urlpatterns = [
     path('sitemap/', SitemapView.as_view(), name='sitemap'),
     path('api/contact/submit/', submit_contact_form, name='api_contact_submit'),
     path('robots.txt', RobotsTxtView.as_view(), name='robots_txt'),
+    path('llms.txt', LLMsTxtView.as_view(), name='llms_txt'),
     path('llm.txt', LLMTxtView.as_view(), name='llm_txt'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap_xml'),
     # Error Page Previews
