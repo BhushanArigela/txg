@@ -73,3 +73,5 @@ db.sqlite3
 .env
 
 tailwindcss
+
+settings.py
