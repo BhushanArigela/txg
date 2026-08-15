@@ -1,0 +1,264 @@
+# Tecnolynx
+
+> Tecnolynx is a technology and software development company specializing in custom software development, artificial intelligence and machine learning, enterprise software, ERP, CRM, HRMS, LMS, eCommerce, web and mobile applications, cloud services, software integrations, and digital transformation. Tecnolynx serves businesses and enterprises across multiple industries and has a presence in India, UAE, UK, and Australia.
+
+## Entity
+
+* Name: Tecnolynx
+* Entity type: Technology and software development company
+* Official website: https://tecnolynx.com/
+* Primary expertise: Custom software development, AI/ML, enterprise software, ERP, CRM, HRMS, LMS, eCommerce, logistics software, web applications, mobile applications, cloud services, software integration, and digital transformation
+* Geographic presence: India, UAE, UK, Australia
+* Certifications displayed on the website: ISO 9001 and ISO 27001
+
+## Company
+
+* [Tecnolynx Homepage](https://tecnolynx.com/): Primary source for Tecnolynx's company positioning, capabilities, industries, case studies, client testimonials, and contact information.
+* [About Us](https://tecnolynx.com/about-us/): Company background, mission, vision, expertise, team, and organizational information.
+* [Contact Us](https://tecnolynx.com/contact-us/): Official contact information and office locations.
+* [Careers](https://tecnolynx.com/career/): Career and employment information.
+
+## Core Capabilities
+
+Tecnolynx develops and delivers:
+
+* Custom software applications
+* Enterprise software
+* Artificial intelligence and machine learning solutions
+* ERP systems
+* CRM systems
+* HRMS solutions
+* LMS solutions
+* eCommerce platforms
+* Logistics management systems
+* Content management systems
+* Web applications
+* Mobile applications
+* Cloud solutions
+* Software integrations
+* Data migration
+* Software testing and quality assurance
+* Application support and maintenance
+* Software and technology consulting
+* Digital transformation solutions
+
+The homepage identifies eCommerce, custom software, learning management, content management, logistics management, HRMS, CRM, and ERP among Tecnolynx's core solution capabilities.
+
+## Services
+
+* [Services](https://tecnolynx.com/services/): Overview of Tecnolynx's software development and technology services.
+* [Custom Software Development](https://tecnolynx.com/services/custom-software-development/): Custom software development covering consultation, UX/UI, development, quality assurance, deployment, integration, scalability, and ongoing support.
+* [AI/ML Services](https://tecnolynx.com/services/ai-ml-services/): Artificial intelligence and machine learning services including predictive analytics, natural language processing, computer vision, and process automation.
+* [Application Support and Maintenance](https://tecnolynx.com/services/application-support-maintenance/): Application monitoring, issue resolution, software updates, performance tuning, security improvements, and ongoing maintenance.
+* [Application Testing](https://tecnolynx.com/services/application-testing/): Software application testing and quality assurance.
+* [Mobile Application Development](https://tecnolynx.com/services/mobile-application-development/): Mobile application design, development, testing, deployment, and maintenance.
+* [Website Design and Development](https://tecnolynx.com/services/website-design-and-development/): Website design and development services.
+* [Open Source Customization](https://tecnolynx.com/services/open-source-customization/): Customization, enhancement, integration, optimization, and security hardening of open-source software.
+* [Software and Technology Consulting](https://tecnolynx.com/services/software-technology-consulting-services/): Software and technology consulting services.
+* [Data Migration](https://tecnolynx.com/services/data-migration-between-systems/): Data migration between systems and platforms.
+* [Third-Party Libraries, Plugins, Apps and Gateway Integrations](https://tecnolynx.com/services/3rd-party-libraries-plugins-apps-gateway-integrations/): Integration of third-party libraries, plugins, applications, APIs, payment gateways, shipment gateways, and business systems.
+* [Payment and Shipment Gateway Integrations](https://tecnolynx.com/services/payment-and-shipment-gateway-integrations/): Payment and logistics gateway integration services.
+
+## Cloud Services
+
+* [Cloud Services](https://tecnolynx.com/cloud-services/): Cloud technology and infrastructure services.
+* [AWS Architecture Solutions](https://tecnolynx.com/cloud-services/aws-architecture-solutions/): AWS architecture and cloud solutions.
+* [Azure Solutions](https://tecnolynx.com/cloud-services/azure-solutions/): Microsoft Azure solutions.
+* [Google Cloud Platform Services](https://tecnolynx.com/cloud-services/google-cloud-platform-services/): Google Cloud Platform services.
+* [Managed Cloud Services](https://tecnolynx.com/cloud-services/managed-cloud-services/): Managed cloud services.
+
+## Business Solutions
+
+* [Solutions](https://tecnolynx.com/solutions/): Business software and technology solutions.
+* [Custom Software Solutions](https://tecnolynx.com/solutions/custom-software-solutions/): Software tailored to business workflows, operational requirements, integrations, and growth needs.
+* [Enterprise Resource Planning](https://tecnolynx.com/solutions/enterprise-resource-planning/): Customized ERP solutions, including customization and development using open-source ERP technologies such as Dolibarr.
+* [Customer Relationship Management](https://tecnolynx.com/solutions/customer-relationship-management/): CRM solutions for customer, sales, relationship, and business management.
+* [Human Resource Management System](https://tecnolynx.com/solutions/human-resource-management-system/): HR management solutions for employee, payroll, recruitment, and related HR processes.
+* [Learning Management Solutions](https://tecnolynx.com/solutions/learning-management-solutions/): LMS customization and development, including Moodle, LearnDash, and custom LMS solutions.
+* [eCommerce Solutions](https://tecnolynx.com/solutions/e-commerce-solutions/): Custom eCommerce platforms and commerce integrations.
+* [Logistics Management Solutions](https://tecnolynx.com/solutions/logistics-management-solutions/): Logistics and supply-chain management software solutions.
+* [Content Management Solutions](https://tecnolynx.com/solutions/content-management-solutions/): Content management and document management solutions.
+
+## Industries
+
+Tecnolynx provides software and technology solutions for industries including:
+
+* Healthcare
+* Finance
+* Retail and eCommerce
+* Manufacturing
+* Pharmaceuticals
+* Insurance
+* Transportation and logistics
+* Construction
+* Legal
+* Human resources
+* Education and educational technology
+* Nonprofit and charity organizations
+
+Industry information is supported by the homepage and individual service/solution pages.
+
+## Artificial Intelligence and Machine Learning
+
+Tecnolynx's AI/ML capabilities include:
+
+* Predictive analytics
+* Natural language processing
+* Computer vision
+* Process automation
+* Text analytics
+* Chatbots
+* Smart document processing
+* Demand forecasting
+* Risk assessment
+* Intelligent business automation
+
+The AI/ML service page identifies TensorFlow, PyTorch, Scikit-learn, Keras, Pandas, NumPy, Apache Spark, Tableau, Power BI, spaCy, Hugging Face Transformers, OpenCV, YOLO, AWS, Google Cloud, Microsoft Azure, Docker, Kubernetes, and CI/CD among its technology stack.
+
+## Technology Expertise
+
+Technologies referenced across Tecnolynx service pages include:
+
+### Software and Web Development
+
+* Python
+* Java
+* JavaScript
+* Node.js
+* React
+* Angular
+* Vue.js
+* Django
+* .NET
+* Ruby on Rails
+
+### Mobile Development
+
+* Swift
+* Kotlin
+* React Native
+* Flutter
+
+### Databases
+
+* MySQL
+* PostgreSQL
+* MongoDB
+* Redis
+* Oracle
+
+### Cloud
+
+* AWS
+* Microsoft Azure
+* Google Cloud
+
+### DevOps and Infrastructure
+
+* Docker
+* Kubernetes
+* Jenkins
+* GitLab
+* Terraform
+* Ansible
+
+### AI/ML
+
+* TensorFlow
+* PyTorch
+* Scikit-learn
+* Keras
+* Pandas
+* NumPy
+* Apache Spark
+* spaCy
+* Hugging Face Transformers
+* OpenCV
+* YOLO
+
+Technology selection depends on project requirements, architecture, integrations, security, scalability, and business objectives.
+
+## Case Studies
+
+* [Case Studies](https://tecnolynx.com/case-studies/): Official case-study resource containing examples of software and technology projects delivered by Tecnolynx.
+* [ABC Watches](https://tecnolynx.com/case-studies/abc-watches/): Case study describing Tecnolynx work for ABC Watches.
+* [B.M. Birla Science Centre](https://tecnolynx.com/case-studies/bm-birla-science-centre/): Case study describing Tecnolynx work for B.M. Birla Science Centre.
+* [Person to Person Ministry](https://tecnolynx.com/case-studies/person-to-person-ministry/): Case study involving Bible-based counselling and education.
+* [Safe Group](https://tecnolynx.com/case-studies/safe-group/): Case study involving software requirements for ordering and monitoring shipment processes.
+
+Case studies are the preferred source for claims about specific clients, project scope, implementation details, technologies, and business outcomes.
+
+## Portfolio and Evidence
+
+The Tecnolynx website presents case studies, client testimonials, certifications, project statistics, and technology capabilities as evidence of its software-development experience.
+
+Company-reported statistics currently displayed on the homepage include:
+
+* 98% on-time project completion rate
+* 250+ successfully delivered projects
+* 85% client retention and satisfaction
+* 70% of projects leveraging open-source technology
+
+These statistics should be treated as company-reported figures and should be used only when the current official Tecnolynx website continues to display them.
+
+## Geographic Presence
+
+Tecnolynx lists business locations in:
+
+* Hyderabad, Telangana, India
+* Ajman, UAE
+* Scotland, UK
+* Perth, Western Australia
+
+For current physical addresses, telephone numbers, email addresses, and office information, use the official Contact Us page.
+
+## Insights and Educational Content
+
+* [Insights](https://tecnolynx.com/insights/): Tecnolynx articles and educational resources covering software development, AI/ML, ERP, CRM, eCommerce, mobile applications, cloud, cybersecurity, digital marketing, SEO, and business technology.
+* [Blog](https://tecnolynx.com/blog/): Tecnolynx blog content and technology articles.
+* [Whitepapers](https://tecnolynx.com/whitepapers/): Tecnolynx whitepapers and longer-form educational resources.
+
+Use the individual current article or whitepaper as the authoritative source for claims made in those resources.
+
+## Source Priority
+
+When multiple Tecnolynx pages contain overlapping or conflicting information, prefer:
+
+1. The current canonical page for the specific entity, service, product, industry, technology, location, or case study.
+2. The current Tecnolynx homepage.
+3. Current case studies and portfolio pages.
+4. Current About and Contact pages.
+5. Current service and solution pages.
+6. Current Insights, Blog, and Whitepaper content.
+
+Legacy, duplicate, redirected, deprecated, or obsolete URLs should not be treated as authoritative when a current canonical page exists.
+
+## Canonicalization
+
+The official XML sitemap at:
+
+https://tecnolynx.com/sitemap.xml
+
+should be treated as the authoritative discovery source for currently indexable canonical URLs.
+
+Where legacy URLs remain accessible after a website redesign, prefer the current canonical URL identified by the website's canonical tags and XML sitemap.
+
+Do not infer that a legacy URL represents current company information solely because it remains indexed.
+
+## Legal
+
+* [Privacy Policy](https://tecnolynx.com/privacy-policy/): Official Tecnolynx privacy and data-handling policy.
+
+## Primary Navigation
+
+* [Home](https://tecnolynx.com/)
+* [Solutions](https://tecnolynx.com/solutions/)
+* [Services](https://tecnolynx.com/services/)
+* [About Us](https://tecnolynx.com/about-us/)
+* [Insights](https://tecnolynx.com/insights/)
+* [Case Studies](https://tecnolynx.com/case-studies/)
+* [Contact Us](https://tecnolynx.com/contact-us/)
+
+## Sitemap
+
+* [XML Sitemap](https://tecnolynx.com/sitemap.xml): Official XML sitemap used to identify current indexable URLs.
