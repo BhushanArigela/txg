@@ -86,7 +86,7 @@ class RobotsTxtView(TemplateView):
     content_type = "text/plain"
 
 class LLMTxtView(TemplateView):
-    template_name = "llms.txt"
+    template_name = "llm.txt"
     content_type = "text/plain"
 
 class SitemapView(TemplateView):
