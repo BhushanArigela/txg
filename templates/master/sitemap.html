@@ -1,0 +1,447 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<!-- =========================================================================
+     1. HERO SECTION: Asymmetrical Dark Gradient Canvas
+   ========================================================================= -->
+<section class="relative min-h-[60vh] flex items-center justify-center bg-white text-slate-900 py-16 sm:py-24 overflow-hidden">
+    <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
+    <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
+
+    <!-- Subtle Primary Blue Spotlight Glow Behind Headline -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[450px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none z-[1] opacity-35" 
+         style="background: radial-gradient(circle, rgba(7,93,162,0.5) 0%, rgba(11,117,205,0.25) 45%, rgba(56,189,248,0.1) 70%, transparent 100%);"></div>
+
+ 
+    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 text-center">
+        <!-- Breadcrumb Navigation -->
+        <nav class="flex justify-center mb-6 text-sm text-slate-600">
+            <a href="{% url 'master:home' %}" class="hover:text-[#EE314D] transition-colors font-medium">Home</a>
+            <span class="mx-2 text-slate-400">/</span>
+            <span class="text-[#075da2] font-bold">Sitemap</span>
+        </nav>
+        
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight mb-6 text-slate-900">
+            Website <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#075da2] to-[#0b75cd]">Sitemap</span>
+        </h1>
+        
+        <!-- Narrative Description -->
+        <p class="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            An overview of all pages, services, industry domains, and technical capabilities offered across the Tecnolynx digital ecosystem.
+        </p>
+
+        <!-- Quick Search / Filter Input -->
+        <div class="max-w-md mx-auto relative z-10">
+            <div class="relative flex items-center">
+                <input type="text" id="sitemap-search" placeholder="Search pages or services..." 
+                       class="w-full px-5 py-4 pl-12 rounded-2xl bg-white border border-slate-200 text-slate-900 placeholder-slate-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#EE314D] focus:border-transparent transition-all shadow-[0_10px_25px_-5px_rgba(7,93,162,0.08)]">
+                <svg class="w-5 h-5 text-blue-600 absolute left-4 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     2. SITEMAP CONTENT GRID
+   ========================================================================= -->
+<section class="py-16 sm:py-24 bg-[#faf8fe] relative overflow-hidden">
+    <!-- Ambient Glows -->
+    <div class="absolute top-1/3 -right-20 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 -left-20 w-96 h-96 bg-sky-100/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="sitemap-sections">
+            
+            <!-- Category 1: Main Pages -->
+            <div class="sitemap-card bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#EE314D] group-hover:bg-[#EE314D] group-hover:text-white transition-colors shadow-2xs">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-extrabold text-gray-900">Main Pages</h2>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Core Directory</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li>
+                            <a href="{% url 'master:home' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span class="font-bold">Home</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:services' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span class="font-bold">Services</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:products' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span class="font-bold">Products</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span class="font-bold">Industries</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:technologies' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span class="font-bold">Technologies</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:portfolio' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span class="font-bold">Portfolio</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:about' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span class="font-bold">About Us</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:contact' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span class="font-bold">Contact Us</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Category 2: Services -->
+            <div class="sitemap-card bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#EE314D] group-hover:bg-[#EE314D] group-hover:text-white transition-colors shadow-2xs">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-extrabold text-gray-900">Services</h2>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Core Offerings</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li>
+                            <a href="{% url 'master:services' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Custom Software Development</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:services' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Artificial Intelligence & Automation</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:services' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>ERP & Business Automation</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:services' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>BIM & Engineering Solutions</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:services' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Mobile & Web Applications</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:services' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Cloud & DevOps Infrastructure</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:services' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Digital Marketing & Growth</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Category 3: Industries We Serve -->
+            <div class="sitemap-card bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#EE314D] group-hover:bg-[#EE314D] group-hover:text-white transition-colors shadow-2xs">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-extrabold text-gray-900">Industries</h2>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Domain Expertise</span>
+                        </div>
+                    </div>
+
+                    <ul class="grid grid-cols-2 gap-2 text-sm font-medium">
+                        <li>
+                            <a href="{% url 'master:industries' %}#manufacturing" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Manufacturing</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#healthcare" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Healthcare</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#construction" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Construction</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#real-estate" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Real Estate</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#retail" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Retail & E-commerce</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#education" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Education</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#logistics" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Logistics</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#finance" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Financial Services</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#government" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Government</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:industries' %}#startups" class="block p-2 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all">Startups</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Category 4: Technologies -->
+            <div class="sitemap-card bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#EE314D] group-hover:bg-[#EE314D] group-hover:text-white transition-colors shadow-2xs">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-extrabold text-gray-900">Technologies</h2>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Tech Stack & Frameworks</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li>
+                            <a href="{% url 'master:technologies' %}#tab-backend" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Backend & Microservices</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:technologies' %}#tab-frontend" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Frontend Engineering</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:technologies' %}#tab-mobile" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Mobile Engineering</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:technologies' %}#tab-cloud" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Cloud & Infrastructure</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:technologies' %}#tab-data-ai" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Data & Artificial Intelligence</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:technologies' %}#bim-engineering" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>BIM & Autodesk Plugins</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Category 5: Products & Solutions -->
+            <div class="sitemap-card bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#EE314D] group-hover:bg-[#EE314D] group-hover:text-white transition-colors shadow-2xs">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-extrabold text-gray-900">Products</h2>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Enterprise Solutions</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li>
+                            <a href="{% url 'master:products' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Enterprise ERP Systems</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:products' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>AI Chatbots & Document AI</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:products' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Revit & SketchUp Plugins</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:products' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Custom Business Portals</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:portfolio' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Case Studies & Success Stories</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Category 6: Legal & Resources -->
+            <div class="sitemap-card bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#EE314D] group-hover:bg-[#EE314D] group-hover:text-white transition-colors shadow-2xs">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-extrabold text-gray-900">Utility & Legal</h2>
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Compliance & Feeds</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm font-medium">
+                        <li>
+                            <a href="{% url 'master:privacy_policy' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Privacy Policy</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:sitemap' %}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-[#075da2] font-bold transition-all group/item">
+                                <span>HTML Sitemap</span>
+                                <span class="text-[10px] uppercase bg-blue-100 text-[#075da2] font-extrabold px-2 py-0.5 rounded-md">Current</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:sitemap_xml' %}" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>XML Sitemap (Search Engines)</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'master:robots_txt' %}" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/70 text-gray-700 hover:text-[#EE314D] transition-all group/item">
+                                <span>Robots.txt</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover/item:text-[#075da2] group-hover/item:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================================================================
+     3. CTA FOOTER BANNER
+   ========================================================================= -->
+<section class="py-16 bg-white border-t border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">
+            Need Help Finding Something?
+        </h2>
+        <p class="text-gray-600 text-base sm:text-lg mb-8 max-w-xl mx-auto">
+            Our team is here to assist you with any custom software inquiries, technical consultations, or project quotes.
+        </p>
+        <a href="{% url 'master:contact' %}#contact-hub" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-2xl bg-[#075da2] text-white font-bold text-base shadow-lg hover:bg-[#043a66] hover:shadow-red-500/25 transition-all duration-300">
+            <span>Contact Our Team</span>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+        </a>
+    </div>
+</section>
+
+<!-- Simple client-side search script -->
+<script>
+    document.getElementById('sitemap-search').addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase().trim();
+        const cards = document.querySelectorAll('.sitemap-card');
+        
+        cards.forEach(card => {
+            const links = card.querySelectorAll('li');
+            let hasVisibleLink = false;
+            
+            links.forEach(li => {
+                const text = li.textContent.toLowerCase();
+                if (query === '' || text.includes(query)) {
+                    li.style.display = '';
+                    hasVisibleLink = true;
+                } else {
+                    li.style.display = 'none';
+                }
+            });
+            
+            if (hasVisibleLink || query === '') {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
+{% endblock %}

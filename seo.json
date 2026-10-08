@@ -1,0 +1,92 @@
+{
+    "default": {
+        "title": "Tecnolynx | Custom Software Development & Digital Solutions",
+        "description": "Tecnolynx builds AI-powered custom software, ERP systems, mobile apps & digital solutions. ISO 27001 certified with offices in India, UAE, UK & Australia.",
+        "keywords": "custom software development, ERP solutions, mobile app development, AI software, digital transformation, IT company Hyderabad",
+        "og_title": "Tecnolynx | Custom Software Development & Digital Solutions",
+        "og_description": "Tecnolynx builds AI-powered custom software, ERP systems, mobile apps & digital solutions. ISO 27001 certified.",
+        "twitter_title": "Tecnolynx | Custom Software Development & Digital Solutions",
+        "twitter_description": "Tecnolynx builds AI-powered custom software, ERP systems, mobile apps & digital solutions. ISO 27001 certified."
+    },
+    "/": {
+        "title": "Tecnolynx | Custom Software Development, ERP Solutions & AI-Powered Digital Transformation",
+        "description": "Tecnolynx builds AI-powered custom software, ERP systems, mobile apps & digital solutions for enterprises. ISO 27001 certified. Offices in India, UAE, UK & Australia. Get a free consultation today.",
+        "keywords": "custom software development, ERP solutions, mobile app development, AI software company, digital transformation services, IT company Hyderabad, cloud solutions, data analytics",
+        "og_title": "Tecnolynx | Custom Software Development, ERP Solutions & AI-Powered Digital Transformation",
+        "og_description": "Tecnolynx builds AI-powered custom software, ERP systems, mobile apps & digital solutions for enterprises. ISO 27001 certified.",
+        "twitter_title": "Tecnolynx | Custom Software Development & AI-Powered Solutions",
+        "twitter_description": "AI-powered custom software, ERP systems, mobile apps & digital solutions. ISO 27001 certified. Get a free consultation."
+    },
+    "/about/": {
+        "title": "About Us | Tecnolynx",
+        "description": "Learn more about Tecnolynx, our mission, vision, and the team behind our innovative digital solutions.",
+        "keywords": "about Tecnolynx, IT company, software development company, our team, mission, vision",
+        "og_title": "About Us | Tecnolynx",
+        "og_description": "Learn more about Tecnolynx, our mission, vision, and the team behind our innovative digital solutions.",
+        "twitter_title": "About Us | Tecnolynx",
+        "twitter_description": "Learn more about Tecnolynx, our mission, vision, and the team behind our innovative digital solutions."
+    },
+    "/industries/": {
+        "title": "Industries We Serve | Tecnolynx",
+        "description": "Tecnolynx provides specialized digital solutions and custom software for various industries including healthcare, finance, retail, and more.",
+        "keywords": "industries, healthcare software, finance IT solutions, retail tech, custom software by industry",
+        "og_title": "Industries We Serve | Tecnolynx",
+        "og_description": "Tecnolynx provides specialized digital solutions and custom software for various industries.",
+        "twitter_title": "Industries We Serve | Tecnolynx",
+        "twitter_description": "Tecnolynx provides specialized digital solutions and custom software for various industries."
+    },
+    "/services/": {
+        "title": "Our Services | Tecnolynx",
+        "description": "Explore our wide range of services including web development, mobile app development, AI solutions, and digital marketing.",
+        "keywords": "web development, mobile apps, AI solutions, digital marketing, IT services",
+        "og_title": "Our Services | Tecnolynx",
+        "og_description": "Explore our wide range of services including web development, mobile app development, AI solutions, and digital marketing.",
+        "twitter_title": "Our Services | Tecnolynx",
+        "twitter_description": "Explore our wide range of services including web development, mobile app development, AI solutions, and digital marketing."
+    },
+    "/products/": {
+        "title": "Our Products | Tecnolynx",
+        "description": "Discover the innovative products and ERP solutions built by Tecnolynx to streamline your business operations.",
+        "keywords": "software products, ERP solutions, business software, Tecnolynx products",
+        "og_title": "Our Products | Tecnolynx",
+        "og_description": "Discover the innovative products and ERP solutions built by Tecnolynx to streamline your business operations.",
+        "twitter_title": "Our Products | Tecnolynx",
+        "twitter_description": "Discover the innovative products and ERP solutions built by Tecnolynx to streamline your business operations."
+    },
+    "/technologies/": {
+        "title": "Technologies We Use | Tecnolynx",
+        "description": "We leverage the latest technologies like Python, Django, React, AI/ML, and cloud platforms to build scalable solutions.",
+        "keywords": "technologies, Python, Django, React, AI, ML, cloud computing",
+        "og_title": "Technologies We Use | Tecnolynx",
+        "og_description": "We leverage the latest technologies like Python, Django, React, AI/ML, and cloud platforms to build scalable solutions.",
+        "twitter_title": "Technologies We Use | Tecnolynx",
+        "twitter_description": "We leverage the latest technologies like Python, Django, React, AI/ML, and cloud platforms to build scalable solutions."
+    },
+    "/portfolio/": {
+        "title": "Our Portfolio | Tecnolynx",
+        "description": "View our portfolio of successful projects and case studies showcasing our expertise in delivering high-quality digital solutions.",
+        "keywords": "portfolio, case studies, successful projects, software development portfolio",
+        "og_title": "Our Portfolio | Tecnolynx",
+        "og_description": "View our portfolio of successful projects and case studies showcasing our expertise in delivering high-quality digital solutions.",
+        "twitter_title": "Our Portfolio | Tecnolynx",
+        "twitter_description": "View our portfolio of successful projects and case studies showcasing our expertise in delivering high-quality digital solutions."
+    },
+    "/contact/": {
+        "title": "Contact Us | Tecnolynx",
+        "description": "Get in touch with Tecnolynx for your next project. We have offices in India, UAE, UK & Australia.",
+        "keywords": "contact Tecnolynx, get in touch, software development inquiry, IT support",
+        "og_title": "Contact Us | Tecnolynx",
+        "og_description": "Get in touch with Tecnolynx for your next project.",
+        "twitter_title": "Contact Us | Tecnolynx",
+        "twitter_description": "Get in touch with Tecnolynx for your next project."
+    },
+    "/privacy-policy/": {
+        "title": "Privacy Policy | Tecnolynx",
+        "description": "Read the privacy policy of Tecnolynx to understand how we handle your data and ensure your privacy.",
+        "keywords": "privacy policy, data protection, Tecnolynx privacy",
+        "og_title": "Privacy Policy | Tecnolynx",
+        "og_description": "Read the privacy policy of Tecnolynx to understand how we handle your data and ensure your privacy.",
+        "twitter_title": "Privacy Policy | Tecnolynx",
+        "twitter_description": "Read the privacy policy of Tecnolynx to understand how we handle your data and ensure your privacy."
+    }
+}

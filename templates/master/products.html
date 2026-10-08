@@ -1,0 +1,761 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "SoftwareApplication",
+            "name": "TXG ERP",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, Cloud Computing, On-Premises",
+            "description": "Modular Enterprise Software and ERP Development solution designed to integrate Manufacturing ERP, Healthcare Software, and Education ERP operations with Business Automation.",
+            "provider": {
+                "@type": "Organization",
+                "name": "Tecnolynx",
+                "url": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:home' %}"
+            }
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "TXG Product Suite",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, Cloud, Hybrid",
+            "description": "Connected ecosystem of Enterprise Software applications including ERP Development, CRM Solutions, HRMS, LMS, Artificial Intelligence (AI), BIM Digital Twin, and Business Intelligence Analytics designed to help organizations work smarter.",
+            "provider": {
+                "@type": "Organization",
+                "name": "Tecnolynx",
+                "url": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:home' %}"
+            }
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Can I start with just one product?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Absolutely. Each TXG product, whether it's a CRM Solution, Manufacturing ERP, or Custom Software tool, is designed to operate independently while offering the flexibility to integrate with the rest of the product suite."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can your products integrate with our existing systems?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. We regularly integrate with existing accounting software, ERP platforms, CRM systems (like HubSpot and GoHighLevel), HR applications, and other Cloud Computing services."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Do you offer cloud and on-premises deployment?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Depending on your business and compliance requirements, our solutions can be deployed via Cloud Computing, on-premises, or in a hybrid environment, optimized for Digital Transformation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can the products be customised?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. Every organisation works differently. Our products are designed to be configurable and extensible, allowing us to tailor workflows, Business Automation, dashboards, and integrations."
+                    }
+                }
+            ]
+        }
+    ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- =========================================================================
+     1. PREMIUM HERO SECTION
+   ========================================================================= -->
+<section id="hero" class="relative flex items-center justify-center overflow-hidden bg-white pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32 border-b border-blue-100/50" style="min-height: 100vh; min-height: 100dvh;">
+    <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
+    <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
+
+    <!-- Subtle Primary Blue Spotlight Glow Behind Headline -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[450px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none z-[1] opacity-35" 
+         style="background: radial-gradient(circle, rgba(7,93,162,0.5) 0%, rgba(11,117,205,0.25) 45%, rgba(56,189,248,0.1) 70%, transparent 100%);"></div>
+
+
+    <div class="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-12 lg:px-16">
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-8 items-center">
+            
+            <!-- Left Column: Content & CTA -->
+            <div class="reveal lg:col-span-7 space-y-8 text-left">
+                
+                <!-- Main Headline -->
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
+                    Intelligent Software <br class="hidden sm:block" />
+                    <span class="bg-gradient-to-r from-[#075da2] to-[#0b75cd] bg-clip-text text-transparent">
+                        That Grows With You
+                    </span>
+                </h1>
+
+                <!-- Subtitle & Narrative -->
+                <p class="text-lg sm:text-xl font-normal leading-relaxed text-slate-600 max-w-2xl">
+                    The <strong class="font-bold text-slate-900">TXG Product Suite</strong> is a connected ecosystem of enterprise applications designed to help organisations work smarter, streamline operations, and scale with confidence.
+                </p>
+
+                <!-- Key Value Badges -->
+                <div class="flex flex-wrap items-center gap-3 pt-1">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100/80 text-xs font-semibold text-[#075da2]">
+                        <svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        8 Modular Applications
+                    </span>
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100/80 text-xs font-semibold text-[#075da2]">
+                        <svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        Cloud & On-Premises
+                    </span>
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100/80 text-xs font-semibold text-[#075da2]">
+                        <svg class="w-3.5 h-3.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        100% Interoperable
+                    </span>
+                </div>
+
+                <!-- Action CTAs -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                    <a href="{% url 'master:contact' %}#contact-hub" class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#075da2] px-8 py-4 text-sm font-bold tracking-wide text-white shadow-lg transition-all hover:bg-[#043a66] hover:shadow-red-500/30">
+                        <span class="mr-2 uppercase">Book a Product Demo</span>
+                        <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                    
+                    <a href="#ecosystem" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 backdrop-blur-md px-8 py-4 text-sm font-bold tracking-wide text-slate-700 transition-all hover:bg-slate-50 hover:border-slate-400 uppercase">
+                        Explore Suite
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Glass Showcase Card -->
+            <div class="reveal lg:col-span-5 relative mt-6 lg:mt-0">
+                <!-- Floating Decorative Ambient Blob -->
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-sky-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                <div class="relative rounded-3xl bg-gradient-to-br from-slate-900 via-[#0f172a] to-blue-950 p-6 sm:p-8 shadow-2xl border border-blue-500/30 text-white overflow-hidden">
+                    <!-- Glass shine effect -->
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <!-- Panel Header -->
+                    <div class="flex items-center justify-between border-b border-white/10 pb-5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-300">TXG Ecosystem Status</span>
+                        </div>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-white/10 text-blue-200 border border-white/10">Connected</span>
+                    </div>
+
+                    <!-- Interactive Micro Product Grid -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <!-- ERP Mini Card -->
+                        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-300 flex items-center justify-center mb-2">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                            </div>
+                            <div class="text-sm font-bold text-white">TXG ERP</div>
+                            <div class="text-[11px] text-slate-400">Enterprise Core</div>
+                        </div>
+
+                        <!-- CRM Mini Card -->
+                        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-300 flex items-center justify-center mb-2">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            </div>
+                            <div class="text-sm font-bold text-white">TXG CRM</div>
+                            <div class="text-[11px] text-slate-400">Sales & Growth</div>
+                        </div>
+
+                        <!-- HRMS Mini Card -->
+                        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center mb-2">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                            </div>
+                            <div class="text-sm font-bold text-white">TXG HRMS</div>
+                            <div class="text-[11px] text-slate-400">People & Payroll</div>
+                        </div>
+
+                        <!-- AI Mini Card -->
+                        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md hover:bg-white/10 transition-colors">
+                            <div class="w-8 h-8 rounded-lg bg-violet-500/20 text-violet-300 flex items-center justify-center mb-2">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            </div>
+                            <div class="text-sm font-bold text-white">TXG AI</div>
+                            <div class="text-[11px] text-slate-400">Smart Automation</div>
+                        </div>
+                    </div>
+
+                    <!-- Panel Footer -->
+                    <div class="mt-5 border-t border-white/10 pt-4 flex items-center justify-between text-xs text-slate-400">
+                        <span>+ LMS, BIM, Analytics & Digital</span>
+                        <span class="text-blue-300 font-semibold flex items-center gap-1">
+                            Seamless Sync
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="ecosystem" class="bg-[#faf8fe] py-16 sm:py-24 relative">
+    <div class="mx-auto max-w-7xl px-6 sm:px-12 lg:px-16 relative z-10">
+        <div class="reveal mx-auto mb-16 max-w-3xl text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.15] tracking-tight text-slate-900">
+                The TXG Product Ecosystem
+            </h2>
+            <p class="mt-6 text-base sm:text-lg font-normal leading-relaxed text-slate-600">
+                Our products are designed to work together, giving you the flexibility to start with one solution and expand as your business grows.
+            </p>
+        </div>
+
+        <!-- Flagship: TXG ERP -->
+        <article id="txg-erp" class="reveal relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-[#0b1120] to-[#1e1b4b] shadow-[0_20px_50px_rgba(15,23,42,0.5)] border border-white/10 group" style="scroll-margin-top: 100px;">
+            
+            <style>
+                @keyframes float-slow {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                }
+                @keyframes float-delayed {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-12px); }
+                }
+                .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+                .animate-float-delayed { animation: float-delayed 7s ease-in-out infinite; animation-delay: 2s; }
+            </style>
+
+            <!-- Multi-Layer Ambient Backgrounds -->
+            <div class="absolute -top-[30%] -right-[10%] w-[80%] h-[80%] bg-blue-500/20 rounded-full blur-[120px] pointer-events-none group-hover:bg-blue-500/30 transition-colors duration-700"></div>
+            <div class="absolute bottom-[10%] right-[20%] w-[50%] h-[50%] bg-sky-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-sky-500/30 transition-colors duration-700"></div>
+            <!-- Texture overlay -->
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+CjxwYXRoIGQ9Ik0yNCAwTDAgMjRNMCAwTDI0IDI0IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] opacity-50 pointer-events-none"></div>
+            
+            <div class="relative z-10 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center p-8 sm:p-12 lg:p-16">
+                
+                <!-- Content Left (Mobile-Centered, Desktop Left-Aligned) -->
+                <div class="space-y-8 relative z-20 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2.5 rounded-full border border-blue-400/30 bg-blue-500/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold tracking-wider text-blue-200 uppercase shadow-inner">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                        </span>
+                        Flagship Platform
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-center lg:justify-start gap-4">
+                            <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-sky-600 shadow-lg shadow-red-500/30 text-white border border-white/20 backdrop-blur-md flex-shrink-0">
+                                <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                            <h3 class="text-4xl sm:text-5xl font-black tracking-tight text-white drop-shadow-sm">TXG ERP</h3>
+                        </div>
+                        <p class="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-sky-200 leading-tight">
+                            Connect Every Department. <br class="hidden sm:block"/> Gain Complete Visibility.
+                        </p>
+                        <p class="text-base sm:text-lg text-slate-300/90 leading-relaxed font-normal max-w-xl mx-auto lg:mx-0">
+                            A centralized enterprise nervous system. TXG ERP unifies finance, sales, purchasing, inventory, manufacturing, HR, and customer service into one secure, intelligent platform.
+                        </p>
+                    </div>
+
+                    <!-- Core Capabilities Grid -->
+                    <div class="pt-4 border-t border-white/10">
+                        <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Core Capabilities</p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-2.5">
+                            <span class="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-semibold text-blue-100 backdrop-blur-md">Finance & Accounting</span>
+                            <span class="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-semibold text-blue-100 backdrop-blur-md">Sales & CRM</span>
+                            <span class="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-semibold text-blue-100 backdrop-blur-md">Inventory & Warehouse</span>
+                            <span class="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-semibold text-blue-100 backdrop-blur-md">Production</span>
+                            <span class="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-semibold text-blue-100 backdrop-blur-md">HR & Payroll</span>
+                            <span class="inline-flex items-center px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-xs font-semibold text-blue-100 backdrop-blur-md">Business Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visual Right: Device Mockups Showcase -->
+                <div class="relative h-[350px] sm:h-[450px] lg:h-[500px] w-full flex items-center justify-center perspective-[2000px]">
+                    <!-- Base glow for devices -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gradient-to-r from-blue-500/40 to-sky-500/40 rounded-full blur-[70px] pointer-events-none"></div>
+
+                    <!-- Glass Pedestal / Shadow Ground -->
+                    <div class="absolute bottom-[5%] left-1/2 -translate-x-1/2 w-[90%] h-24 bg-blue-900/40 rounded-[100%] blur-[15px] border-t border-blue-400/20 transform rotate-x-60 pointer-events-none"></div>
+                    
+                    <!-- Laptop Image Showcase -->
+                    <div class="absolute z-10 right-0 lg:right-[-5%] transform group-hover:-translate-y-2 transition-transform duration-700 ease-out w-[280px] sm:w-[420px] lg:w-[520px]">
+                        <img src="{% static 'img/products/laptop.webp' %}" alt="TXG ERP Laptop Experience" width="1200" height="750" loading="lazy" class="w-full h-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.6)] object-contain" />
+
+                        <!-- Decorative floating badge - Laptop -->
+                        <div class="absolute -top-10 -left-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-3 shadow-2xl z-30">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                </div>
+                                <div>
+                                    <div class="text-[10px] text-slate-300 uppercase font-bold tracking-wider">Revenue</div>
+                                    <div class="text-sm font-black text-white">+24.8%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phone Image Showcase -->
+                    <div class="absolute z-20 left-[2%] sm:left-[5%] lg:left-[-8%] bottom-[5%] transform group-hover:-translate-y-4 transition-transform duration-700 ease-out delay-150 w-[110px] sm:w-[150px] lg:w-[180px]">
+                        <img src="{% static 'img/products/phone.webp' %}" alt="TXG ERP Mobile Experience" width="400" height="800" loading="lazy" class="w-full h-auto drop-shadow-[0_30px_40px_rgba(0,0,0,0.7)] object-contain" />
+
+                        <!-- Decorative floating badge - Phone -->
+                        <div class="absolute -bottom-4 -right-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-2.5 shadow-2xl z-30">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-2 w-2">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                                </span>
+                                <div class="text-[11px] font-bold text-white">Live Sync</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <!-- CRM -->
+            <article id="txg-crm" class="reveal group relative flex flex-col rounded-3xl border border-sky-200/50 bg-white/70 backdrop-blur-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" style="scroll-margin-top: 100px;">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-sky-100 text-sky-600">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-900">TXG CRM</h3>
+                </div>
+                <p class="text-base font-bold leading-tight text-slate-800 mb-4">Build Stronger Relationships at Every Stage.</p>
+                <p class="text-sm font-normal leading-relaxed text-slate-600 mb-8">TXG CRM helps sales, marketing, and customer service teams work together with a complete view of every interaction to deliver exceptional experiences.</p>
+                
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-sky-50 text-sky-700 text-xs font-semibold">Lead Management</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-sky-50 text-sky-700 text-xs font-semibold">Sales Pipeline</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-sky-50 text-sky-700 text-xs font-semibold">Marketing Automation</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-sky-50 text-sky-700 text-xs font-semibold">Support</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- HRMS -->
+            <article id="txg-hrms" class="reveal group relative flex flex-col rounded-3xl border border-emerald-200/50 bg-white/70 backdrop-blur-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" style="scroll-margin-top: 100px;">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-900">TXG HRMS</h3>
+                </div>
+                <p class="text-base font-bold leading-tight text-slate-800 mb-4">Empower Your People with Smarter HR.</p>
+                <p class="text-sm font-normal leading-relaxed text-slate-600 mb-8">Streamline HR processes from recruitment and onboarding to attendance, leave, payroll integration, and employee engagement.</p>
+                
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold">Recruitment</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold">Attendance</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold">Payroll</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-xs font-semibold">Performance</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LMS -->
+            <article id="txg-lms" class="reveal group relative flex flex-col rounded-3xl border border-amber-200/50 bg-white/70 backdrop-blur-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300" style="scroll-margin-top: 100px;">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 text-amber-600">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-900">TXG LMS</h3>
+                </div>
+                <p class="text-base font-bold leading-tight text-slate-800 mb-4">Learning That Inspires Growth.</p>
+                <p class="text-sm font-normal leading-relaxed text-slate-600 mb-8">Make learning engaging and measurable. Create courses, track progress, issue certificates, and monitor performance from one platform.</p>
+                
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 text-xs font-semibold">Online Learning</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 text-xs font-semibold">Assessments</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 text-xs font-semibold">Certifications</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 text-xs font-semibold">Analytics</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <!-- AI -->
+            <article class="reveal group relative flex flex-col rounded-3xl border border-violet-200/50 bg-white/70 backdrop-blur-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-violet-100 text-violet-600">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-900">TXG AI</h3>
+                </div>
+                <p class="text-base font-bold leading-tight text-slate-800 mb-4">Artificial Intelligence That Works Alongside Your Team.</p>
+                <p class="text-sm font-normal leading-relaxed text-slate-600 mb-8">Bring practical AI into everyday operations. From AI assistants to workflow automation, help your teams save time and make faster decisions.</p>
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-violet-50 text-violet-700 text-xs font-semibold">AI Agents</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-violet-50 text-violet-700 text-xs font-semibold">Chatbots</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-violet-50 text-violet-700 text-xs font-semibold">Document Processing</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-violet-50 text-violet-700 text-xs font-semibold">Predictive Insights</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- BIM -->
+            <article class="reveal group relative flex flex-col rounded-3xl border border-slate-200/80 bg-white/70 backdrop-blur-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-slate-100 text-slate-600">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-900">TXG BIM</h3>
+                </div>
+                <p class="text-base font-bold leading-tight text-slate-800 mb-4">Digital Engineering Solutions for the Built Environment.</p>
+                <p class="text-sm font-normal leading-relaxed text-slate-600 mb-8">Automate design workflows, develop custom Revit plugins, manage BIM data, and improve project collaboration across construction and engineering.</p>
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-50 text-slate-700 text-xs font-semibold">BIM Automation</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-50 text-slate-700 text-xs font-semibold">Digital Twins</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-50 text-slate-700 text-xs font-semibold">Engineering Apps</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-50 text-slate-700 text-xs font-semibold">Cloud Collaboration</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Analytics -->
+            <article class="reveal group relative flex flex-col rounded-3xl border border-cyan-200/50 bg-white/70 backdrop-blur-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-900">TXG Analytics</h3>
+                </div>
+                <p class="text-base font-bold leading-tight text-slate-800 mb-4">Turn Business Data into Actionable Insights.</p>
+                <p class="text-sm font-normal leading-relaxed text-slate-600 mb-8">Bring together data from across your organisation into interactive dashboards. Monitor performance, identify opportunities, and make confident decisions.</p>
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-700 text-xs font-semibold">Dashboards</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-700 text-xs font-semibold">KPI Monitoring</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-700 text-xs font-semibold">Power BI Integration</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-700 text-xs font-semibold">Predictive Analytics</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Digital -->
+            <article class="reveal group relative flex flex-col rounded-3xl border border-rose-200/50 bg-white/70 backdrop-blur-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-rose-100 text-rose-600">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold tracking-tight text-slate-900">TXG Digital</h3>
+                </div>
+                <p class="text-base font-bold leading-tight text-slate-800 mb-4">Helping Your Business Get Found, Grow, and Convert.</p>
+                <p class="text-sm font-normal leading-relaxed text-slate-600 mb-8">Combine strategy, marketing technology, and automation to strengthen online presence, generate leads, and create connected customer experiences.</p>
+                <div class="mt-auto">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-semibold">SEO & AEO</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-semibold">Google Ads</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-semibold">Marketing Automation</span>
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-semibold">CRO</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-16 sm:py-24 relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-6 sm:px-12 lg:px-16 relative z-10">
+        <div class="reveal mx-auto max-w-3xl text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.15] tracking-tight text-slate-900">
+                Why Businesses Choose the TXG Product Suite
+            </h2>
+            <p class="mt-6 text-base sm:text-lg font-normal leading-relaxed text-slate-600">
+                Every product is built around the same guiding principles to ensure your success.
+            </p>
+        </div>
+
+        <div class="reveal grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Modular by Design -->
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 mt-1 flex items-center justify-center w-12 h-12 rounded-xl bg-red-50 text-[#EE314D] group-hover:bg-[#075da2] group-hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold tracking-tight text-slate-900 mb-2">Modular by Design</h3>
+                    <p class="text-sm font-normal leading-relaxed text-slate-600">Start with the solution you need today and expand seamlessly as your business grows.</p>
+                </div>
+            </div>
+
+            <!-- Seamlessly Connected -->
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 mt-1 flex items-center justify-center w-12 h-12 rounded-xl bg-red-50 text-[#EE314D] group-hover:bg-[#075da2] group-hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold tracking-tight text-slate-900 mb-2">Seamlessly Connected</h3>
+                    <p class="text-sm font-normal leading-relaxed text-slate-600">Our products integrate with each other and with your existing third-party applications.</p>
+                </div>
+            </div>
+
+            <!-- Built for Scale -->
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 mt-1 flex items-center justify-center w-12 h-12 rounded-xl bg-red-50 text-[#EE314D] group-hover:bg-[#075da2] group-hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold tracking-tight text-slate-900 mb-2">Built for Scale</h3>
+                    <p class="text-sm font-normal leading-relaxed text-slate-600">Whether you have ten users or ten thousand, our products are designed to grow alongside you.</p>
+                </div>
+            </div>
+
+            <!-- Enterprise-Grade Security -->
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 mt-1 flex items-center justify-center w-12 h-12 rounded-xl bg-red-50 text-[#EE314D] group-hover:bg-[#075da2] group-hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold tracking-tight text-slate-900 mb-2">Enterprise-Grade Security</h3>
+                    <p class="text-sm font-normal leading-relaxed text-slate-600">Protecting your business data is at the heart of every product we build.</p>
+                </div>
+            </div>
+
+            <!-- Deployment Options -->
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 mt-1 flex items-center justify-center w-12 h-12 rounded-xl bg-red-50 text-[#EE314D] group-hover:bg-[#075da2] group-hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold tracking-tight text-slate-900 mb-2">Flexible Deployment</h3>
+                    <p class="text-sm font-normal leading-relaxed text-slate-600">Choose from cloud, on-premises, or hybrid models to fit your business requirements.</p>
+                </div>
+            </div>
+
+            <!-- Ongoing Partnership -->
+            <div class="flex gap-4 group">
+                <div class="flex-shrink-0 mt-1 flex items-center justify-center w-12 h-12 rounded-xl bg-red-50 text-[#EE314D] group-hover:bg-[#075da2] group-hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold tracking-tight text-slate-900 mb-2">Ongoing Partnership</h3>
+                    <p class="text-sm font-normal leading-relaxed text-slate-600">Implementation is just the beginning. We continue to support and enhance your solutions.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reveal mt-20 rounded-3xl bg-[#faf8fe] border border-blue-100/50 p-8 sm:p-12">
+            <div class="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-[1fr_auto]">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">Need Something More Tailored?</h2>
+                    <p class="mt-4 text-base font-normal leading-relaxed text-slate-600">Every organisation has its own processes. If one of our products doesn't meet every requirement, we can customise it or develop additional functionality. Our product engineering team can build a completely bespoke solution leveraging the strength of the TXG platform.</p>
+                </div>
+                <a href="{% url 'master:contact' %}#contact-hub" class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#075da2] px-8 py-3.5 text-sm font-bold tracking-wide text-white transition-all hover:bg-[#043a66] hover:shadow-lg hover:shadow-red-500/30">
+                    <span class="mr-2">Talk to Our Team</span>
+                    <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="relative overflow-hidden bg-gradient-to-br from-[#075da2] to-blue-900 py-20 sm:py-24">
+    <!-- Ambient Background Effects -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-4xl px-6 text-center sm:px-12">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-6">Let's Find the Right Solution for Your Business</h2>
+        <div class="mx-auto max-w-3xl space-y-4 text-base sm:text-lg font-medium leading-relaxed text-blue-100 mb-10">
+            <p>Whether you're looking for an enterprise ERP, a modern CRM, AI-powered automation, engineering solutions, business intelligence, or a complete digital transformation platform, we'll help you identify the right combination of products to support your goals.</p>
+            <p>Let's explore how the TXG Product Suite can help your business become more connected, more efficient, and ready for the future.</p>
+        </div>
+        
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+            <!-- Primary CTA -->
+            <a href="{% url 'master:contact' %}#contact-hub" class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-8 py-4 text-sm font-bold tracking-wide text-[#075da2] shadow-lg transition-all hover:bg-gray-50 hover:shadow-xl hover:shadow-blue-900/50">
+                <span class="mr-2 uppercase">Book a Product Demo</span>
+                <svg class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+            
+            <!-- Secondary CTA -->
+            <a href="mailto:business@tecnolynx.com" class="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/5 backdrop-blur-sm px-8 py-4 text-sm font-bold tracking-wide text-white transition-all hover:bg-white/10 hover:border-white/50 uppercase">
+                Speak with a Product Specialist
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="bg-[#faf8fe] py-16 sm:py-24 relative overflow-hidden border-t border-slate-200/60">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 lg:px-20">
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight mb-2">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <!-- Flush Accordion Stack -->
+        <div class="max-w-4xl mx-auto divide-y divide-gray-200/80 border-y border-gray-200/80 reveal">
+            <!-- FAQ 1 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" open>
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Can I start with just one product?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Absolutely. Each TXG product is designed to operate independently while offering the flexibility to integrate with the rest of the product suite as your needs grow.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 2 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Can your products integrate with our existing systems?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Yes. We regularly integrate with accounting software, ERP platforms, CRM systems, HR applications, payment gateways, cloud services, and other third-party solutions.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 3 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Do you offer cloud and on-premises deployment?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Yes. Depending on your business and compliance requirements, our products can be deployed in the cloud, on-premises, or in a hybrid environment.
+                    </p>
+                </div>
+            </details>
+
+            <!-- FAQ 4 -->
+            <details class="group py-4 sm:py-5 transition-colors" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary class="flex items-center justify-between cursor-pointer list-none select-none text-base sm:text-lg lg:text-xl font-bold text-[#0f172a] hover:text-[#075da2] transition-colors py-2" itemprop="name">
+                    <span class="pr-4 sm:pr-6">Can the products be customised?</span>
+                    <span class="w-8 h-8 rounded-full bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#075da2] group-open:rotate-180 group-open:bg-[#075da2] group-open:text-white transition-all duration-300 flex-shrink-0">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </span>
+                </summary>
+                <div class="pt-2 sm:pt-3 pb-2 pr-6 sm:pr-12" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed font-medium" itemprop="text">
+                        Yes. Every organisation works differently. Our products are designed to be configurable and extensible, allowing us to tailor workflows, reports, dashboards, and integrations to suit your business.
+                    </p>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+
+
+
+<script>
+  // Center the hash-targeted product card in the viewport after page load
+  (function () {
+    function centerHashTarget() {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const el = document.querySelector(hash);
+      if (!el) return;
+      // Small delay to let reveal animations and layout settle
+      setTimeout(function () {
+        const elRect = el.getBoundingClientRect();
+        const elHeight = elRect.height;
+        const windowHeight = window.innerHeight;
+        const navbarHeight = 80; // approximate fixed navbar height
+        const availableHeight = windowHeight - navbarHeight;
+        // How much to offset from the top so the card is centered in available space
+        const offsetToCenter = navbarHeight + (availableHeight / 2) - (elHeight / 2);
+        const scrollTop = window.pageYOffset + elRect.top - offsetToCenter;
+        window.scrollTo({ top: Math.max(0, scrollTop), behavior: 'smooth' });
+      }, 120);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', centerHashTarget);
+    } else {
+      centerHashTarget();
+    }
+  })();
+</script>
+
+
+{% endblock %}

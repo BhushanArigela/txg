@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Page Not Found (404) | Tecnolynx{% endblock %}
+{% block meta_description %}The requested page could not be found on Tecnolynx. Explore our custom software development services or return to the homepage.{% endblock %}
+
+{% block content %}
+<section class="min-h-[85vh] pt-32 pb-20 bg-gradient-to-b from-blue-50/60 via-white to-sky-50/40 relative overflow-hidden flex items-center">
+    <!-- Ambient Backdrop Lighting -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-300/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-sky-300/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 text-center">
+        <!-- 404 Big Decorative Badge -->
+        <div class="inline-flex flex-col items-center mb-6 reveal">
+            <div class="relative">
+                <span class="text-8xl sm:text-9xl lg:text-[12rem] font-black tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-[#075da2] to-[#0b75cd] select-none drop-shadow-sm">
+                    404
+                </span>
+                <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-blue-500 to-sky-600 rounded-full opacity-80 blur-xs"></div>
+            </div>
+        </div>
+
+        <!-- Headline & Copy -->
+        <div class="max-w-2xl mx-auto space-y-4 mb-10 reveal">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#075da2] text-xs sm:text-sm font-bold tracking-wide">
+                <span class="w-2 h-2 rounded-full bg-[#EE314D] animate-pulse"></span>
+                Page Not Found
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                Oops! We Couldn't Find That Page
+            </h1>
+            <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
+                The URL you requested might have been moved, renamed, or no longer exists. Let's get you back on the right path.
+            </p>
+        </div>
+
+        <!-- Primary Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 reveal">
+            <a href="{% url 'master:home' %}" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-2xl text-white bg-[#EE314D] hover:bg-[#d42640] transition-all duration-300 shadow-lg shadow-red-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Return to Homepage
+            </a>
+            <a href="{% url 'master:contact' %}#contact-hub" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-2xl text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 hover:text-[#EE314D] hover:border-blue-200 transition-all duration-300 shadow-sm hover:-translate-y-0.5">
+                <svg class="w-5 h-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                Contact Support
+            </a>
+        </div>
+
+        <!-- Quick Navigation Cards -->
+        <div class="border-t border-slate-200/80 pt-12 max-w-4xl mx-auto">
+            <h2 class="text-xs font-bold text-slate-600 uppercase tracking-widest mb-6">Or explore our core sections</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-left">
+                
+                <a href="{% url 'master:services' %}" class="group p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-blue-300 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-red-50 text-[#EE314D] flex items-center justify-center mb-3 group-hover:bg-[#075da2] group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-900 group-hover:text-[#EE314D] transition-colors">Our Services</span>
+                </a>
+
+                <a href="{% url 'master:products' %}" class="group p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-blue-300 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Products & ERP</span>
+                </a>
+
+                <a href="{% url 'master:technologies' %}" class="group p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-blue-300 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center mb-3 group-hover:bg-sky-600 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-900 group-hover:text-sky-700 transition-colors">Tech Hub</span>
+                </a>
+
+                <a href="{% url 'master:sitemap' %}" class="group p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-blue-300 hover:shadow-md transition-all duration-300 flex flex-col justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center mb-3 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </div>
+                    <span class="text-sm font-bold text-slate-900 group-hover:text-amber-700 transition-colors">Site Directory</span>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

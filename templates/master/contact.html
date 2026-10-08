@@ -1,0 +1,827 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Tecnolynx",
+    "description": "Get in touch with Tecnolynx for Custom Software Development, Technology Consulting, Enterprise Software, and Digital Solutions.",
+    "url": "{{ request.scheme }}://{{ request.get_host }}{% url 'master:contact' %}",
+    "mainEntity": {
+        "@type": "LocalBusiness",
+        "name": "Tecnolynx",
+        "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.webp' %}",
+        "telephone": "+919441577676",
+        "email": "business@tecnolynx.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "TecnolynxGlobal Pvt. Ltd., 7th Floor, Fairmount Downtown, X Road, Doolapally Rd, Devender Colony, Kompally",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500014",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 17.4432,
+            "longitude": 78.4672
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        "priceRange": "$$"
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How can I contact Tecnolynx?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can contact Tecnolynx by calling +91 9441577676, emailing business@tecnolynx.com, or filling out the contact form on our website. Our India HQ is located at TecnolynxGlobal Pvt Ltd, 7th Floor, Fairmount Downtown, X Road, Doolapally Rd, Devender Colony, Kompally, Hyderabad, Telangana 500014."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is Tecnolynx's typical response time?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our Technology Consulting team responds to all inquiries within 24 hours on business days. For urgent matters, you can call us directly at +91 9441577676 for immediate assistance."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you work with clients outside India?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We provide Custom Software, Artificial Intelligence, and Digital Transformation solutions to startups, growing businesses, and enterprises globally."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How soon can we start?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We aim to begin discovery as soon as possible. After our initial discussion, we'll provide a clear timeline for planning, development, and delivery."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you sign Non-Disclosure Agreements (NDAs)?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. We understand that projects involve confidential ideas and proprietary AI models or business workflows. We're happy to sign an NDA before discussing project details."
+            }
+        }
+    ]
+}
+</script>
+
+<style>
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- =========================================================================
+     1. HERO SECTION
+   ========================================================================= -->
+<section class="relative flex items-center justify-center pt-24 sm:pt-28 lg:pt-32 pb-4 sm:pb-6 lg:pb-6 bg-white text-slate-900 overflow-hidden border-b border-slate-200/80">
+    <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
+    <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
+
+    <!-- Subtle Primary Blue Spotlight Glow Behind Headline -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[450px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none z-[1] opacity-35" 
+         style="background: radial-gradient(circle, rgba(7,93,162,0.5) 0%, rgba(11,117,205,0.25) 45%, rgba(56,189,248,0.1) 70%, transparent 100%);"></div>
+
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        {% if source %}
+        <!-- CONCEPT: INFOGRAPHIC TIMELINE -->
+        <div class="max-w-5xl mx-auto space-y-6 reveal relative z-10 pt-3 pb-2">            
+            <!-- 1. Header Section -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="md:w-3/5 space-y-5 text-center md:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
+                        You found us!
+                    </h1>
+                    <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
+                        We are so glad you found your way and we love that you peeked behind the curtain to see who crafted the digital experience you just explored.
+                    </p>
+                </div>
+                <div class="md:w-2/5 flex justify-center md:justify-end">
+                    <!-- Header Image -->
+                    <div class="w-64 h-64 sm:w-42 sm:h-42 rounded-3xl overflow-hidden shadow-sm border border-slate-200/80 bg-slate-50 flex items-center justify-center">
+                        <img src="{% static 'img/contact.webp' %}" alt="Contact Tecnolynx" class="w-full h-full object-cover rounded-3xl" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Reasons Grid (Single Row) -->
+            <div class="pt-2 sm:pt-2 pb-2 my-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                    <!-- Point 1: Design -->
+                    <div class="flex flex-col items-center text-center space-y-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-blue-300">
+                            <div class="w-12 h-9 sm:w-14 sm:h-10 border-2 border-slate-700 rounded-md bg-white flex flex-col overflow-hidden">
+                                <div class="w-full h-2.5 sm:h-3 border-b-2 border-slate-700 flex items-center px-1 gap-1">
+                                    <div class="w-1 h-1 bg-slate-700 rounded-full"></div>
+                                    <div class="w-1 h-1 bg-slate-700 rounded-full"></div>
+                                </div>
+                                <div class="flex-1 flex items-center justify-center">
+                                     <svg class="w-4 h-4 sm:w-5 sm:h-5 text-sky-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed max-w-xs">
+                            Whether you're here because <br><span class="text-[#075da2] font-black text-base sm:text-lg">you loved the design,</span>
+                        </p>
+                    </div>
+
+                    <!-- Point 2: Tech Partner -->
+                    <div class="flex flex-col items-center text-center space-y-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-amber-300">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed max-w-xs">
+                            are looking for a <br><span class="text-[#075da2] font-black text-base sm:text-lg">creative/technology partner,</span>
+                        </p>
+                    </div>
+
+                    <!-- Point 3: Web Wanderers -->
+                    <div class="flex flex-col items-center text-center space-y-3 group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-md group-hover:border-emerald-300">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base leading-relaxed max-w-xs">
+                            or simply love wandering <br><span class="text-[#075da2] font-black text-base sm:text-lg">through the corners of the web,</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sleek Separator Line -->
+            <div class="w-full my-6 border-t border-dashed border-slate-300/80 max-w-4xl mx-auto"></div>
+
+            <!-- 3. Action Grid Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center pt-4 relative">
+                
+                <!-- Subtle dividers between columns on desktop -->
+                <div class="hidden md:block absolute left-1/3 top-2 bottom-2 w-px border-l-2 border-dashed border-slate-300"></div>
+                <div class="hidden md:block absolute right-1/3 top-2 bottom-2 w-px border-l-2 border-dashed border-slate-300"></div>
+
+                <!-- Coffee -->
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="w-20 h-16 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-orange-500" viewBox="0 0 24 24" fill="currentColor"><path d="M20 8h-3V4H3c-.55 0-1 .45-1 1v9c0 2.76 2.24 5 5 5h6c2.76 0 5-2.24 5-5v-1h2c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-2 5h-2V6h2v7zM4 6h11v7H4V6z"/></svg>
+                        </div>
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 flex justify-between gap-1 opacity-60">
+                            <div class="w-0.5 h-3 bg-slate-400 rounded-full animate-[pulse_1.5s_infinite]"></div>
+                            <div class="w-0.5 h-4 bg-slate-400 rounded-full animate-[pulse_1.5s_0.5s_infinite]"></div>
+                            <div class="w-0.5 h-3 bg-slate-400 rounded-full animate-[pulse_1.5s_1s_infinite]"></div>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 font-medium text-sm sm:text-base leading-relaxed">
+                        <strong class="text-slate-900 font-black">Grab a cup of coffee,</strong><br>take a look around<br><span class="text-[#075da2] font-bold">our portfolio,</span>
+                    </p>
+                </div>
+                
+                <!-- Chat -->
+                <div class="flex flex-col items-center space-y-3">
+                    <div class="w-20 h-16 flex items-center justify-center relative">
+                        <svg class="w-12 h-12 text-[#075da2]" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                        <svg class="w-10 h-10 text-sky-200 absolute bottom-1 right-2" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                    </div>
+                    <p class="text-slate-700 font-medium text-sm sm:text-base leading-relaxed">
+                        <strong class="text-slate-900 font-black">and let's start</strong><br><span class="text-[#075da2] font-bold">a conversation.</span>
+                    </p>
+                    <a href="#contact-hub" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#EE314D] hover:bg-[#d62841] text-white font-bold text-xs transition-all shadow-sm hover:shadow hover:-translate-y-0.5 mt-1">
+                        <span>Send Message</span>
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
+                    </a>
+                </div>
+
+                <!-- Email/Social -->
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="w-20 h-16 flex items-center justify-center relative">
+                        <svg class="w-14 h-14 text-slate-100" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/></svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm">
+                                <span class="text-[#EE314D] font-bold text-lg leading-none">@</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 font-medium text-sm sm:text-base leading-relaxed">
+                        You can drop us a line anytime at<br>
+                        <a href="mailto:letsconnect@tecnolynx.com" class="text-[#EE314D] font-bold hover:underline transition-colors">letsconnect@tecnolynx.com</a>
+                    </p>
+                    <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+                        <span class="text-slate-700 font-medium text-sm sm:text-base">or connect with us:</span>
+                        <div class="inline-flex items-center gap-2 ml-1">
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/people/TecnolynxGlobal-Pvt-Ltd/100077144360706/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook" class="w-7 h-7 rounded-full bg-[#075da2] hover:bg-slate-800 flex items-center justify-center text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <!-- X -->
+                            <a href="https://x.com/tecnolynxglobal" target="_blank" rel="noopener noreferrer nofollow" aria-label="X" class="w-7 h-7 rounded-full bg-[#075da2] hover:bg-slate-800 flex items-center justify-center text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/company/tecnolynx/posts/?feedView=all" target="_blank" rel="noopener noreferrer nofollow" aria-label="LinkedIn" class="w-7 h-7 rounded-full bg-[#075da2] hover:bg-slate-800 flex items-center justify-center text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/tecnolynxglobal/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram" class="w-7 h-7 rounded-full bg-[#075da2] hover:bg-slate-800 flex items-center justify-center text-white transition-all">
+                                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.46 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Signature -->
+            <div class="pb-2 pt-4 text-center">
+                <p class="font-serif italic text-lg sm:text-xl text-slate-700 font-medium">
+                    Thanks for stopping by, we hope you stay a while 😊
+                </p>
+            </div>
+            
+        </div>
+        {% else %}
+        <!-- STANDARD HERO SECTION -->
+        <div class="max-w-3xl mx-auto text-center space-y-4 reveal">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#075da2] font-extrabold text-xs sm:text-sm tracking-widest uppercase shadow-sm mx-auto">
+                <svg class="w-4 h-4 text-[#EE314D]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                <span>Get In Touch</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.08]">
+                Let's Build Something <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#075da2] to-[#0b75cd]">Great Together</span>
+            </h1>
+
+            <p class="text-slate-600 font-medium text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Every successful project starts with a conversation. Share your goals with us, and we'll help you explore the best technical path forward.
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- =========================================================================
+     2. CONTACT FORM & WAYS TO REACH US
+   ========================================================================= -->
+<section id="contact-hub" class="relative pt-10 pb-16 sm:pt-14 sm:pb-24 bg-white text-slate-900 border-b border-slate-200/80 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+        <!-- Contact Hub Grid (Ways to Reach Us + Form) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+            
+            <!-- Contact Information (Left Column) -->
+            <div class="lg:col-span-5 space-y-6 reveal">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm space-y-6">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                            Ways to Reach Us
+                        </h2>
+                        <p class="text-slate-600 font-medium text-sm sm:text-base mt-2">
+                            We'd love to hear from you. Choose your preferred way to connect with our team.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+                        <!-- Visit Our Office -->
+                        <div class="flex items-start gap-4 p-4.5 rounded-2xl bg-slate-50 border border-slate-200/60 hover:border-blue-300 transition-colors group">
+                            <div class="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center text-[#075da2] flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V11m0 0h4m-4 0H7" /></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-0.5">Visit Our Office</h3>
+                                <p class="text-base font-bold text-slate-900">TecnolynxGlobal Pvt. Ltd.</p>
+                                <p class="text-xs sm:text-sm text-slate-600 font-medium">7th Floor, Fairmount Downtown, X Road, Doolapally Rd, Devender Colony, Kompally,</p>
+                                <p class="text-xs sm:text-sm text-slate-600 font-medium">Hyderabad, Telangana, India – 500014</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-4 p-4.5 rounded-2xl bg-slate-50 border border-slate-200/60 hover:border-blue-300 transition-colors group">
+                            <div class="w-11 h-11 bg-sky-50 rounded-xl flex items-center justify-center text-sky-600 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-0.5">Email</h3>
+                                <a href="mailto:business@tecnolynx.com" class="text-base sm:text-lg text-slate-900 font-bold hover:text-[#EE314D] transition-colors">business@tecnolynx.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4 p-4.5 rounded-2xl bg-slate-50 border border-slate-200/60 hover:border-blue-300 transition-colors group">
+                            <div class="w-11 h-11 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-0.5">Phone</h3>
+                                <a href="tel:+919441577676" class="text-base sm:text-lg text-slate-900 font-bold hover:text-[#EE314D] transition-colors">+91 9441577676</a>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours -->
+                        <div class="flex items-start gap-4 p-4.5 rounded-2xl bg-slate-50 border border-slate-200/60 hover:border-blue-300 transition-colors group">
+                            <div class="w-11 h-11 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600 flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-0.5">Business Hours</h3>
+                                <p class="text-xs sm:text-sm text-slate-900 font-bold">Monday – Friday: 9:30 AM – 6:30 PM (IST)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form (Right Column) -->
+            <div class="lg:col-span-7 reveal">
+                <div class="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-slate-200/80 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-[#075da2]"></div>
+                    
+                    <form id="contact-form" action="#" method="POST" class="space-y-6">
+                        {% csrf_token %}
+                        <div id="form-messages" class="hidden p-4 mb-4 rounded-xl text-sm font-medium"></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="first_name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">First Name</label>
+                                <input type="text" name="first_name" id="first_name" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-base text-slate-900 placeholder-slate-400 font-medium" placeholder="John" required>
+                            </div>
+                            <div>
+                                <label for="last_name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Last Name</label>
+                                <input type="text" name="last_name" id="last_name" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-base text-slate-900 placeholder-slate-400 font-medium" placeholder="Doe" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Email Address</label>
+                                <input type="email" name="email" id="email" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-base text-slate-900 placeholder-slate-400 font-medium" placeholder="john@company.com">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Phone Number</label>
+                                <input type="tel" name="phone" id="phone" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-base text-slate-900 placeholder-slate-400 font-medium" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject_select" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Subject</label>
+                            <select id="subject_select" name="subject_select" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-base text-slate-900 font-medium" required>
+                                <option value="" disabled selected hidden>How can we help you?</option>
+                                <option value="Build Something New">Build Something New</option>
+                                <option value="Modernize Existing Software">Modernize Existing Software</option>
+                                <option value="Exploring Artificial Intelligence">Exploring Artificial Intelligence</option>
+                                <option value="Dedicated Technology Partner">Dedicated Technology Partner</option>
+                                <option value="BIM or Engineering Expertise">BIM or Engineering Expertise</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div id="custom_subject_div" class="hidden">
+                            <label for="custom_subject" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Please specify</label>
+                            <input type="text" name="custom_subject" id="custom_subject" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-base text-slate-900 placeholder-slate-400 font-medium" placeholder="Your inquiry subject">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors text-base text-slate-900 placeholder-slate-400 font-medium resize-none" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+
+                        <div id="my-turnstile"></div>
+
+                        <button type="submit" id="submit-btn" disabled class="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-black rounded-2xl text-white bg-gray-400 cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 shadow-md transition-all duration-200 group">
+                            <span id="btn-text">Complete verification to send</span>
+                            <svg id="btn-icon" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                            <svg id="btn-spinner" class="ml-2 w-5 h-5 animate-spin hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     2. HOW CAN WE HELP? SECTION
+   ========================================================================= -->
+<section id="how-can-we-help" class="relative py-20 sm:py-32 bg-white text-slate-900 border-b border-slate-200/80 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+            <!-- Sticky Header -->
+            <div class="lg:col-span-5 lg:sticky lg:top-32 self-start space-y-6 reveal">
+                <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#EE314D] text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                    <span>Tailored Support</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    How Can We Help?
+                </h2>
+                <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed max-w-md">
+                    Every enquiry is different, and we're happy to meet you wherever you are in your journey. We adapt our expertise to your specific needs.
+                </p>
+            </div>
+            
+            <!-- List -->
+            <div class="lg:col-span-7 space-y-8 sm:space-y-12 reveal">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 group">
+                    <div class="shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-50 border border-slate-200/80 text-slate-400 group-hover:bg-blue-50 group-hover:text-[#EE314D] group-hover:border-blue-200 flex items-center justify-center font-black text-xl sm:text-2xl transition-all">01</div>
+                    <div class="space-y-3 pt-1 sm:pt-2">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">I'm Looking to Build Something New</h3>
+                        <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                            Have an idea for a web application, mobile app, SaaS platform, or custom software? Let's explore how we can turn your vision into reality with modern technologies.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="w-full h-px bg-slate-100"></div>
+
+                <!-- Item 2 -->
+                <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 group">
+                    <div class="shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-50 border border-slate-200/80 text-slate-400 group-hover:bg-blue-50 group-hover:text-[#EE314D] group-hover:border-blue-200 flex items-center justify-center font-black text-xl sm:text-2xl transition-all">02</div>
+                    <div class="space-y-3 pt-1 sm:pt-2">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">I Want to Modernize Existing Software</h3>
+                        <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                            If your current systems are slowing your business down, we can help you improve performance, enhance user experience, or migrate to modern platforms.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="w-full h-px bg-slate-100"></div>
+
+                <!-- Item 3 -->
+                <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 group">
+                    <div class="shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-50 border border-slate-200/80 text-slate-400 group-hover:bg-blue-50 group-hover:text-[#EE314D] group-hover:border-blue-200 flex items-center justify-center font-black text-xl sm:text-2xl transition-all">03</div>
+                    <div class="space-y-3 pt-1 sm:pt-2">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">I Need a Dedicated Technology Partner</h3>
+                        <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                            Whether you need a dedicated development team, ongoing support, or long-term product development, we become an extension of your business.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     3. WHAT HAPPENS NEXT? SECTION
+   ========================================================================= -->
+<section id="what-happens-next" class="relative py-20 sm:py-32 bg-slate-50 text-slate-900 border-b border-slate-200/80 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="text-center space-y-4 mb-16 sm:mb-20 reveal">
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-[#EE314D] text-xs sm:text-sm font-extrabold tracking-widest uppercase shadow-sm mx-auto">
+                <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                <span>Our Process</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                What Happens Next?
+            </h2>
+            <p class="text-slate-600 font-medium text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                We believe the first conversation should be simple and focused on understanding your needs.
+            </p>
+        </div>
+
+        <div class="relative reveal">
+            <!-- Timeline Connecting Line (Desktop) -->
+            <div class="hidden lg:block absolute top-6 left-12 right-12 h-0.5 bg-blue-200/80 -translate-y-1/2 z-0"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 relative z-10">
+                <!-- Step 1 -->
+                <div class="space-y-5 group">
+                    <div class="w-12 h-12 rounded-2xl bg-[#075da2] text-white font-black text-lg flex items-center justify-center ring-8 ring-slate-50 shadow-md group-hover:scale-110 transition-transform">
+                        01
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">Tell Us About Your Business</h3>
+                        <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                            Share your goals, challenges, or project idea using our contact form or by reaching out directly.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="space-y-5 group">
+                    <div class="w-12 h-12 rounded-2xl bg-[#075da2] text-white font-black text-lg flex items-center justify-center ring-8 ring-slate-50 shadow-md group-hover:scale-110 transition-transform">
+                        02
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">Discovery Conversation</h3>
+                        <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                            One of our consultants will get in touch to understand your business and discuss solutions.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="space-y-5 group">
+                    <div class="w-12 h-12 rounded-2xl bg-[#075da2] text-white font-black text-lg flex items-center justify-center ring-8 ring-slate-50 shadow-md group-hover:scale-110 transition-transform">
+                        03
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">Solution & Proposal</h3>
+                        <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                            We'll prepare a tailored proposal outlining the approach, timeline, and estimated investment.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="space-y-5 group">
+                    <div class="w-12 h-12 rounded-2xl bg-[#075da2] text-white font-black text-lg flex items-center justify-center ring-8 ring-slate-50 shadow-md group-hover:scale-110 transition-transform">
+                        04
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">Let's Build Together</h3>
+                        <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                            Once you're ready, we'll assemble the right team and begin turning your ideas into reality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     4. FREQUENTLY ASKED QUESTIONS SECTION
+   ========================================================================= -->
+<section id="faq-contact" class="relative py-20 sm:py-32 bg-slate-50 text-slate-900 border-b border-slate-200/80 scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-6 sm:px-12 relative z-10">
+        
+        <div class="text-center space-y-6 mb-16 sm:mb-20 reveal">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                Frequently Asked Questions
+            </h2>
+        </div>
+
+        <div class="space-y-0 divide-y divide-slate-200/80 border-t border-b border-slate-200/80 reveal">
+            <!-- FAQ 1 -->
+            <div class="py-8 space-y-4">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Do you work with clients outside India?</h3>
+                <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed max-w-3xl">
+                    Yes. We work with startups, growing businesses, and enterprises across multiple countries. Our team collaborates remotely using modern tools to ensure a seamless experience.
+                </p>
+            </div>
+            
+            <!-- FAQ 2 -->
+            <div class="py-8 space-y-4">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900">How soon can we start?</h3>
+                <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed max-w-3xl">
+                    We aim to begin discovery as soon as possible. After our initial discussion, we'll provide a clear timeline for planning, development, and delivery.
+                </p>
+            </div>
+            
+            <!-- FAQ 3 -->
+            <div class="py-8 space-y-4">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900">Do you sign Non-Disclosure Agreements (NDAs)?</h3>
+                <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed max-w-3xl">
+                    Absolutely. We understand that projects involve confidential ideas. We're happy to sign an NDA before discussing project details.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================================
+     5. VALUE PROP & FINAL CTA SECTION
+   ========================================================================= -->
+<section id="start-conversation-cta" class="relative py-20 sm:py-32 bg-white text-slate-900 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
+        
+        <div class="bg-blue-50 rounded-[2.5rem] p-10 sm:p-16 lg:p-20 text-center space-y-8 reveal relative overflow-hidden border border-blue-100/50">
+            <!-- Decorative blur -->
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-200/50 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-sky-200/50 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-3xl mx-auto space-y-8">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.1]">
+                    Let's Build Something <br/>
+                    <span class="text-[#075da2]">Meaningful Together.</span>
+                </h2>
+                
+                <p class="text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+                    Choosing a technology partner is about more than technical expertise. It's about finding a team that listens, communicates clearly, and genuinely cares about helping your business succeed.
+                </p>
+
+                <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                    <a href="#contact-form" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#EE314D] hover:bg-[#d42640] text-white font-black text-base sm:text-lg shadow-[0_10px_25px_rgba(7,93,162,0.25)] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2.5 group">
+                        <span>Book a Free Consultation</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+<script>
+let turnstileWidgetId;
+let turnstileToken = null;
+
+function enableSubmitButton() {
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('bg-gray-400', 'cursor-not-allowed');
+        submitBtn.classList.add('bg-[#075da2]', 'hover:bg-[#043a66]', 'hover:shadow-lg');
+        btnText.textContent = 'Send Message';
+        btnIcon.classList.remove('hidden');
+    }
+}
+
+function disableSubmitButton() {
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const btnSpinner = document.getElementById('btn-spinner');
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.remove('bg-[#075da2]', 'hover:bg-[#043a66]', 'hover:shadow-lg');
+        submitBtn.classList.add('bg-gray-400', 'cursor-not-allowed');
+        btnText.textContent = 'Complete verification to send';
+        btnIcon.classList.add('hidden');
+        btnSpinner.classList.add('hidden');
+    }
+    turnstileToken = null;
+}
+
+window.onloadTurnstileCallback = function() {
+    turnstileWidgetId = turnstile.render('#my-turnstile', {
+        sitekey: '{{ turnstile_sitekey }}',
+        appearance: 'always',
+        callback: function(token) {
+            turnstileToken = token;
+            enableSubmitButton();
+        },
+        'expired-callback': function() {
+            disableSubmitButton();
+        },
+        'error-callback': function() {
+            disableSubmitButton();
+            const formMessages = document.getElementById('form-messages');
+            if (formMessages) {
+                formMessages.classList.remove('hidden');
+                formMessages.className = 'p-4 mb-4 rounded-xl text-sm font-medium bg-red-50 text-red-800 border border-red-200';
+                formMessages.textContent = 'Security verification failed. Please try again.';
+            }
+            return true;
+        }
+    });
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const formMessages = document.getElementById('form-messages');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const subjectSelect = document.getElementById('subject_select');
+    const customSubjectDiv = document.getElementById('custom_subject_div');
+    const customSubjectInput = document.getElementById('custom_subject');
+
+    if (subjectSelect) {
+        subjectSelect.addEventListener('change', function() {
+            if (this.value === 'other') {
+                customSubjectDiv.classList.remove('hidden');
+                customSubjectInput.setAttribute('required', 'required');
+            } else {
+                customSubjectDiv.classList.add('hidden');
+                customSubjectInput.removeAttribute('required');
+                customSubjectInput.value = '';
+            }
+        });
+    }
+
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (!turnstileToken) {
+                formMessages.classList.remove('hidden');
+                formMessages.className = 'p-4 mb-4 rounded-xl text-sm font-medium bg-yellow-50 text-yellow-800 border border-yellow-200';
+                formMessages.textContent = 'Please complete the security verification first.';
+                return;
+            }
+            
+            // UI Loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending...';
+            btnIcon.classList.add('hidden');
+            btnSpinner.classList.remove('hidden');
+            formMessages.classList.add('hidden');
+            formMessages.className = 'hidden p-4 mb-4 rounded-xl text-sm font-medium';
+            
+            // Gather data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Handle custom subject logic
+            if (data.subject_select === 'other') {
+                data.subject = data.custom_subject;
+            } else {
+                data.subject = data.subject_select;
+            }
+            delete data.subject_select;
+            delete data.custom_subject;
+            
+            // Add the turnstile token
+            data['cf-turnstile-response'] = turnstileToken;
+            
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            
+            fetch('{% url "master:api_contact_submit" %}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json().then(data => ({ status: response.status, body: data })))
+            .then(res => {
+                const { status, body } = res;
+                formMessages.classList.remove('hidden');
+                
+                if (status === 200 && body.success) {
+                    formMessages.classList.add('bg-green-50', 'text-green-800', 'border', 'border-green-200');
+                    formMessages.textContent = body.message;
+                    form.reset();
+                    // Reset turnstile and disable button for next submission
+                    if(window.turnstile) { turnstile.reset(turnstileWidgetId); }
+                    disableSubmitButton();
+                } else {
+                    formMessages.classList.add('bg-red-50', 'text-red-800', 'border', 'border-red-200');
+                    let errorText = body.message || 'An error occurred. Please try again.';
+                    if (body.errors) {
+                        const firstError = Object.values(body.errors)[0];
+                        if (firstError) { errorText += ' ' + firstError; }
+                    }
+                    formMessages.textContent = errorText;
+                    // Reset turnstile and disable button so user must re-verify
+                    if(window.turnstile) { turnstile.reset(turnstileWidgetId); }
+                    disableSubmitButton();
+                }
+            })
+            .catch(error => {
+                formMessages.classList.remove('hidden');
+                formMessages.classList.add('bg-red-50', 'text-red-800', 'border', 'border-red-200');
+                formMessages.textContent = 'A network error occurred. Please try again.';
+                if(window.turnstile) { turnstile.reset(turnstileWidgetId); }
+                disableSubmitButton();
+            })
+            .finally(() => {
+                btnSpinner.classList.add('hidden');
+            });
+        });
+    }
+
+    if (window.location.hash === '#contact-hub') {
+        const contactHub = document.getElementById('contact-hub');
+        if (contactHub) {
+            setTimeout(() => {
+                contactHub.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+    }
+});
+</script>
+
+
+{% endblock %}

@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<!-- Privacy Policy Hero Section -->
+<section class="relative min-h-[60vh] flex items-center justify-center bg-white text-slate-900 pt-32 pb-16 sm:pt-40 sm:pb-20 lg:pt-44 lg:pb-20 overflow-hidden">
+    <!-- Particles.js Background Canvas (Masked in center to keep text clean, visible on sides/top/bottom) -->
+    <div id="particles-js" class="absolute inset-0 z-[2] pointer-events-auto" style="mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%); -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 45%, transparent 30%, black 75%);"></div>
+
+    <!-- Subtle Primary Blue Spotlight Glow Behind Headline -->
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-[750px] sm:w-[900px] h-[450px] rounded-full blur-[90px] sm:blur-[110px] pointer-events-none z-[1] opacity-35" 
+         style="background: radial-gradient(circle, rgba(7,93,162,0.5) 0%, rgba(11,117,205,0.25) 45%, rgba(56,189,248,0.1) 70%, transparent 100%);"></div>
+
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 text-center">
+        <!-- Breadcrumb -->
+        <nav class="flex justify-center mb-6 text-sm text-slate-600" aria-label="Breadcrumb">
+            <a href="{% url 'master:home' %}" class="hover:text-slate-900 transition-colors">Home</a>
+            <span class="mx-2 text-gray-400" aria-hidden="true">/</span>
+            <span class="text-[#075da2] font-bold" aria-current="page">Privacy Policy</span>
+        </nav>
+        
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 text-slate-900">
+            Privacy <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#075da2] to-[#0b75cd]">Policy</span>
+        </h1>
+        
+        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-6">
+            This privacy statement describes what personal information about you Tecnolynx gathers and how we use it.
+        </p>
+
+        <div class="inline-flex items-center space-x-2 bg-blue-50/90 backdrop-blur-md px-4 py-2 rounded-full border border-blue-200/80 text-xs sm:text-sm text-slate-700 font-medium shadow-sm">
+            <svg class="w-4 h-4 text-[#EE314D] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>Last updated on: <time datetime="2026-08-03" class="font-bold text-[#075da2]">03/08/2026</time></span>
+        </div>
+    </div>
+</section>
+
+<!-- Content Container -->
+<section class="py-12 sm:py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 sm:px-12">
+        
+        <div class="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 shadow-sm border border-gray-100 space-y-12 text-gray-700 leading-relaxed">
+
+            <!-- Section 1: Why should you read this? -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3 text-[#075da2]">
+                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center font-bold text-sm">01</div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Why Should You Read This?</h2>
+                </div>
+                <p>
+                    We are <strong>Tecnolynx</strong>, an IT consultancy and software development company based in Hyderabad. You are presently on our website, which serves as the online representation of our business, as you read this page. We are steadfastly devoted to giving you a wonderful experience while you browse our website, to sharing the things you might find interesting, to immediately answering any queries that could arise, and to ensuring that the website operates continuously so that you don’t become disappointed.
+                </p>
+                <p>
+                    Without your kind cooperation, which you provide by providing your personal data with us, this will not be possible. While also acknowledging the extreme sensitivity of personal data, we take your privacy very seriously. To prevent you from feeling insecure in this respect, we have created this privacy policy, which goes into great depth about how we operate with your personal data.
+                </p>
+                <div class="bg-blue-50/70 border-l-4 border-[#075da2] p-4 rounded-r-xl text-sm text-gray-800">
+                    <p class="font-medium">
+                        Before using this website, please carefully read this policy. Your data will only be processed in the ways that this Policy specifies. Children under the age of 16 are not intended for our Websites, and we do not intentionally collect personal information from them.
+                    </p>
+                </div>
+                <p class="text-sm text-gray-600">
+                    This Policy is an essential aspect of the Website’s Terms and Conditions. Kindly ensure to review our Policy periodically as we may decide to revise it in the future. Please email us at <a href="mailto:business@tecnolynx.com" class="text-[#075da2] font-semibold hover:underline">business@tecnolynx.com</a> if you have any questions or complaints about our policy.
+                </p>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Section 2: What data do we collect? -->
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3 text-[#075da2]">
+                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center font-bold text-sm">02</div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">What Data Do We Collect?</h2>
+                </div>
+                <p>
+                    To give you honest feedback about our services, Tecnolynx gathers data. Some of this information is provided voluntarily by you, such as when you fill out the Contact us, Contact, and Ask Author forms to contact us for assistance or to post on one of our articles. Some of the information we collect comes from technology like cookies, as well as from software operating on your device that sends us problem reports or use information.
+                </p>
+                
+                <h3 class="text-lg font-semibold text-gray-900 pt-2">Outside Sources</h3>
+                <p>
+                    We also get information from outside sources. We safeguard information collected from third parties in accordance with the policies outlined in this statement and any additional limitations imposed by the information’s origin. These outside sources could change over time, but now they consist of:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-sm text-gray-700">
+                    <li>Service providers that assist us in determining your location based on your IP address so that we may customise some of our services to you.</li>
+                    <li>Partners with whom we provide co-branded services or collaborate on marketing initiatives.</li>
+                    <li>Sources that are open to the public, including free government databases or other information in the public domain.</li>
+                </ul>
+
+                <p class="text-sm bg-gray-50 p-4 rounded-xl border border-gray-100">
+                    Regarding the data we gather, you have options. You have the option to refuse providing personal information when prompted. However, you might not be able to access a service, a feature, or get feedback if you decide not to share data that is required for its delivery.
+                </p>
+
+                <h3 class="text-lg font-semibold text-gray-900 pt-2">Data Potentially Collected</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100 space-y-2">
+                        <h4 class="font-bold text-gray-900 text-sm uppercase tracking-wide">Name and Contact Data</h4>
+                        <p class="text-xs text-gray-600">First and last name, business email address, phone number, and company name.</p>
+                    </div>
+                    <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100 space-y-2">
+                        <h4 class="font-bold text-gray-900 text-sm uppercase tracking-wide">Demographic Data</h4>
+                        <p class="text-xs text-gray-600">Information such as your preferred language and country.</p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-gray-900 pt-2">Website Data Tracked:</h4>
+                <ul class="list-disc pl-6 space-y-2.5 text-sm text-gray-700">
+                    <li><strong>Visitor Behaviour:</strong> Information on visitor behaviour patterns, including pages visited and duration spent.</li>
+                    <li><strong>Co-branding:</strong> Details from partners with whom we provide co-branded services or marketing initiatives.</li>
+                    <li><strong>Configuration Data:</strong> Network access information, including your IP address.</li>
+                    <li><strong>Performance & Error Reports:</strong> Technical issues, error severity, hardware/software specifications, and browsing environment details at the time of error.</li>
+                    <li><strong>Troubleshooting Info:</strong> Hardware/software diagnostics, communication transcripts, and machine application state during support.</li>
+                </ul>
+
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl text-xs sm:text-sm text-amber-900">
+                    <strong>Note on Unsolicited Personal Data:</strong> Please keep in mind that you may provide personal information that we do not require, such as payment information, in the description part of a contact form. We only intend to save this data on our backup server; we will not utilise it in any other manner. Do not provide us with any personal information that has not been specifically requested.
+                </div>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Section 3: Why do we collect data? -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3 text-[#075da2]">
+                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center font-bold text-sm">03</div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Why Do We Collect Data?</h2>
+                </div>
+                <p>
+                    Sending messages, including marketing communications, advertising, evaluating website visitor statistics, technical website issues, and enhancing website user experience are just a few of the reasons Tecnolynx gathers the data.
+                </p>
+                <p>
+                    To fulfil these goals, we will communicate with you about matters you have requested; we’ll get in touch with you if we need to get more information from you; we’ll double-check our records; and we’ll occasionally ask how you’re doing. <strong>We do not share our email lists for rent or trade with other companies or organisations.</strong>
+                </p>
+                <p>
+                    We have included technological and operational precautions intended to stop data leaks. For instance, we keep information about you that we have obtained directly or indirectly, such as your name, company name, email address, or phone number, in a secure database.
+                </p>
+                <p class="text-sm text-gray-600">
+                    Additionally, you may subscribe to emails and specify whether you want to receive marketing communications from Tecnolynx through email, SMS, postal mail, or phone.
+                </p>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Section 4: Why do we share your personal data? -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3 text-[#075da2]">
+                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center font-bold text-sm">04</div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Why Do We Share Your Personal Data?</h2>
+                </div>
+                <p>
+                    Your information will be given to our Development Centre, who will deal with your request. Our Development Centre is not permitted to use any personal data it obtains from us for any other reasons than those listed above and is subject to our data privacy and security rules. All responsibilities of the Development Centre are outlined in an agreement between Tecnolynx and the Development Centre.
+                </p>
+                <p>
+                    We shall get access to, move, disclose, and keep a copy of your personal information where we in good faith believe it is required to:
+                </p>
+                <ul class="list-disc pl-6 space-y-2 text-sm text-gray-700">
+                    <li>Uphold the law as it is written or give in to an appropriate legal request, such as one from law enforcement or another government agency.</li>
+                    <li>Protect our customers, such as stopping spam or efforts to deceive those who use our services.</li>
+                    <li>Defend Tecnolynx's rights, particularly by upholding the conditions controlling the use of the services.</li>
+                </ul>
+                <p class="text-xs text-gray-500 italic pt-2">
+                    Please be aware that some of our website pages contain links to third-party services whose privacy practices may be different from Tecnolynx’s. If you give any of those organisations your personal information, their privacy policies will apply.
+                </p>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Section 5: What rights do you have? -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3 text-[#075da2]">
+                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center font-bold text-sm">05</div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">What Rights Do You Have?</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 text-sm">
+                        <strong>Access & Information:</strong> Right to know at any moment what personal information we maintain about you and who has access to it.
+                    </div>
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 text-sm">
+                        <strong>Update & Modification:</strong> Right to request free updates for any outdated or incomplete personal information.
+                    </div>
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 text-sm">
+                        <strong>Marketing Opt-Out:</strong> Right to opt out of any marketing messages sent by us.
+                    </div>
+                    <div class="p-4 rounded-xl bg-gray-50 border border-gray-100 text-sm">
+                        <strong>Consent Withdrawal & Erasure:</strong> Right to withdraw permission or request deletion of your personal data at any time.
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Section 6 & 7: Cookies -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3 text-[#075da2]">
+                    <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center font-bold text-sm">06</div>
+                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Cookies & Similar Technologies</h2>
+                </div>
+                <p>
+                    Tecnolynx provides online services and assists in data collection via cookies. A cookie is a tiny text file stored on your device containing identifiers and configuration preferences.
+                </p>
+                <p class="text-sm font-semibold text-gray-900">Primary Uses of Cookies:</p>
+                <ul class="list-disc pl-6 space-y-2 text-sm text-gray-700">
+                    <li><strong>Security:</strong> Helping identify fraud and prevent misuse of our website and services.</li>
+                    <li><strong>Information Storage:</strong> Remembering data you submit across form steps.</li>
+                    <li><strong>Analytics:</strong> Gathering statistics regarding website performance and user engagement patterns.</li>
+                </ul>
+                <div class="pt-2">
+                    <h3 class="font-bold text-gray-900 mb-1">How to Control Cookies?</h3>
+                    <p class="text-sm">Typically, you can disable cookies through your web browser's security settings.</p>
+                </div>
+                <div class="pt-2">
+                    <h3 class="font-bold text-gray-900 mb-1">Other Similar Technologies</h3>
+                    <p class="text-sm">We may also use other comparable technologies like Local Shared Objects ("Flash cookies") to boost performance by storing particular data locally on your device.</p>
+                </div>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Section 8 & 9: End Users & Security -->
+            <div class="space-y-6">
+                <div class="space-y-3">
+                    <h3 class="text-lg font-bold text-gray-900">Notice to End Users</h3>
+                    <p class="text-sm">
+                        Tecnolynx’s services are aimed towards organisations. If your organisation has any policies, they may apply to how you use the Tecnolynx website. The owner of the domain associated with your email address (such as your employer) may access and process your data.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-lg font-bold text-gray-900">How We Secure Your Data</h3>
+                    <p class="text-sm">
+                        To guard against unauthorised access, use, or disclosure of your personal information, we implement security procedures and technologies, including storing confidential information on computers in restricted access facilities.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <h3 class="text-lg font-bold text-gray-900">How Long Data Is Stored</h3>
+                    <p class="text-sm">
+                        Personal information is kept for as long as needed to fulfill your service requests, comply with legal directives, or uphold contracts. Sensitive personal data generally has a retention period of up to five years unless extended by statutory requirements.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Section 10: Contact Box -->
+            <div class="bg-gradient-to-r from-slate-900 to-blue-950 rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
+                <div class="space-y-2 text-center sm:text-left">
+                    <h3 class="text-xl font-bold">Have Questions About Our Policy?</h3>
+                    <p class="text-gray-300 text-sm">Email our privacy team. We respond to all inquiries within 30 days.</p>
+                </div>
+                <a href="mailto:business@tecnolynx.com" class="inline-flex items-center px-6 py-3 rounded-xl bg-[#EE314D] hover:bg-[#d42640] text-white font-bold text-sm shadow-md transition duration-200 whitespace-nowrap">
+                    Contact Privacy Team
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+{% endblock %}

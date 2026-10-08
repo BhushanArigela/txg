@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Server Error (500) | Tecnolynx{% endblock %}
+{% block meta_description %}An unexpected server error occurred on Tecnolynx. Our technical team has been notified.{% endblock %}
+
+{% block content %}
+<section class="min-h-[85vh] pt-32 pb-20 bg-gradient-to-b from-slate-900 via-[#111827] to-[#0f172a] text-white relative overflow-hidden flex items-center">
+    <!-- Ambient Glow effects -->
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-[400px] h-[400px] bg-sky-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 text-center">
+        <!-- 500 Big Decorative Badge -->
+        <div class="inline-flex flex-col items-center mb-6 reveal">
+            <div class="relative">
+                <span class="text-8xl sm:text-9xl lg:text-[12rem] font-black tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-sky-300 to-blue-200 select-none drop-shadow-lg">
+                    500
+                </span>
+                <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-28 h-1.5 bg-gradient-to-r from-blue-400 to-sky-500 rounded-full opacity-80 blur-xs"></div>
+            </div>
+        </div>
+
+        <!-- Headline & Copy -->
+        <div class="max-w-2xl mx-auto space-y-4 mb-10 reveal">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 text-blue-200 text-xs sm:text-sm font-bold tracking-wide backdrop-blur-md">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                System Disruption
+            </div>
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                Server Encountered an Error
+            </h1>
+            <p class="text-base sm:text-lg text-slate-300 font-medium leading-relaxed">
+                Something went wrong on our server while processing your request. Our technical team has been notified. Please try reloading the page.
+            </p>
+        </div>
+
+        <!-- Primary Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 reveal">
+            <button onclick="window.location.reload()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-2xl text-white bg-[#075da2] hover:bg-blue-600 transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 cursor-pointer">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                Reload Page
+            </button>
+            <a href="{% url 'master:home' %}" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-bold uppercase tracking-wider rounded-2xl text-slate-200 bg-slate-800/90 border border-slate-700 hover:bg-slate-700 hover:text-white transition-all duration-300 shadow-sm hover:-translate-y-0.5">
+                <svg class="w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Return Home
+            </a>
+        
+        </div>
+
+        <!-- Help box -->
+        <div class="max-w-md mx-auto p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-slate-400 text-xs sm:text-sm">
+            If the problem persists, feel free to reach out to our team at
+            <a href="mailto:business@tecnolynx.com" class="text-blue-300 hover:underline font-bold">business@tecnolynx.com</a>
+        </div>
+    </div>
+</section>
+{% endblock content %}
