@@ -166,6 +166,11 @@ EMAIL_TIMEOUT = 10
 # Contact Form Email Receiver
 CONTACT_EMAIL_RECEIVER = os.environ.get('CONTACT_EMAIL_RECEIVER')
 
+# HubSpot CRM Integration Settings
+HUBSPOT_ACCESS_TOKEN = os.environ.get('HUBSPOT_ACCESS_TOKEN') or os.environ.get('HUBSPOT_SERVICE_TOKEN')
+HUBSPOT_REQUEST_TIMEOUT = int(os.environ.get('HUBSPOT_REQUEST_TIMEOUT', 10))
+
+
 # Caching for Rate Limiting
 CACHES = {
     'default': {

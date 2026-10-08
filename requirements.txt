@@ -1,6 +1,11 @@
-asgiref==3.12.1
 Django==6.0.7
-dotenv==0.9.9
+asgiref==3.12.1
+certifi==2026.1.4
+charset-normalizer==3.4.4
+idna==3.18
 python-dotenv==1.2.2
+requests==2.33.1
 sqlparse==0.5.5
+tzdata==2025.3
+urllib3==2.8.0
 whitenoise==6.12.0
