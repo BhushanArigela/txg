@@ -1,5 +1,6 @@
 import json
 import logging
+import threading
 import urllib.request
 import urllib.parse
 from django.conf import settings
@@ -14,6 +15,7 @@ logger = logging.getLogger(__name__)
 
 from .forms import ContactForm
 from .models import SourceVisit
+from .hubspot import sync_contact_to_hubspot
 
 class HomeView(TemplateView):
     template_name = "master/home.html"
@@ -119,6 +121,86 @@ def verify_turnstile(token, ip_address):
         logger.error("Turnstile verification failed: %s", e, exc_info=True)
         return False
 
+def _process_contact_submission_background(contact_message, logo_url):
+    """
+    Background worker to handle HubSpot CRM sync and email notifications
+    without blocking the user's HTTP response.
+    """
+    # 1. Sync Contact to HubSpot CRM
+    try:
+        sync_contact_to_hubspot(contact_message)
+    except Exception as e:
+        logger.error(f"Error during HubSpot sync: {e}", exc_info=True)
+
+    email_context = {
+        'contact_message': contact_message,
+        'logo_url': logo_url,
+    }
+
+    sender = getattr(settings, 'DEFAULT_FROM_EMAIL', None) or getattr(settings, 'EMAIL_HOST_USER', None) or 'webmaster@localhost'
+    receiver = getattr(settings, 'CONTACT_EMAIL_RECEIVER', None)
+
+    # 2. Send Admin Notification Email
+    admin_subject = f"New Contact Request: {contact_message.subject}"
+    admin_plain_message = (
+        f"New contact request from {contact_message.first_name} {contact_message.last_name}\n"
+        f"Email: {contact_message.email or 'Not provided'}\n"
+        f"Phone: {contact_message.phone or 'Not provided'}\n"
+        f"Subject: {contact_message.subject}\n\n"
+        f"Message:\n{contact_message.message}"
+    )
+    try:
+        admin_html_message = render_to_string('emails/admin_email.html', email_context)
+    except Exception as e:
+        logger.error(f"Failed to render admin HTML email template: {e}")
+        admin_html_message = None
+
+    if receiver:
+        try:
+            send_mail(
+                admin_subject,
+                admin_plain_message,
+                sender,
+                [receiver],
+                html_message=admin_html_message,
+                fail_silently=False,
+            )
+            logger.info(f"Admin contact email sent successfully to {receiver}")
+        except Exception as e:
+            logger.error(f"Failed to send admin contact email: {e}", exc_info=True)
+    else:
+        logger.warning("CONTACT_EMAIL_RECEIVER is not configured in settings. Admin email not sent.")
+
+    # 3. Send Customer Confirmation Email (if email provided)
+    if contact_message.email:
+        customer_subject = f"Thank you for contacting Tecnolynx - {contact_message.subject}"
+        customer_plain_message = (
+            f"Dear {contact_message.first_name} {contact_message.last_name},\n\n"
+            f"Thank you for reaching out to Tecnolynx Global. We have received your inquiry regarding '{contact_message.subject}'.\n\n"
+            f"Our team will review your message and respond to you as soon as possible.\n\n"
+            f"Best regards,\n"
+            f"Operations Team\n"
+            f"TecnolynxGlobal Pvt. Ltd."
+        )
+        try:
+            customer_html_message = render_to_string('emails/customer_email.html', email_context)
+        except Exception as e:
+            logger.error(f"Failed to render customer HTML email template: {e}")
+            customer_html_message = None
+
+        try:
+            send_mail(
+                customer_subject,
+                customer_plain_message,
+                sender,
+                [contact_message.email],
+                html_message=customer_html_message,
+                fail_silently=False,
+            )
+            logger.info(f"Customer confirmation email sent successfully to {contact_message.email}")
+        except Exception as e:
+            logger.error(f"Failed to send customer confirmation email: {e}", exc_info=True)
+
 @require_POST
 def submit_contact_form(request):
     ip_address = get_client_ip(request)
@@ -161,74 +243,13 @@ def submit_contact_form(request):
         # 4. Build logo URL & Context
         from django.templatetags.static import static
         logo_url = request.build_absolute_uri(static('img/logo.webp'))
-        email_context = {
-            'contact_message': contact_message,
-            'logo_url': logo_url,
-        }
-
-        sender = getattr(settings, 'DEFAULT_FROM_EMAIL', None) or getattr(settings, 'EMAIL_HOST_USER', None) or 'webmaster@localhost'
-        receiver = getattr(settings, 'CONTACT_EMAIL_RECEIVER', None)
-
-        # 5. Send Admin Notification Email
-        admin_subject = f"New Contact Request: {contact_message.subject}"
-        admin_plain_message = (
-            f"New contact request from {contact_message.first_name} {contact_message.last_name}\n"
-            f"Email: {contact_message.email or 'Not provided'}\n"
-            f"Phone: {contact_message.phone or 'Not provided'}\n"
-            f"Subject: {contact_message.subject}\n\n"
-            f"Message:\n{contact_message.message}"
-        )
-        try:
-            admin_html_message = render_to_string('emails/admin_email.html', email_context, request=request)
-        except Exception as e:
-            logger.error(f"Failed to render admin HTML email template: {e}")
-            admin_html_message = None
-
-        if receiver:
-            try:
-                send_mail(
-                    admin_subject,
-                    admin_plain_message,
-                    sender,
-                    [receiver],
-                    html_message=admin_html_message,
-                    fail_silently=False,
-                )
-                logger.info(f"Admin contact email sent successfully to {receiver}")
-            except Exception as e:
-                logger.error(f"Failed to send admin contact email: {e}", exc_info=True)
-        else:
-            logger.warning("CONTACT_EMAIL_RECEIVER is not configured in settings. Admin email not sent.")
-
-        # 6. Send Customer Confirmation Email (if email provided)
-        if contact_message.email:
-            customer_subject = f"Thank you for contacting Tecnolynx - {contact_message.subject}"
-            customer_plain_message = (
-                f"Dear {contact_message.first_name} {contact_message.last_name},\n\n"
-                f"Thank you for reaching out to Tecnolynx Global. We have received your inquiry regarding '{contact_message.subject}'.\n\n"
-                f"Our team will review your message and respond to you as soon as possible.\n\n"
-                f"Best regards,\n"
-                f"Operations Team\n"
-                f"TecnolynxGlobal Pvt. Ltd."
-            )
-            try:
-                customer_html_message = render_to_string('emails/customer_email.html', email_context, request=request)
-            except Exception as e:
-                logger.error(f"Failed to render customer HTML email template: {e}")
-                customer_html_message = None
-
-            try:
-                send_mail(
-                    customer_subject,
-                    customer_plain_message,
-                    sender,
-                    [contact_message.email],
-                    html_message=customer_html_message,
-                    fail_silently=False,
-                )
-                logger.info(f"Customer confirmation email sent successfully to {contact_message.email}")
-            except Exception as e:
-                logger.error(f"Failed to send customer confirmation email: {e}", exc_info=True)
+        
+        # Asynchronously process HubSpot sync and emails in the background
+        threading.Thread(
+            target=_process_contact_submission_background,
+            args=(contact_message, logo_url),
+            daemon=True,
+        ).start()
 
         return JsonResponse({
             'success': True,

@@ -94,6 +94,13 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -157,8 +164,8 @@ TURNSTILE_SECRET = os.environ.get('TURNSTILE_SECRET')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
 EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
-EMAIL_USE_SSL = True
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', 'True')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  
@@ -166,6 +173,10 @@ EMAIL_TIMEOUT = 10
 
 # Contact Form Email Receiver
 CONTACT_EMAIL_RECEIVER = os.environ.get('CONTACT_EMAIL_RECEIVER')
+
+#Hubspot Service Token
+HUBSPOT_ACCESS_TOKEN = os.environ.get('HUBSPOT_ACCESS_TOKEN') or os.environ.get('HUBSPOT_SERVICE_TOKEN')
+HUBSPOT_REQUEST_TIMEOUT = int(os.environ.get('HUBSPOT_REQUEST_TIMEOUT', 10))
 
 # Caching for Rate Limiting
 CACHES = {
