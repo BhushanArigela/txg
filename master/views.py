@@ -242,7 +242,7 @@ def submit_contact_form(request):
         
         # 4. Build logo URL & Context
         from django.templatetags.static import static
-        logo_url = request.build_absolute_uri(static('img/logo.webp'))
+        logo_url = request.build_absolute_uri(static('img/txg.png'))
         
         # Asynchronously process HubSpot sync and emails in the background
         threading.Thread(
